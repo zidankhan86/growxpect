@@ -19,12 +19,42 @@ class SEOSeeder extends Seeder
             [
                 'id' => 1,
                 'page_slug' => 'home',
-                'title' => 'Welcome To Ecommerce',
-                'description' => 'Ecommerce helps you manage customers, automate billing, and get paid via M-PESA — all in one platform.',
-                'keywords' => 'Ecommerce, automate billing, water service, water billing',
-                'image' => 'uploads/seo/logovenmeo-6666c014183a9.png',
-                'created_at' => '2022-08-19 23:31:12',
-                'updated_at' => '2025-08-09 12:03:01'
+                'title' => 'Growxpect | Digital Growth & Performance Marketing Agency',
+                'description' => 'We engineer predictable revenue engines with high-converting funnels, marketing automation, paid ads, and AI systems.',
+                'keywords' => 'digital growth agency, performance marketing, conversion rate optimization, sales funnels, crm automation',
+                'image' => 'assets/images/og-image.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id' => 2,
+                'page_slug' => 'about',
+                'title' => 'About Us - Growxpect | We Build Growth Systems',
+                'description' => 'Growxpect is a digital growth agency helping businesses generate more leads, convert more customers, and scale with smarter systems.',
+                'keywords' => 'about growxpect, digital growth agency, marketing automation team',
+                'image' => 'assets/images/og-image.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id' => 3,
+                'page_slug' => 'case_studies',
+                'title' => 'Case Studies & Results - Growxpect',
+                'description' => 'Explore how Growxpect helps healthcare, SaaS, real estate, and eCommerce brands achieve explosive measurable growth.',
+                'keywords' => 'case studies, client results, growth marketing metrics, roi',
+                'image' => 'assets/images/og-image.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id' => 4,
+                'page_slug' => 'services',
+                'title' => 'Our Growth Services & Pricing - Growxpect',
+                'description' => 'Full-funnel growth infrastructure: Lead Gen, CRM & Automation, Paid Media, and AI Sales Systems.',
+                'keywords' => 'growth services, paid media pricing, marketing automation pricing, lead gen packages',
+                'image' => 'assets/images/og-image.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
 

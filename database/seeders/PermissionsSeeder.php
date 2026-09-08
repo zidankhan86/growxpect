@@ -35,90 +35,23 @@ class PermissionsSeeder extends Seeder
             ['id' => 99, 'name' => 'admin.cpage.edit', 'group_name' => 'custom-page', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
             ['id' => 101, 'name' => 'admin.cpage.view', 'group_name' => 'custom-page', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
             ['id' => 102, 'name' => 'admin.settings.general', 'group_name' => 'settings', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 103, 'name' => 'admin.slider.index', 'group_name' => 'slider', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 104, 'name' => 'admin.slider.create', 'group_name' => 'slider', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 105, 'name' => 'admin.slider.edit', 'group_name' => 'slider', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 106, 'name' => 'admin.slider.delete', 'group_name' => 'slider', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 112, 'name' => 'admin.category.index', 'group_name' => 'category', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 113, 'name' => 'admin.category.create', 'group_name' => 'category', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 114, 'name' => 'admin.category.edit', 'group_name' => 'category', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 115, 'name' => 'admin.category.delete', 'group_name' => 'category', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            ['id' => 116, 'name' => 'admin.subcategory.index', 'group_name' => 'subcategory', 'guard_name' => 'admin', 'created_at' => '2024-06-01 18:04:53', 'updated_at' => '2024-06-01 18:04:53'],
-            [
-                'id' => 117,
-                'name' => 'admin.team.index',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-            [
-                'id' => 118,
-                'name' => 'admin.team.create',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-            [
-                'id' => 119,
-                'name' => 'admin.team.edit',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-            [
-                'id' => 120,
-                'name' => 'admin.team.delete',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-            [
-                'id' => 121,
-                'name' => 'admin.team.view',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-
-             [
-                'id' => 122,
-                'name' => 'admin.category.create',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-
-            [
-                'id' => 122,
-                'name' => 'admin.category.index',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-
-             [
-                'id' => 123,
-                'name' => 'admin.category.delete',
-                'group_name' => 'team',
-                'guard_name' => 'admin',
-                'created_at' => '2024-06-01 18:04:53',
-                'updated_at' => '2024-06-01 18:04:53',
-            ],
-
+            ['id' => 124, 'name' => 'admin.seo.index', 'group_name' => 'seo', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 125, 'name' => 'admin.seo.edit', 'group_name' => 'seo', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 126, 'name' => 'admin.seo.view', 'group_name' => 'seo', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 127, 'name' => 'admin.seo.update', 'group_name' => 'seo', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 128, 'name' => 'admin.user.index', 'group_name' => 'admin', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 129, 'name' => 'admin.user.create', 'group_name' => 'admin', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 130, 'name' => 'admin.user.store', 'group_name' => 'admin', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 131, 'name' => 'admin.user.edit', 'group_name' => 'admin', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 132, 'name' => 'admin.user.update', 'group_name' => 'admin', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 133, 'name' => 'admin.cms.manage', 'group_name' => 'cms', 'guard_name' => 'admin', 'created_at' => now(), 'updated_at' => now()],
         ];
 
         foreach ($permissions as $permission) {
-            Permission::firstOrCreate([
-                'name' => $permission['name'],
-                'guard_name' => $permission['guard_name'],
-            ]);
+            Permission::updateOrCreate(
+                ['name' => $permission['name'], 'guard_name' => $permission['guard_name']],
+                ['group_name' => $permission['group_name']]
+            );
         }
 
         Artisan::call('optimize:clear');

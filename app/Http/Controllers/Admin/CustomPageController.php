@@ -24,7 +24,8 @@ class CustomPageController extends Controller
 
     public function index(Request $request)
     {
-        if (is_null($this->user) || !$this->user->can('admin.cpage.index')) {
+        $user = $this->user ?? Auth::guard('admin')->user();
+        if (is_null($user) || !$user->can('admin.cpage.index')) {
             abort(403, 'Sorry !! You are Unauthorized.');
         }
 

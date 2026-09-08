@@ -43,7 +43,7 @@
 @endif
 
 {{-- IziToast Error Notify --}}
-@if ($errors->any())
+@if (isset($errors) && $errors->any())
     @php
         $collection = collect($errors->all());
         $errors = $collection->unique();

@@ -10,13 +10,19 @@ class RoleHasPermissionsSeeder extends Seeder
 {
     public function run(): void
     {
-        $adminRole = Role::firstOrCreate(
+        $superadminRole = Role::firstOrCreate(
             ['name' => 'superadmin'],
+            ['guard_name' => 'admin']
+        );
+
+        $adminRole = Role::firstOrCreate(
+            ['name' => 'admin'],
             ['guard_name' => 'admin']
         );
 
         $permissions = Permission::all();
 
+        $superadminRole->syncPermissions($permissions);
         $adminRole->syncPermissions($permissions);
     }
 }

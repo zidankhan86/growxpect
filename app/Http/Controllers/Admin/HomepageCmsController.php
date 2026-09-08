@@ -300,31 +300,25 @@ class HomepageCmsController extends Controller
 
     public function updateCms(Request $request)
     {
-        $allowedFields = [
-            'hero' => ['hero_title', 'hero_subtitle'],
-            'screen2' => ['title', 'subtitle'],
-            'video1' => ['video_url'],
-            'screen4' => ['line1', 'line2'],
-            'video2' => ['video_url'],
-            'quote' => ['quote'],
-            'cta' => ['cta_text'],
-            'final_button' => ['button_text'],
-        ];
-
         $request->validate([
-            'section' => 'required|string|in:' . implode(',', array_keys($allowedFields)),
+            'section' => 'required|string',
         ]);
 
         try {
             $section = $request->input('section');
+            $data = $request->except(['_token', 'section']);
 
-            foreach ($allowedFields[$section] as $field) {
-                HomepageContent::set(
-                    $section,
-                    $field,
-                    $request->input($field),
-                    $this->detectFieldType($field)
-                );
+            foreach ($data as $key => $value) {
+                if ($request->hasFile($key)) {
+                    $this->replaceImage($request->file($key), $section, $key, 'uploads/cms/' . $section);
+                } else {
+                    HomepageContent::set(
+                        $section,
+                        $key,
+                        $value,
+                        $this->detectFieldType($key)
+                    );
+                }
             }
 
             return $this->jsonSuccess(ucwords(str_replace('_', ' ', $section)) . ' updated successfully.');

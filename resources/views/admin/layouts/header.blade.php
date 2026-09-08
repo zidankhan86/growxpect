@@ -1,5 +1,6 @@
 @php
     $settings = DB::table('settings')->first();
+    $adminUser = Auth::guard('admin')->user() ?? Auth::user();
 @endphp
 <div class="page_wrapper">
     <header class="navbar navbar-expand-md  d-lg-flex d-print-none">
@@ -38,15 +39,15 @@
                             </svg>
                         </a>
                     </div>
-                  
+
 
                 </div>
                 <div class="dropdown">
                     <a href="#" class="nav-link px-0 d-flex align-items-center" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <span class="avatar rounded" style="background-image: url('{{ getProfile(Auth::user()->image) }}')"></span>
+                        <span class="avatar rounded" style="background-image: url('{{ getProfile($adminUser?->image) }}')"></span>
                         <div class="d-none d-xl-block ms-2">
-                            {{ Auth::user()->name }}
+                            {{ $adminUser?->name ?? 'Admin' }}
                         </div>
                         <span class="nav-link-arrow"></span>
                     </a>

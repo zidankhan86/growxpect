@@ -26,7 +26,8 @@ class SeoController extends Controller
 
     public function index()
     {
-        if (is_null($this->user) || !$this->user->can('admin.seo.index')) {
+        $user = $this->user ?? Auth::guard('admin')->user();
+        if (is_null($user) || !$user->can('admin.seo.index')) {
             abort(403, 'Sorry !! You are Unauthorized.');
         }
 
