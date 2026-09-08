@@ -59,6 +59,14 @@
   </script>
 
   <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
     /* Custom Glow & Glassmorphic Utilities */
     .glass-panel {
       background: rgba(13, 21, 41, 0.7);
@@ -85,6 +93,19 @@
     }
     .glow-dot {
       filter: drop-shadow(0 0 8px #00F0FF);
+    }
+    /* Infinite Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
     }
     /* Smooth Scrollbar */
     ::-webkit-scrollbar {
@@ -139,7 +160,7 @@
 
       <!-- Drawer Nav Links -->
       <nav class="p-5 space-y-2">
-        <a href="#" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-blue-500/10 border border-cyan-500/30 text-cyan-400 font-semibold text-sm shadow-glow-pill">
+        <a href="index.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-blue-500/10 border border-cyan-500/30 text-cyan-400 font-semibold text-sm shadow-glow-pill">
           <span class="flex items-center gap-3">
             <i data-lucide="home" class="w-4 h-4"></i>
             Home
@@ -147,41 +168,38 @@
           <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400/70"></i>
         </a>
 
-        <!-- Services Accordion in Drawer -->
-        <div>
-          <button id="drawer-services-toggle" class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
-            <span class="flex items-center gap-3">
-              <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
-              Services
-            </span>
-            <i data-lucide="chevron-down" id="drawer-services-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
-          </button>
-          
-          <div id="drawer-services-menu" class="hidden pl-10 pr-3 py-2 space-y-2 border-l border-white/10 ml-6 my-1 text-xs">
-            <a href="#solutions" class="drawer-link block py-1.5 text-slate-400 hover:text-cyan-400 transition-colors">High-Converting Funnels</a>
-            <a href="#solutions" class="drawer-link block py-1.5 text-slate-400 hover:text-cyan-400 transition-colors">CRM Systems</a>
-            <a href="#solutions" class="drawer-link block py-1.5 text-slate-400 hover:text-cyan-400 transition-colors">Marketing Automation</a>
-            <a href="#solutions" class="drawer-link block py-1.5 text-slate-400 hover:text-cyan-400 transition-colors">Lead Generation</a>
-          </div>
-        </div>
-
-        <a href="#case-studies" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+        <a href="about.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
           <span class="flex items-center gap-3">
-            <i data-lucide="trophy" class="w-4 h-4 text-blue-400"></i>
+            <i data-lucide="users" class="w-4 h-4 text-cyan-400"></i>
+            About Us
+          </span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+
+        <a href="case-studies.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3">
+            <i data-lucide="trophy" class="w-4 h-4 text-purple-400"></i>
             Case Studies
           </span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
         </a>
 
-        <a href="#partner" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+        <a href="services.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
           <span class="flex items-center gap-3">
-            <i data-lucide="users" class="w-4 h-4 text-indigo-400"></i>
-            About
+            <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i>
+            Services & Pricing
+          </span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+        <a href="#pricing" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3">
+            <i data-lucide="tag" class="w-4 h-4 text-purple-400"></i>
+            Pricing Plans
           </span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
         </a>
 
-        <a href="#process" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+        <a href="index.html#process" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
           <span class="flex items-center gap-3">
             <i data-lucide="sparkles" class="w-4 h-4 text-sky-400"></i>
             Our Process
@@ -233,23 +251,12 @@
 
         <!-- Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#" class="text-cyan-400 font-semibold transition-colors hover:text-cyan-300">Home</a>
-          <div class="relative group">
-            <button class="flex items-center gap-1.5 hover:text-white transition-colors py-2 focus:outline-none">
-              <span>Services</span>
-              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform duration-200"></i>
-            </button>
-            <!-- Dropdown Menu -->
-            <div class="absolute top-full left-0 w-52 py-2.5 px-2 bg-[#0C1326]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-              <a href="#solutions" class="block px-3 py-2 text-xs rounded-lg hover:bg-white/5 hover:text-cyan-400 text-slate-300 transition-colors">High-Converting Funnels</a>
-              <a href="#solutions" class="block px-3 py-2 text-xs rounded-lg hover:bg-white/5 hover:text-cyan-400 text-slate-300 transition-colors">CRM Systems</a>
-              <a href="#solutions" class="block px-3 py-2 text-xs rounded-lg hover:bg-white/5 hover:text-cyan-400 text-slate-300 transition-colors">Marketing Automation</a>
-              <a href="#solutions" class="block px-3 py-2 text-xs rounded-lg hover:bg-white/5 hover:text-cyan-400 text-slate-300 transition-colors">Lead Generation</a>
-            </div>
-          </div>
-          <a href="#case-studies" class="hover:text-white transition-colors">Case Studies</a>
-          <a href="#partner" class="hover:text-white transition-colors">About</a>
-          <a href="#process" class="hover:text-white transition-colors">Blog</a>
+          <a href="index.html" class="text-cyan-400 font-semibold transition-colors hover:text-cyan-300">Home</a>
+          <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+          <a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a>
+          <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+          <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+          <a href="#process" class="hover:text-white transition-colors">Process</a>
         </nav>
 
         <!-- Right Action CTA -->
@@ -470,24 +477,82 @@
 
         </div>
 
-        <!-- Logos Bar -->
-        <div class="mt-16 sm:mt-20 pt-10 border-t border-white/[0.06] text-center">
-          <p class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-6">TRUSTED BY INDUSTRY LEADERS</p>
-          <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-14 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
-            <div class="flex items-center gap-2 text-slate-300 font-bold text-xs sm:text-sm tracking-wide">
-              <i data-lucide="cross" class="w-4 h-4 text-cyan-400"></i> HealthFlow
-            </div>
-            <div class="flex items-center gap-2 text-slate-300 font-bold text-xs sm:text-sm tracking-wide">
-              <i data-lucide="hexagon" class="w-4 h-4 text-blue-400"></i> Nexora
-            </div>
-            <div class="flex items-center gap-2 text-slate-300 font-bold text-xs sm:text-sm tracking-wide">
-              <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i> BrightPath
-            </div>
-            <div class="flex items-center gap-2 text-slate-300 font-bold text-xs sm:text-sm tracking-wide">
-              <i data-lucide="mountain" class="w-4 h-4 text-sky-400"></i> SummitSEO
-            </div>
-            <div class="flex items-center gap-2 text-slate-300 font-bold text-xs sm:text-sm tracking-wide">
-              <i data-lucide="layers" class="w-4 h-4 text-cyan-300"></i> Vectra
+        <!-- Logos Bar: Infinite Continuous Moving Marquee (Bigger & Animated) -->
+        <div class="mt-16 sm:mt-24 pt-10 border-t border-white/[0.08] text-center overflow-hidden relative">
+          <p class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 font-bold mb-8">
+            TRUSTED BY INDUSTRY LEADERS
+          </p>
+
+          <!-- Continuous Marquee Track -->
+          <div class="relative overflow-hidden w-full py-2">
+            <div class="animate-marquee flex items-center gap-10 sm:gap-16">
+              
+              <!-- Set 1 -->
+              <div class="flex items-center gap-10 sm:gap-16 shrink-0">
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="cross" class="w-6 h-6 text-cyan-400"></i>
+                  <span>HealthFlow</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-400/40 hover:bg-purple-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="hexagon" class="w-6 h-6 text-purple-400"></i>
+                  <span>Nexora</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-400/40 hover:bg-blue-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="sparkles" class="w-6 h-6 text-blue-400"></i>
+                  <span>BrightPath</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-300/40 hover:bg-cyan-400/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="mountain" class="w-6 h-6 text-cyan-300"></i>
+                  <span>SummitSEO</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-300/40 hover:bg-purple-400/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="layers" class="w-6 h-6 text-purple-300"></i>
+                  <span>Vectra</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-teal-400/40 hover:bg-teal-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="shield-check" class="w-6 h-6 text-teal-400"></i>
+                  <span>OmniScale</span>
+                </div>
+              </div>
+
+              <!-- Set 2 (Seamless Infinite Repeat) -->
+              <div class="flex items-center gap-10 sm:gap-16 shrink-0" aria-hidden="true">
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="cross" class="w-6 h-6 text-cyan-400"></i>
+                  <span>HealthFlow</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-400/40 hover:bg-purple-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="hexagon" class="w-6 h-6 text-purple-400"></i>
+                  <span>Nexora</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-400/40 hover:bg-blue-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="sparkles" class="w-6 h-6 text-blue-400"></i>
+                  <span>BrightPath</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-300/40 hover:bg-cyan-400/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="mountain" class="w-6 h-6 text-cyan-300"></i>
+                  <span>SummitSEO</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-300/40 hover:bg-purple-400/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="layers" class="w-6 h-6 text-purple-300"></i>
+                  <span>Vectra</span>
+                </div>
+
+                <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-teal-400/40 hover:bg-teal-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
+                  <i data-lucide="shield-check" class="w-6 h-6 text-teal-400"></i>
+                  <span>OmniScale</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -1601,6 +1666,267 @@
     <!-- ========================================================================= -->
     <!-- 10. BOOK A STRATEGY CALL / CALENDAR SECTION -->
     <!-- ========================================================================= -->
+    
+    <!-- ========================================================================= -->
+    <!-- 9.5 TRANSPARENT PRICING PLANS SECTION -->
+    <!-- ========================================================================= -->
+    <section id="pricing" class="py-20 sm:py-28 relative overflow-hidden">
+      <!-- Background Ambient Aura -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[800px] h-[450px] bg-gradient-to-r from-cyan-500/10 via-purple-600/15 to-blue-600/10 blur-[150px] rounded-full"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            TRANSPARENT GROWTH TIERS
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Simple, Value-Driven Investment For <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400">Predictable Revenue</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Choose the growth architecture that matches your current stage. Every system is custom-built, seamlessly integrated, and engineered for high conversion.
+          </p>
+        </div>
+
+        <!-- 3 Tier Pricing Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Card 1: Growth Foundation (Starter) -->
+          <div class="glass-panel glass-panel-hover rounded-3xl p-8 flex flex-col justify-between border-white/10 relative group">
+            <div class="space-y-6">
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+                  <i data-lucide="filter" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">Foundation</span>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2">Growth Foundation</h3>
+                <p class="text-xs text-slate-400 leading-relaxed min-h-[36px]">
+                  Essential lead capture and CRM pipeline automation designed to eliminate lead drop-off.
+                </p>
+              </div>
+
+              <!-- Price Box -->
+              <div class="pt-4 pb-2 border-y border-white/[0.08]">
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-3xl sm:text-4xl font-extrabold text-white">$1,490</span>
+                  <span class="text-xs text-slate-400 font-medium">/ one-time setup</span>
+                </div>
+                <div class="text-[11px] text-cyan-400/80 font-medium mt-1">
+                  Optional optimization & hosting: $290/mo
+                </div>
+              </div>
+
+              <!-- Feature List -->
+              <div class="space-y-3 pt-2">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-300">What's Included:</div>
+                <ul class="space-y-2.5 text-xs text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Custom High-Converting Landing Page / Funnel</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>CRM Configuration & Deal Pipeline Setup</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>3-Stage Instant Email & SMS Follow-Up Workflows</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Automated Booking Calendar & Form Integration</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Instant Team Alert Bot (Slack / WhatsApp / Email)</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Essential Analytics & Conversion Tracking</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <a href="#booking" class="w-full py-3.5 px-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all group-hover:border-cyan-500/40">
+                <span>Start With Foundation</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Flagship Growth Engine (POPULAR - Highlighted) -->
+          <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border-2 border-cyan-400/60 shadow-[0_0_50px_rgba(56,197,210,0.25)] relative transform lg:-translate-y-2 bg-[#091226]/90">
+            <!-- Popular Badge -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white text-[11px] font-extrabold uppercase tracking-wider shadow-glow-cyan flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
+              <span>Most Popular &bull; Complete System</span>
+            </div>
+
+            <div class="space-y-6 pt-2">
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-purple-600/30 border border-cyan-400/50 text-cyan-300 flex items-center justify-center shadow-glow-cyan">
+                  <i data-lucide="zap" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300">All-in-One Engine</span>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-extrabold text-white mb-2">Flagship Growth Engine</h3>
+                <p class="text-xs text-slate-300 leading-relaxed min-h-[36px]">
+                  The complete connected ecosystem: High-converting funnels, CRM automation, Paid Ads management, and AI Speed-to-Lead bot.
+                </p>
+              </div>
+
+              <!-- Price Box -->
+              <div class="pt-4 pb-2 border-y border-white/[0.12] bg-white/[0.02] rounded-xl px-4">
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">$2,750</span>
+                  <span class="text-xs text-slate-400 font-medium">/ month</span>
+                </div>
+                <div class="text-[11px] text-cyan-300 font-medium mt-1 flex items-center gap-1">
+                  <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i> Includes $1,990 one-time architecture setup
+                </div>
+              </div>
+
+              <!-- Feature List -->
+              <div class="space-y-3 pt-2">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-cyan-300">Everything In Foundation, Plus:</div>
+                <ul class="space-y-2.5 text-xs text-slate-200">
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span class="font-semibold text-white">Full Multi-Stage Funnel Ecosystem (VSL + Lead Magnet + Booking)</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span class="font-semibold text-white">Omnichannel Paid Ads Management (Meta & Google Ads)</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span class="font-semibold text-cyan-300">AI Speed-to-Lead Instant Response Bot (< 60s qualification)</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Complete Lifecycle CRM Workflows & Multi-Touch Nurturing</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Continuous CRO A/B Split Testing & Copy Optimizations</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                    <span>Dedicated Growth Strategist & Private Slack Channel</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <a href="#booking" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:scale-[1.02] active:scale-95 transition-all">
+                <span>Build My Growth Engine</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Enterprise Scale -->
+          <div class="glass-panel glass-panel-hover rounded-3xl p-8 flex flex-col justify-between border-white/10 relative group">
+            <div class="space-y-6">
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                  <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">Enterprise</span>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2">Custom Enterprise</h3>
+                <p class="text-xs text-slate-400 leading-relaxed min-h-[36px]">
+                  Bespoke AI automation, high-volume multi-brand funnels, and enterprise API integrations.
+                </p>
+              </div>
+
+              <!-- Price Box -->
+              <div class="pt-4 pb-2 border-y border-white/[0.08]">
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-3xl sm:text-4xl font-extrabold text-white">Custom</span>
+                  <span class="text-xs text-slate-400 font-medium">/ tailored scope</span>
+                </div>
+                <div class="text-[11px] text-purple-400/90 font-medium mt-1">
+                  Tailored for established firms & high ad spend
+                </div>
+              </div>
+
+              <!-- Feature List -->
+              <div class="space-y-3 pt-2">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-300">Enterprise Inclusions:</div>
+                <ul class="space-y-2.5 text-xs text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                    <span>Multi-Brand / Multi-Location Funnel & CRM Systems</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                    <span>Custom AI Agent Trained on Proprietary Business Knowledge</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                    <span>Custom Database, ERP, or Proprietary Webhook Integrations</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                    <span>Multi-Touch Revenue Attribution & Executive Reporting</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                    <span>White-Glove Team Onboarding & SOP Documentation</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                    <span>Priority 24/7 Response Time & Dedicated Tech Lead</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <a href="#booking" class="w-full py-3.5 px-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all group-hover:border-purple-500/40">
+                <span>Talk to Solutions Architect</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Standalone Service Link Banner -->
+        <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-cyan-950/30 via-slate-900/50 to-purple-950/30 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5 text-center sm:text-left">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Looking for individual, a-la-carte service pricing?</h4>
+              <p class="text-xs text-slate-400">View individual pricing for Funnels, CRM Automation, Paid Ads, and AI Speed-to-Lead bots.</p>
+            </div>
+          </div>
+          <a href="services.html" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-cyan-300 font-semibold text-xs flex items-center gap-2 whitespace-nowrap transition-colors">
+            <span>View All Services & Pricing</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
     <section id="booking" class="py-20 sm:py-24 relative overflow-hidden">
       
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies & Client Results — Growxpect</title>
+  <meta name="description" content="Discover how Growxpect builds end-to-end growth systems, conversion funnels, and CRM automation that drive predictable revenue across industries." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              darkest: '#030712',
+              dark: '#070C18',
+              card: '#0C1326',
+              cardBorder: '#1E293B',
+              cardHover: '#131D3B',
+              cyan: '#38C5D2',
+              purple: '#8C2AA6',
+              cyanGlow: 'rgba(56, 197, 210, 0.25)',
+              purpleGlow: 'rgba(140, 42, 166, 0.25)',
+            }
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px -5px rgba(56, 197, 210, 0.45)',
+            'glow-purple': '0 0 25px -5px rgba(168, 85, 247, 0.45)',
+            'glow-brand': '0 0 30px -5px rgba(140, 42, 166, 0.4)',
+            'glow-card': '0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 0 1px rgba(255, 255, 255, 0.08)',
+            'glow-pill': '0 0 15px rgba(56, 197, 210, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .glass-panel {
+      background: rgba(13, 21, 41, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-panel-hover {
+      transition: all 0.3s ease;
+    }
+    .glass-panel-hover:hover {
+      background: rgba(18, 29, 58, 0.85);
+      border-color: rgba(56, 197, 210, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(56, 197, 210, 0.25);
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(56, 197, 210, 0.5);
+    }
+    .grid-bg {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#030712] text-slate-200 font-sans antialiased overflow-x-hidden relative selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- Ambient Glows -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-purple-600/15 blur-[140px] rounded-full"></div>
+    <div class="absolute top-[25%] -left-40 w-[600px] h-[600px] bg-cyan-500/15 blur-[150px] rounded-full"></div>
+    <div class="absolute top-[55%] -right-40 w-[700px] h-[700px] bg-purple-600/15 blur-[160px] rounded-full"></div>
+    <div class="absolute bottom-10 left-1/3 w-[800px] h-[500px] bg-cyan-500/12 blur-[140px] rounded-full"></div>
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="drawer-panel" class="fixed top-0 left-0 bottom-0 w-[290px] sm:w-[320px] bg-[#070C18] border-r border-white/10 z-50 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+    <div>
+      <div class="p-5 border-b border-white/[0.08] flex items-center justify-between">
+        <a href="index.html" class="flex items-center">
+          <img src="logo.png" alt="Growxpect" class="h-8 w-auto object-contain" />
+        </a>
+        <button id="drawer-close-btn" class="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-400 hover:text-white" aria-label="Close menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <nav class="p-5 space-y-2">
+        <a href="index.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Home</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+        <a href="about.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> About Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+        <a href="case-studies.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold text-sm shadow-glow-pill">
+          <span class="flex items-center gap-3"><i data-lucide="trophy" class="w-4 h-4 text-purple-400"></i> Case Studies</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-cyan-400/70"></i>
+        </a>
+        <a href="services.html" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3"><i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i> Services & Pricing</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+        <a href="index.html#pricing" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3"><i data-lucide="tag" class="w-4 h-4 text-purple-400"></i> Pricing Plans</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+        <a href="index.html#process" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
+          <span class="flex items-center gap-3"><i data-lucide="sparkles" class="w-4 h-4 text-sky-400"></i> Process</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+      </nav>
+    </div>
+
+    <div class="p-5 border-t border-white/[0.08] space-y-4">
+      <a href="index.html#booking" class="drawer-link w-full py-3 px-4 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-glow-cyan">
+        <span>Book a Strategy Call</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+      <p class="text-[11px] text-center text-slate-500">&copy; 2026 Growxpect Systems.</p>
+    </div>
+  </aside>
+
+  <!-- MAIN PAGE WRAPPER -->
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#030712]/85 border-b border-white/[0.06] transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center group">
+          <img src="logo.png" alt="Growxpect" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="index.html" class="hover:text-white transition-colors">Home</a>
+          <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+          <a href="case-studies.html" class="text-cyan-400 font-semibold transition-colors">Case Studies</a>
+          <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+          <a href="index.html#pricing" class="hover:text-white transition-colors">Pricing</a>
+          <a href="index.html#process" class="hover:text-white transition-colors">Process</a>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-4">
+          <a href="index.html#booking" class="relative group overflow-hidden rounded-full p-[1px] font-semibold text-xs transition-all duration-300 hover:scale-[1.02] shadow-glow-cyan">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-600 rounded-full"></div>
+            <div class="relative px-5 py-2.5 rounded-full bg-[#030712] text-white flex items-center gap-2 font-semibold group-hover:bg-transparent transition-all">
+              <span>Book a Strategy Call</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex md:hidden items-center">
+          <button id="drawer-open-btn" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white" aria-label="Open menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. HERO HEADER -->
+    <section class="relative pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase backdrop-blur-md">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          PROVEN CLIENT RESULTS
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Real Growth Systems. <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 text-glow">
+            Measurable Revenue Impact.
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Explore how we engineer custom full-funnel architectures, smart CRM pipelines, and automated multi-channel sequences to scale businesses across diverse industries.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 pt-4" id="case-filters">
+          <button class="filter-tab px-5 py-2.5 rounded-full text-xs font-bold bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white shadow-glow-cyan transition-all" data-filter="all">All Case Studies</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300 hover:border-cyan-400/40 hover:text-white transition-all" data-filter="healthcare">Healthcare & MedSpa</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300 hover:border-cyan-400/40 hover:text-white transition-all" data-filter="saas">B2B SaaS</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300 hover:border-cyan-400/40 hover:text-white transition-all" data-filter="realestate">Real Estate</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300 hover:border-cyan-400/40 hover:text-white transition-all" data-filter="ecommerce">E-Commerce</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CASE STUDY CARDS GRID -->
+    <section class="py-12 sm:py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="case-grid">
+          
+          <!-- Case 1: MedSpa / Healthcare -->
+          <div class="case-card glass-panel glass-panel-hover rounded-3xl p-7 sm:p-8 border-white/10 space-y-6 flex flex-col justify-between" data-category="healthcare">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                  HEALTHCARE & MEDSPA
+                </span>
+                <span class="text-xs text-slate-400">60-Day Transformation</span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold text-white">NovaHealth MedSpa — 312% Appointment Surge via Automated WhatsApp Triage</h2>
+              
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                NovaHealth was receiving paid ad leads but suffering from slow manual consultation follow-ups and high no-show rates. Growxpect implemented an automated booking funnel, instant 45-second WhatsApp qualification, and 2-way CRM synchronization.
+              </p>
+
+              <!-- Metrics -->
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-cyan-400">+312%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Show-Up Rate</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-purple-400">4.7%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Conv. Rate (was 1.1%)</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">-42%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Acquisition Cost</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-400">Stack: <span class="text-white font-medium">Meta Ads &bull; Custom Funnel &bull; GoHighLevel &bull; WhatsApp AI</span></div>
+              <a href="index.html#booking" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
+                <span>Book Similar Call</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Case 2: B2B SaaS -->
+          <div class="case-card glass-panel glass-panel-hover rounded-3xl p-7 sm:p-8 border-white/10 space-y-6 flex flex-col justify-between" data-category="saas">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                  B2B SAAS
+                </span>
+                <span class="text-xs text-slate-400">90-Day Pipeline Overhaul</span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold text-white">CloudScale AI — 240% Demo Volume & 88.4% Qualified Show-Up Rate</h2>
+              
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Sales reps spent hours qualifying inbound demo requests. We deployed an interactive product assessment funnel, automated calendar routing based on company size, and pre-call onboarding video drips.
+              </p>
+
+              <!-- Metrics -->
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-blue-400">+240%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Demo Pipeline</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-cyan-400">88.4%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Attendance Rate</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">4.2x</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Revenue ROI</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-400">Stack: <span class="text-white font-medium">Google Ads &bull; HubSpot &bull; Calendly &bull; Make Automation</span></div>
+              <a href="index.html#booking" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                <span>Book Similar Call</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Case 3: Luxury Real Estate -->
+          <div class="case-card glass-panel glass-panel-hover rounded-3xl p-7 sm:p-8 border-white/10 space-y-6 flex flex-col justify-between" data-category="realestate">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+                  REAL ESTATE
+                </span>
+                <span class="text-xs text-slate-400">High-Ticket Acquisition</span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold text-white">PrimeEstates Luxury — $3.2M Closed Sales from Instant VIP Lead Routing</h2>
+              
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Ultra-high-net-worth buyers require immediate white-glove attention. We constructed an interactive property catalog funnel connected directly to agent WhatsApp lines with auto-generated customized property PDF dossiers.
+              </p>
+
+              <!-- Metrics -->
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-purple-400">$3.2M</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Closed Properties</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-cyan-400">&lt;45s</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Response Time</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">+195%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">VIP Inquiries</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-400">Stack: <span class="text-white font-medium">Meta Luxury Retargeting &bull; CRM &bull; WhatsApp API</span></div>
+              <a href="index.html#booking" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1">
+                <span>Book Similar Call</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Case 4: E-Commerce DTC -->
+          <div class="case-card glass-panel glass-panel-hover rounded-3xl p-7 sm:p-8 border-white/10 space-y-6 flex flex-col justify-between" data-category="ecommerce">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                  E-COMMERCE / DTC
+                </span>
+                <span class="text-xs text-slate-400">Post-Purchase Engine</span>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold text-white">LuxeApparel — +$290k Recovered Carts & 68.2% Repeat Purchase Rate</h2>
+              
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                By replacing generic abandoned cart emails with dynamic SMS + WhatsApp VIP discount triggers and personalized post-purchase nurture flows, LuxeApparel transformed one-off shoppers into lifelong brand advocates.
+              </p>
+
+              <!-- Metrics -->
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">+$290k</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Recovered Revenue</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-cyan-400">+68.2%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Repeat Rate</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                  <div class="text-xl sm:text-2xl font-extrabold text-purple-400">+34%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Higher AOV</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-400">Stack: <span class="text-white font-medium">Shopify Plus &bull; Klaviyo &bull; SMS Bump &bull; AI Upsell</span></div>
+              <a href="index.html#booking" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+                <span>Book Similar Call</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. BOTTOM CTA BANNER -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-panel rounded-3xl p-8 sm:p-12 border-cyan-500/30 text-center max-w-4xl mx-auto space-y-6 shadow-2xl relative">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Ready to Architect Your Growth Engine?</h2>
+          <p class="text-xs sm:text-base text-slate-300 max-w-xl mx-auto">
+            Book a 30-minute free growth architecture call to discover the exact funnels, CRM workflows, and automation your business needs to scale.
+          </p>
+          <div class="pt-2">
+            <a href="index.html#booking" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-xs sm:text-sm shadow-glow-cyan hover:scale-105 transition-all">
+              <span>Book A Free Strategy Call</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-16 pb-12 border-t border-white/[0.08] bg-[#02050E] relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/[0.06]">
+          <div class="flex flex-col items-center md:items-start gap-2">
+            <a href="index.html" class="flex items-center">
+              <img src="logo.png" alt="Growxpect" class="h-8 w-auto object-contain" />
+            </a>
+            <p class="text-xs text-slate-500">Connecting funnels, CRM, and automation into predictable revenue engines.</p>
+          </div>
+
+          <div class="flex items-center gap-8 text-xs font-medium text-slate-400">
+            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+            <a href="about.html" class="hover:text-white transition-colors">About</a>
+            <a href="case-studies.html" class="text-cyan-400 font-semibold transition-colors">Case Studies</a>
+            <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+            <a href="index.html#booking" class="hover:text-white transition-colors">Book Call</a>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>&copy; 2026 Growxpect. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Drawer
+    const drawerOpenBtn = document.getElementById('drawer-open-btn');
+    const drawerCloseBtn = document.getElementById('drawer-close-btn');
+    const drawerPanel = document.getElementById('drawer-panel');
+    const drawerBackdrop = document.getElementById('drawer-backdrop');
+
+    function openDrawer() {
+      drawerPanel.classList.remove('-translate-x-full');
+      drawerPanel.classList.add('translate-x-0');
+      drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      drawerBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeDrawer() {
+      drawerPanel.classList.remove('translate-x-0');
+      drawerPanel.classList.add('-translate-x-full');
+      drawerBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      drawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (drawerOpenBtn) drawerOpenBtn.addEventListener('click', openDrawer);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+    // Filter Tabs
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const caseCards = document.querySelectorAll('.case-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'via-indigo-600', 'to-purple-600', 'text-white', 'shadow-glow-cyan', 'font-bold');
+          t.classList.add('bg-white/5', 'border', 'border-white/10', 'text-slate-300', 'font-semibold');
+        });
+
+        tab.classList.add('bg-gradient-to-r', 'from-cyan-500', 'via-indigo-600', 'to-purple-600', 'text-white', 'shadow-glow-cyan', 'font-bold');
+        tab.classList.remove('bg-white/5', 'border', 'border-white/10', 'text-slate-300');
+
+        caseCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
