@@ -1,0 +1,339 @@
+ @media screen and (min-width: 992px) {
+     .shop-page .offcanvas.offcanvas-start {
+         position: relative !important;
+         transform: none !important;
+     }
+
+     .shop-page .offcanvas {
+         position: relative !important;
+         visibility: visible;
+         z-index: 1;
+         opacity: 1;
+         background-color: transparent !important;
+         border: none !important;
+     }
+
+
+ }
+
+ @media screen and (max-width:991px) {
+
+     .offcanvas_body {
+         padding: 15px;
+         overflow-y: auto;
+         overflow-x: hidden !important;
+         scrollbar-width: thin;
+     }
+
+     .banner-content h1 {
+         font-size: 35px;
+     }
+
+     .single-banner-item {
+         padding: 100px 0px;
+     }
+
+     .ecom-nav .navbar .navbar-nav .nav-item a {
+         padding: 0px;
+         display: inline-block;
+         position: relative;
+     }
+
+     .navbar-brand img {
+         max-width: 115px;
+     }
+
+     .ecom-nav .option-item {
+         padding: 0px 10px;
+     }
+
+     .mdiv {
+         /* width: 33%; */
+         display: flex;
+         justify-content: space-between;
+     }
+
+     .mdiv.others-option {
+         justify-content: end !important;
+     }
+
+     .menu-badge {
+        right: -56px;
+        top: -8px;
+    }
+     .ecom-nav .navbar .navbar-nav .nav-item {
+         padding: 14px 20px;
+         border-bottom: 1px solid #f3f3f3;
+     }
+ }
+
+ @media screen and (max-width:775px) {
+
+
+     .banner-content h1 {
+         font-size: 25px;
+     }
+
+     .single-banner-item {
+         padding: 100px 0px;
+     }
+
+     .slider_arrows {
+         position: relative;
+         width: 150px;
+         margin: auto;
+         top: -37px;
+     }
+
+     .slider_arrows svg {
+         width: 40px;
+         height: 40px;
+     }
+
+     .slider_prev svg {
+         left: 5px;
+     }
+
+     /* right arrow */
+     .slider_next svg {
+         right: 5px;
+     }
+
+     .order_success h2 {
+         font-size: 20px;
+     }
+
+     .order_success p {
+         font-size: 14px;
+     }
+
+     .products-details-desc h1 {
+         font-size: 20px;
+     }
+
+     .slider_sec .small-arrow {
+         width: 36px;
+         height: 36px;
+     }
+
+     .slider_sec .small-arrow svg {
+         width: 20px;
+         height: 20px;
+     }
+
+
+ }
+
+
+ @media screen and (max-width:575px) {
+     .section_heading h4 {
+         font-size: 18px;
+     }
+
+     .brand_sec .swiper-prev,
+     .brand_sec .swiper-next,
+     .testimonial_sec .review_swiper_prev,
+     .testimonial_sec .review_swiper_next,
+     .related_swiper_prev,
+     .suggest_swiper_prev,
+     .related_swiper_next,
+     .suggest_swiper_next,
+     .category_sec .swiper_prev,
+     .category_sec .swiper_next {
+         width: 35px;
+         height: 35px
+     }
+
+     .single-contact-info-box h3 {
+         font-size: 18px;
+     }
+
+     .footer-bottom-area {
+         margin-bottom: 68px;
+     }
+
+     .footer-area {
+         text-align: center;
+     }
+
+     .single-footer-widget h3::before {
+         margin: auto;
+         left: 0;
+         right: 0;
+     }
+
+     .single-footer-widget h3 {
+         font-size: 16px;
+     }
+
+     .single-footer-widget .link-list li a {
+         font-size: 15px;
+     }
+
+     .single-footer-widget .footer-contact-info li {
+         font-size: 14px;
+     }
+
+     .slider_arrows {
+         width: 100px;
+     }
+
+     .single-facility-box h3 {
+         margin-bottom: 5px;
+         font-size: 16px;
+     }
+
+     .single-facility-box .icon svg {
+         width: 25px;
+         height: 25px;
+     }
+
+     .single-facility-box {
+         padding-left: 35px;
+     }
+
+     .slider_sec .carousel-indicators [data-bs-target] {
+         width: 6px;
+         height: 6px;
+     }
+
+     .category_card {
+         padding: 14px 5px;
+     }
+
+     .category_card h4 a {
+         font-size: 14px;
+     }
+
+     .products-add-to-cart .secondary-btn {
+         width: 100%;
+     }
+
+     .products-add-to-cart svg {
+         width: 20px;
+         height: 20px;
+     }
+
+     #scrollToTopBtn {
+         bottom: 80px;
+         width: 44px;
+         height: 44px;
+     }
+
+     .purchased_notification {
+         max-width: 250px;
+         width: 100%;
+     }
+ }
+
+
+ @media screen and (max-width:500px) {
+
+
+     .ecom-nav .option-item {
+         padding: 0px 8px;
+     }
+
+     .ecom-nav .option-item svg {
+         width: 22px;
+         height: 22px;
+     }
+
+     .banner_sec {
+         min-height: 300px;
+     }
+
+     .product_card .product_name h3 {
+         margin: 0;
+         line-height: 18px;
+         margin-bottom: 5px;
+     }
+
+     .product_card .product_name h3 a {
+         font-size: 14px;
+     }
+
+     .product_card .pro_price {
+         font-size: 12px;
+     }
+
+     .product_card .form-check-label {
+         font-size: 12px;
+         padding: 3px 10px !important;
+         height: auto;
+     }
+
+     .product_card .primary-btn {
+         font-size: 12px;
+         padding: 8px 5px;
+     }
+
+     .product_card .secondary-btn {
+         font-size: 12px;
+         padding: 8px 5px;
+     }
+
+     .pro_btn svg {
+         width: 16px;
+         height: 16px;
+     }
+
+     .product_card .size {
+         font-size: 12px;
+     }
+
+     .product_info h3 {
+         font-size: 14px;
+     }
+
+     .product_info del {
+         font-size: 12px;
+     }
+
+     .product_info span {
+         font-size: 12px;
+     }
+
+     .pro_tag {
+         font-size: 11px;
+     }
+
+     .testimonial-card {
+         padding: 20px 20px;
+     }
+
+     .products-details-tabs .nav .nav-item .nav-link {
+         font-size: 14px;
+     }
+
+     .mobile_nav span {
+         font-size: 12px;
+     }
+
+     .products-add-to-cart .secondary-btn {
+         padding: 12px 0px !important;
+         font-size: 14px;
+     }
+
+     .products-add-to-cart .qty_option {
+         width: 180px;
+     }
+
+     .ecom-nav .option-item {
+         padding: 0px 5px;
+     }
+
+     .flash-countdown .time {
+         width: 33px !important;
+         height: 33px !important;
+         font-size: 13px;
+     }
+
+     .flash-countdown small {
+         font-size: 14px !important;
+     }
+
+     .flash_sale_wrap .flash-badge {
+         font-size: 14px !important;
+     }
+ }
