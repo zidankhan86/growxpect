@@ -1,6 +1,6 @@
 <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#030712]/85 border-b border-white/[0.06] transition-all">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-    
+
     <!-- Dynamic Logo -->
     <a href="{{ route('home') }}" class="flex items-center group">
       <img src="{{ !empty($setting->site_logo) && file_exists(public_path($setting->site_logo)) ? asset($setting->site_logo) : asset('logo.png') }}" alt="{{ $setting->site_name ?? 'Growxpect' }}" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" />

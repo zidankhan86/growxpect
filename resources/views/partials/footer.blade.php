@@ -1,6 +1,6 @@
 <footer class="pt-16 pb-12 border-t border-white/[0.08] bg-[#02050E] relative z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/[0.06]">
       <div class="flex flex-col items-center md:items-start gap-2">
         <a href="{{ route('home') }}" class="flex items-center">
@@ -21,7 +21,7 @@
 
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
       <p>&copy; {{ date('Y') }} {{ $setting->copyright_text ?? $setting->site_name ?? 'Growxpect' }}. All rights reserved.</p>
-      
+
       <div class="flex items-center gap-6">
         @if(!empty($setting->linkedin_url))
           <a href="{{ $setting->linkedin_url }}" target="_blank" class="hover:text-cyan-400 transition-colors">LinkedIn</a>

@@ -1,7 +1,7 @@
 <div id="drawer-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
 <aside id="drawer-panel" class="fixed top-0 left-0 bottom-0 w-[290px] sm:w-[320px] bg-[#070C18] border-r border-white/10 z-50 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
-  
+
   <div>
     <!-- Drawer Top Header -->
     <div class="p-5 border-b border-white/[0.08] flex items-center justify-between">

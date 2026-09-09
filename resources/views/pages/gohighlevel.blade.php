@@ -8,7 +8,7 @@
 <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-      
+
       <!-- Left Content -->
       <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-[11px] sm:text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-glow-pill">
@@ -42,85 +42,138 @@
       </div>
 
       <!-- Right Interactive Hub Graphic -->
-      <div class="lg:col-span-6 flex items-center justify-center">
-        <div class="relative w-full max-w-[480px] aspect-square flex items-center justify-center">
+      <div class="lg:col-span-6 flex items-center justify-center pt-4 lg:pt-0">
+        <div class="relative w-full max-w-[500px] h-[380px] sm:h-[420px] flex items-center justify-center select-none">
           
           <!-- Background Ambient Glow -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-purple-600/20 to-indigo-500/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/15 via-purple-600/15 to-indigo-500/15 rounded-full blur-[90px] -z-10 pointer-events-none"></div>
 
-          <!-- Circular SVG Connection Lines -->
-          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400" fill="none">
-            <circle cx="200" cy="200" r="140" stroke="rgba(56, 197, 210, 0.2)" stroke-width="1" stroke-dasharray="4 4" />
-            <circle cx="200" cy="200" r="95" stroke="rgba(168, 85, 247, 0.2)" stroke-width="1" />
+          <!-- SVG Curved Connector Wires -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 540 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cyanLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38C5D2" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#818CF8" stop-opacity="0.5" />
+              </linearGradient>
+              <filter id="wireGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 1. CRM (Top Left) -->
+            <path d="M 235 185 C 235 125, 175 105, 175 75" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
             
-            <!-- Radiating Circuit Lines to Nodes -->
-            <path d="M 200 155 L 200 70" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 235 165 L 290 95" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 245 200 L 330 200" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 235 235 L 295 305" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 200 245 L 200 330" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 165 235 L 105 305" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 155 200 L 70 200" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
-            <path d="M 165 165 L 105 95" stroke="rgba(56, 197, 210, 0.45)" stroke-width="1.5" />
+            <!-- 2. Funnels (Top Center) -->
+            <path d="M 270 185 C 270 140, 270 110, 270 75" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            
+            <!-- 3. Website (Top Right) -->
+            <path d="M 305 185 C 305 125, 365 105, 365 75" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+
+            <!-- 4. Appointments (Right Top) -->
+            <path d="M 345 205 C 400 205, 435 175, 455 155" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+
+            <!-- 5. SMS (Right Bottom) -->
+            <path d="M 345 235 C 400 235, 435 265, 455 285" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+
+            <!-- 6. Email (Bottom Right) -->
+            <path d="M 305 255 C 305 315, 365 335, 365 365" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+
+            <!-- 7. Automation (Bottom Center) -->
+            <path d="M 270 255 C 270 300, 270 330, 270 365" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+
+            <!-- 8. AI (Left Bottom) -->
+            <path d="M 195 235 C 140 235, 105 265, 85 285" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+
+            <!-- 9. Reputation (Left Top) -->
+            <path d="M 195 205 C 140 205, 105 175, 85 155" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
           </svg>
 
-          <!-- Central Core: HighLevel -->
-          <div class="relative z-20 w-32 h-20 sm:w-36 sm:h-24 rounded-2xl bg-[#081226] border-2 border-cyan-400/70 shadow-[0_0_40px_rgba(56,197,210,0.35)] flex flex-col items-center justify-center p-3 text-center transition-transform hover:scale-105 duration-300">
-            <div class="flex items-center gap-1 text-cyan-400 font-extrabold text-sm sm:text-base tracking-tight">
-              <span class="text-amber-400 text-base">↑↑</span>
-              <span class="text-white">HighLevel</span>
+          <!-- Central Core: Official HighLevel 3-Arrow Box -->
+          <div class="relative z-30 px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl sm:rounded-3xl bg-[#061021] border-2 border-cyan-400/90 shadow-[0_0_35px_rgba(56,197,210,0.45)] flex items-center justify-center gap-3 transition-transform hover:scale-105 duration-300">
+            <!-- 3 Colored Vertical Arrows (Yellow, Cyan, Green) -->
+            <div class="flex items-end gap-1.5 h-7">
+              <!-- Yellow Arrow -->
+              <div class="flex flex-col items-center">
+                <svg class="w-3.5 h-3.5 text-amber-400 -mb-1" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L4 10H9V22H15V10H20L12 2Z"/>
+                </svg>
+              </div>
+              <!-- Blue/Cyan Arrow -->
+              <div class="flex flex-col items-center">
+                <svg class="w-3 h-3 text-cyan-400 -mb-1" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 4L5 11H9V22H15V11H19L12 4Z"/>
+                </svg>
+              </div>
+              <!-- Green Arrow -->
+              <div class="flex flex-col items-center">
+                <svg class="w-3.5 h-3.5 text-emerald-400 -mb-1" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0L3 9H8V22H16V9H21L12 0Z"/>
+                </svg>
+              </div>
             </div>
-            <span class="text-[9px] font-bold text-cyan-300 uppercase tracking-widest mt-0.5">Unified Core</span>
+
+            <!-- Bold HighLevel Wordmark -->
+            <span class="text-lg sm:text-xl font-extrabold text-white tracking-tight">HighLevel</span>
           </div>
 
-          <!-- 8 Surrounding Orbital Feature Nodes -->
+          <!-- 9 Surrounding Nodes (Matching media_1788984298035.png) -->
           
-          <!-- Node 1: Funnels (Top Center) -->
-          <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="filter" class="w-4 h-4 text-purple-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">Funnels</span>
+          <!-- 1. CRM (Top Left) -->
+          <div class="absolute top-2 left-[26%] sm:left-[28%] z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
+            <i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">CRM</span>
           </div>
 
-          <!-- Node 2: Website (Top Right) -->
-          <div class="absolute top-12 right-6 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-cyan-500/40 shadow-[0_0_20px_rgba(56,197,210,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="monitor" class="w-4 h-4 text-cyan-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">Website</span>
+          <!-- 2. Funnels (Top Center) -->
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-1 hover:border-purple-400 hover:scale-105 transition-all">
+            <i data-lucide="filter" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">Funnels</span>
           </div>
 
-          <!-- Node 3: Appointments (Right Center) -->
-          <div class="absolute top-1/2 right-0 -translate-y-1/2 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-cyan-500/40 shadow-[0_0_20px_rgba(56,197,210,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">Appointments</span>
+          <!-- 3. Website (Top Right) -->
+          <div class="absolute top-2 right-[26%] sm:right-[28%] z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
+            <i data-lucide="monitor" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">Website</span>
           </div>
 
-          <!-- Node 4: SMS (Bottom Right) -->
-          <div class="absolute bottom-12 right-6 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-cyan-500/40 shadow-[0_0_20px_rgba(56,197,210,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="message-square" class="w-4 h-4 text-cyan-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">SMS</span>
+          <!-- 4. Appointments (Right Top) -->
+          <div class="absolute top-[26%] right-0 z-20 w-20 sm:w-24 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
+            <i data-lucide="calendar" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
+            <span class="text-[9px] sm:text-[10px] font-bold text-slate-200 text-center leading-tight">Appointments</span>
           </div>
 
-          <!-- Node 5: Email (Bottom Center) -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="mail" class="w-4 h-4 text-purple-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">Email</span>
+          <!-- 5. SMS (Right Bottom) -->
+          <div class="absolute bottom-[20%] right-0 z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">SMS</span>
           </div>
 
-          <!-- Node 6: Automation (Bottom Left) -->
-          <div class="absolute bottom-12 left-6 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-cyan-500/40 shadow-[0_0_20px_rgba(56,197,210,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="settings" class="w-4 h-4 text-cyan-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">Automation</span>
+          <!-- 6. Email (Bottom Right) -->
+          <div class="absolute bottom-2 right-[26%] sm:right-[28%] z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
+            <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">Email</span>
           </div>
 
-          <!-- Node 7: AI (Left Center) -->
-          <div class="absolute top-1/2 left-0 -translate-y-1/2 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">AI</span>
+          <!-- 7. Automation (Bottom Center) -->
+          <div class="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 w-20 sm:w-24 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
+            <i data-lucide="settings" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200 text-center leading-tight">Automation</span>
           </div>
 
-          <!-- Node 8: Reputation (Top Left) -->
-          <div class="absolute top-12 left-6 z-20 px-3 py-2 rounded-xl bg-[#091124]/90 border border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.25)] flex flex-col items-center gap-1 hover:border-cyan-400 transition-all">
-            <i data-lucide="star" class="w-4 h-4 text-purple-400"></i>
-            <span class="text-[10px] font-bold text-slate-200">Reputation</span>
+          <!-- 8. AI (Left Bottom) -->
+          <div class="absolute bottom-[20%] left-0 z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-1 hover:border-purple-400 hover:scale-105 transition-all">
+            <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">AI</span>
+          </div>
+
+          <!-- 9. Reputation (Left Top) -->
+          <div class="absolute top-[26%] left-0 z-20 w-20 sm:w-24 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-1 hover:border-purple-400 hover:scale-105 transition-all">
+            <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"></i>
+            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200 text-center leading-tight">Reputation</span>
           </div>
 
         </div>
@@ -134,7 +187,7 @@
 <section id="problem" class="py-20 sm:py-24 relative bg-[#040916]/80 border-t border-white/[0.06]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
+
       <!-- Text Description -->
       <div class="lg:col-span-5 space-y-5">
         <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
@@ -153,7 +206,7 @@
       <!-- Comparison Diagram: Sprawl vs One Platform -->
       <div class="lg:col-span-7">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-          
+
           <!-- Left: Fragmented Sprawl (Messy Tools) -->
           <div class="md:col-span-6 p-5 sm:p-6 rounded-3xl bg-[#081024] border border-red-500/20 relative overflow-hidden shadow-2xl">
             <div class="absolute top-3 left-4 text-[10px] font-bold uppercase tracking-wider text-red-400/80">
@@ -238,7 +291,7 @@
 <!-- 3. WHAT GOHIGHLEVEL BRINGS TOGETHER (8 FEATURES GRID) -->
 <section id="how-it-works" class="py-20 sm:py-28 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
       <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
         — WHAT GOHIGHLEVEL BRINGS TOGETHER
@@ -250,7 +303,7 @@
 
     <!-- 8 Feature Cards Grid (4 Columns) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
+
       <!-- 1. CRM & Pipelines -->
       <div class="glass-panel glass-panel-hover rounded-2xl p-6 space-y-4 border-white/10 hover:border-cyan-400/50 transition-all group">
         <div class="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center group-hover:scale-110 group-hover:text-cyan-400 group-hover:border-cyan-400/40 transition-all">
@@ -346,7 +399,7 @@
 <!-- 4. CUSTOMER JOURNEY (FROM FIRST CLICK TO LONG-TERM CUSTOMER) -->
 <section class="py-20 sm:py-24 relative bg-slate-950/70 border-t border-white/[0.06]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
       <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
         — YOUR CUSTOMER JOURNEY
@@ -361,10 +414,10 @@
 
     <!-- 7 Step Journey Flow Container -->
     <div class="p-6 sm:p-10 rounded-3xl bg-[#070E20] border border-white/10 shadow-2xl relative">
-      
+
       <!-- Horizontal Steps Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-2 items-center text-center">
-        
+
         <!-- Step 1: Lead -->
         <div class="flex flex-col items-center space-y-2.5">
           <div class="w-12 h-12 rounded-full bg-purple-600/20 border-2 border-purple-500/50 text-purple-300 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.3)]">
@@ -439,7 +492,7 @@
 <!-- 5. WHY GROWXPECT RECOMMENDS IT -->
 <section class="py-20 sm:py-24 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
       <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
         — WHY GROWXPECT RECOMMENDS IT
@@ -451,7 +504,7 @@
 
     <!-- 3 Benefit Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
+
       <!-- 01 ONE CONNECTED SYSTEM -->
       <div class="glass-panel glass-panel-hover rounded-3xl p-8 space-y-6 border-white/10 hover:border-cyan-400/50 transition-all relative group">
         <div class="flex items-center justify-between">
@@ -502,7 +555,7 @@
 <!-- 6. GROWXPECT + GOHIGHLEVEL SYNERGY EQUATION -->
 <section class="py-20 sm:py-24 relative bg-[#040A18]/80 border-t border-white/[0.06]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
       <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
         — GROWXPECT + GOHIGHLEVEL
@@ -517,13 +570,17 @@
 
     <!-- 3 Formula Cards with + and = -->
     <div class="grid grid-cols-1 lg:grid-cols-11 gap-6 items-center">
-      
+
       <!-- Card 1: HighLevel Platform -->
       <div class="lg:col-span-4 p-7 rounded-3xl bg-[#081226] border border-cyan-500/30 shadow-2xl space-y-5">
         <div class="flex items-center justify-between pb-3 border-b border-white/10">
-          <div class="flex items-center gap-1.5 text-white font-extrabold text-base">
-            <span class="text-amber-400">↑↑</span>
-            <span>HighLevel</span>
+          <div class="flex items-center gap-2">
+            <div class="flex items-end gap-1 h-5">
+              <svg class="w-3 h-3 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 10H9V22H15V10H20L12 2Z"/></svg>
+              <svg class="w-2.5 h-2.5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L5 11H9V22H15V11H19L12 4Z"/></svg>
+              <svg class="w-3 h-3 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L3 9H8V22H16V9H21L12 0Z"/></svg>
+            </div>
+            <span class="text-white font-extrabold text-base tracking-tight">HighLevel</span>
           </div>
           <span class="text-[11px] font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">PLATFORM</span>
         </div>
@@ -625,7 +682,7 @@
 <!-- 7. IMPLEMENTATION SUPPORT (DON'T KNOW WHERE TO START?) -->
 <section class="py-20 sm:py-24 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12">
       <div class="lg:col-span-6 space-y-4">
         <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
@@ -643,7 +700,7 @@
       <!-- 4-Step Process Grid -->
       <div class="lg:col-span-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          
+
           <!-- Step 01: Create -->
           <div class="p-5 rounded-2xl bg-[#081024] border border-white/10 space-y-2">
             <div class="flex items-center justify-between text-slate-400">
@@ -702,10 +759,10 @@
 <!-- 8. BOTTOM CTA BANNER & DISCLOSURE -->
 <section class="py-16 sm:py-20 relative bg-gradient-to-b from-transparent via-cyan-950/20 to-black">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="p-8 sm:p-14 rounded-3xl bg-gradient-to-r from-[#07132B] via-[#0D1B3E] to-[#120B29] border border-cyan-500/40 shadow-2xl relative overflow-hidden">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
+
         <div class="lg:col-span-8 space-y-4">
           <span class="text-xs font-bold uppercase tracking-widest text-cyan-400 block">LET'S GROW TOGETHER</span>
           <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -741,3 +798,4 @@
   </div>
 </section>
 @endsection
+
