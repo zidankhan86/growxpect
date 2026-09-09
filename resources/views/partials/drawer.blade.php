@@ -23,12 +23,20 @@
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
       </a>
 
-      <a href="{{ route('about') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('about') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
+      <a href="{{ route('services') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('services') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
         <span class="flex items-center gap-3">
-          <i data-lucide="users" class="w-4 h-4 text-purple-400"></i>
-          About Us
+          <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+          Services
         </span>
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+      </a>
+
+      <a href="{{ route('gohighlevel') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-bold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
+        <span class="flex items-center gap-3">
+          <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+          GoHighLevel
+        </span>
+        <span class="text-[10px] uppercase font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">All-in-One</span>
       </a>
 
       <a href="{{ route('case-studies') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('case-studies') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
@@ -39,10 +47,10 @@
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
       </a>
 
-      <a href="{{ route('services') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('services') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
+      <a href="{{ route('about') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('about') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
         <span class="flex items-center gap-3">
-          <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
-          Services & Pricing
+          <i data-lucide="users" class="w-4 h-4 text-purple-400"></i>
+          About Us
         </span>
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
       </a>
@@ -51,14 +59,6 @@
         <span class="flex items-center gap-3">
           <i data-lucide="tag" class="w-4 h-4 text-purple-400"></i>
           Pricing Plans
-        </span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
-      </a>
-
-      <a href="{{ route('home') }}#process" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
-        <span class="flex items-center gap-3">
-          <i data-lucide="sparkles" class="w-4 h-4 text-sky-400"></i>
-          Our Process
         </span>
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
       </a>

@@ -55,6 +55,16 @@ class SEOSeeder extends Seeder
                 'image' => 'assets/images/og-image.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
+            ],
+            [
+                'id' => 5,
+                'page_slug' => 'gohighlevel',
+                'title' => 'Get GoHighLevel — All-in-One Leads, Sales & Automation | Growxpect',
+                'description' => 'GoHighLevel brings your CRM, funnels, conversations, appointments, marketing automation, and client management into one powerful platform.',
+                'keywords' => 'gohighlevel, highlevel, crm, marketing automation, sales funnels, growxpect gohighlevel setup',
+                'image' => 'assets/images/og-image.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
 

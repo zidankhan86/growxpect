@@ -9,11 +9,12 @@
         <p class="text-xs text-slate-500">{{ $setting->footer_text ?? 'Connecting funnels, CRM, and automation into predictable revenue engines.' }}</p>
       </div>
 
-      <div class="flex items-center gap-8 text-xs font-medium text-slate-400">
+      <div class="flex flex-wrap items-center justify-center md:justify-end gap-6 sm:gap-8 text-xs font-medium text-slate-400">
         <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">Home</a>
-        <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">About</a>
+        <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">Services</a>
+        <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">GoHighLevel</a>
         <a href="{{ route('case-studies') }}" class="{{ request()->routeIs('case-studies') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">Case Studies</a>
-        <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">Services & Pricing</a>
+        <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-cyan-400 font-semibold' : 'hover:text-white' }} transition-colors">About Us</a>
         <a href="{{ route('home') }}#booking" class="hover:text-white transition-colors">Book Call</a>
       </div>
     </div>

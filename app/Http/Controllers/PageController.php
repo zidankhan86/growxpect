@@ -49,6 +49,12 @@ class PageController extends Controller
         return view('pages.services', compact('seo', 'pricingPlans'));
     }
 
+    public function gohighlevel()
+    {
+        $seo = Seo::where('page_slug', 'gohighlevel')->first();
+        return view('pages.gohighlevel', compact('seo'));
+    }
+
     public function customPage($slug)
     {
         $page = CustomPage::where('slug', $slug)->firstOrFail();
