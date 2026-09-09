@@ -44,7 +44,7 @@
       <!-- Right Interactive Hub Graphic (100% Scalable Vector SVG) -->
       <div class="lg:col-span-6 flex items-center justify-center pt-2 lg:pt-0">
         <div class="w-full max-w-[580px] select-none relative">
-          
+
           <!-- Background Ambient Glow -->
           <div class="absolute inset-4 bg-gradient-to-tr from-cyan-500/20 via-purple-600/20 to-indigo-500/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
@@ -622,107 +622,111 @@
       </p>
     </div>
 
-    <!-- 3 Formula Cards with + and = -->
-    <div class="grid grid-cols-1 lg:grid-cols-11 gap-6 items-center">
-
+    <!-- 3 Formula Cards with + and = (Balanced, Responsive Flex Container) -->
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-5 xl:gap-6">
+      
       <!-- Card 1: HighLevel Platform -->
-      <div class="lg:col-span-4 p-7 rounded-3xl bg-[#081226] border border-cyan-500/30 shadow-2xl space-y-5">
-        <div class="flex items-center justify-between pb-3 border-b border-white/10">
-          <div class="flex items-center gap-2">
-            <div class="flex items-end gap-1 h-5">
-              <svg class="w-3 h-3 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 10H9V22H15V10H20L12 2Z"/></svg>
-              <svg class="w-2.5 h-2.5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L5 11H9V22H15V11H19L12 4Z"/></svg>
-              <svg class="w-3 h-3 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L3 9H8V22H16V9H21L12 0Z"/></svg>
+      <div class="w-full lg:flex-1 p-6 sm:p-8 rounded-3xl bg-[#081226] border border-cyan-500/30 shadow-2xl flex flex-col justify-between min-h-[340px] hover:border-cyan-400/60 transition-all">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
+            <div class="flex items-center gap-2">
+              <div class="flex items-end gap-1 h-5">
+                <svg class="w-3 h-3 text-amber-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 10H9V22H15V10H20L12 2Z"/></svg>
+                <svg class="w-2.5 h-2.5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4L5 11H9V22H15V11H19L12 4Z"/></svg>
+                <svg class="w-3 h-3 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L3 9H8V22H16V9H21L12 0Z"/></svg>
+              </div>
+              <span class="text-white font-extrabold text-base tracking-tight">HighLevel</span>
             </div>
-            <span class="text-white font-extrabold text-base tracking-tight">HighLevel</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">PLATFORM</span>
           </div>
-          <span class="text-[11px] font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">PLATFORM</span>
-        </div>
 
-        <ul class="space-y-3 text-xs text-slate-300">
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>CRM & Pipelines</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>Funnels & Pages</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>Automation Engine</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>2-Way Messaging & SMS</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>Appointment Calendars</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>Built-in AI & Bots</span>
-          </li>
-        </ul>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>CRM</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Funnels</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Automation</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Messaging</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Appointments</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>AI</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Plus Operator -->
-      <div class="lg:col-span-1 flex items-center justify-center text-3xl font-extrabold text-cyan-400">
+      <div class="w-10 h-10 rounded-full bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-extrabold text-xl shrink-0 shadow-glow-pill">
         +
       </div>
 
       <!-- Card 2: Growxpect Strategy -->
-      <div class="lg:col-span-4 p-7 rounded-3xl bg-[#081226] border border-purple-500/30 shadow-2xl space-y-5">
-        <div class="flex items-center justify-between pb-3 border-b border-white/10">
-          <div class="flex items-center gap-1.5 text-white font-extrabold text-base">
-            <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
-            <span>Growxpect</span>
+      <div class="w-full lg:flex-1 p-6 sm:p-8 rounded-3xl bg-[#081226] border border-purple-500/30 shadow-2xl flex flex-col justify-between min-h-[340px] hover:border-purple-400/60 transition-all">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
+            <div class="flex items-center gap-1.5 text-white font-extrabold text-base">
+              <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
+              <span>Growxpect</span>
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">STRATEGY</span>
           </div>
-          <span class="text-[11px] font-bold text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">STRATEGY</span>
-        </div>
 
-        <ul class="space-y-3 text-xs text-slate-300">
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
-            <span>Custom Funnel Architecture</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
-            <span>Complete CRM Setup & Tagging</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
-            <span>End-to-End Workflow Automation</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
-            <span>Speed-to-Lead Follow-up Sequences</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
-            <span>Conversion Rate Optimization</span>
-          </li>
-          <li class="flex items-center gap-2.5">
-            <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
-            <span>Ongoing Optimization & Support</span>
-          </li>
-        </ul>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Funnel Design</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>CRM Setup</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Automation</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Workflow Architecture</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Conversion Optimization</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0"></i>
+              <span>Ongoing Support</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Equals Operator -->
-      <div class="lg:col-span-1 flex items-center justify-center text-3xl font-extrabold text-cyan-400">
+      <div class="w-10 h-10 rounded-full bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-extrabold text-xl shrink-0 shadow-glow-pill">
         =
       </div>
 
       <!-- Card 3: Outcome (YOUR GROWTH SYSTEM) -->
-      <div class="lg:col-span-1 lg:col-start-auto p-7 rounded-3xl bg-gradient-to-br from-[#081B34] to-[#0A1224] border-2 border-cyan-400/60 shadow-glow-cyan text-center flex flex-col items-center justify-center space-y-4">
-        <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 flex items-center justify-center shadow-glow-cyan">
-          <i data-lucide="trending-up" class="w-7 h-7"></i>
+      <div class="w-full lg:flex-1 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#061833] via-[#081226] to-[#0A1024] border-2 border-cyan-400/70 shadow-[0_0_45px_rgba(56,197,210,0.3)] text-center flex flex-col items-center justify-center min-h-[340px] space-y-4 hover:scale-[1.02] transition-all">
+        <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 flex items-center justify-center shadow-glow-cyan">
+          <i data-lucide="trending-up" class="w-8 h-8"></i>
         </div>
-        <div>
-          <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider uppercase mb-2">YOUR GROWTH SYSTEM</h3>
-          <p class="text-xs text-cyan-200 font-semibold leading-relaxed">
+        <div class="space-y-2">
+          <h3 class="text-sm sm:text-base font-extrabold text-white tracking-wider uppercase">YOUR GROWTH SYSTEM</h3>
+          <p class="text-xs sm:text-sm text-cyan-200 font-semibold leading-relaxed">
             More leads. More sales.<br />Less manual work.
           </p>
         </div>
