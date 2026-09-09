@@ -216,310 +216,305 @@
       </p>
     </div>
 
-    <!-- 6-Stage Pipeline Flow -->
-    <div class="relative py-6">
+    <!-- 6-Stage Pipeline Flow (Contained & Fluid Responsive) -->
+    <div class="relative py-4 w-full">
       
-      <!-- Desktop Pipeline Grid (6 Cards with Connectors & Leaks) -->
-      <div class="hidden xl:flex items-center justify-between gap-1 relative">
+      <!-- Desktop Pipeline Flow (6 Cards with Connectors & Leaks - Fits 100% inside container) -->
+      <div class="hidden lg:flex items-start justify-between w-full gap-1.5 relative">
 
         <!-- Stage 1: AD -->
-        <div class="flex flex-col items-center shrink-0 w-[170px]">
-          <div class="w-full glass-panel rounded-2xl p-4 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] transition-all group min-h-[190px]">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(168,85,247,0.25)]">
-              <i data-lucide="megaphone" class="w-5 h-5"></i>
+        <div class="flex flex-col items-center flex-1 min-w-0 max-w-[155px]">
+          <div class="w-full glass-panel rounded-2xl p-3.5 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all group min-h-[175px]">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(168,85,247,0.25)]">
+              <i data-lucide="megaphone" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="text-sm font-extrabold text-white tracking-wider mb-1">AD</h3>
-              <p class="text-[11px] text-slate-400 leading-snug">Attracts potential customers</p>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider mb-1 truncate">AD</h3>
+              <p class="text-[10px] text-slate-400 leading-snug">Attracts potential customers</p>
             </div>
-            <div class="flex items-center gap-1.5 pt-3 mt-2 border-t border-white/5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-              <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+            <div class="flex items-center gap-1.5 pt-2.5 mt-2 border-t border-white/5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
           </div>
-          <span class="mt-2.5 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">New Leads</span>
+          <span class="mt-2 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[9px] font-semibold whitespace-nowrap">New Leads</span>
         </div>
 
         <!-- Connector 1: Ad -> Landing Page -->
-        <div class="flex items-center justify-center shrink-0 w-8">
+        <div class="flex items-center justify-center shrink-0 pt-16 px-0.5">
           <div class="flex items-center text-cyan-400">
             <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38C5D2]"></span>
-            <div class="w-4 h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-300"></div>
-            <i data-lucide="chevron-right" class="w-4 h-4 -ml-1"></i>
+            <div class="w-3 xl:w-5 h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-300"></div>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 -ml-1"></i>
           </div>
         </div>
 
         <!-- Stage 2: LANDING PAGE -->
-        <div class="flex flex-col items-center shrink-0 w-[170px]">
-          <div class="w-full glass-panel rounded-2xl p-4 flex flex-col justify-between border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_25px_rgba(56,197,210,0.2)] transition-all group min-h-[190px]">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(56,197,210,0.25)]">
-              <i data-lucide="layout" class="w-5 h-5"></i>
+        <div class="flex flex-col items-center flex-1 min-w-0 max-w-[155px]">
+          <div class="w-full glass-panel rounded-2xl p-3.5 flex flex-col justify-between border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(56,197,210,0.2)] transition-all group min-h-[175px]">
+            <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(56,197,210,0.25)]">
+              <i data-lucide="layout" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="text-sm font-extrabold text-white tracking-wider mb-1">LANDING PAGE</h3>
-              <p class="text-[11px] text-slate-400 leading-snug">Captures interest & collects details</p>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider mb-1 truncate">LANDING PAGE</h3>
+              <p class="text-[10px] text-slate-400 leading-snug">Captures interest & details</p>
             </div>
-            <div class="flex items-center gap-1.5 pt-3 mt-2 border-t border-white/5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <div class="flex items-center gap-1.5 pt-2.5 mt-2 border-t border-white/5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
             </div>
           </div>
-          <div class="h-6"></div>
         </div>
 
         <!-- Connector 2: Landing Page -> Form -->
-        <div class="flex items-center justify-center shrink-0 w-8">
+        <div class="flex items-center justify-center shrink-0 pt-16 px-0.5">
           <div class="flex items-center text-cyan-400">
             <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38C5D2]"></span>
-            <div class="w-4 h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-300"></div>
-            <i data-lucide="chevron-right" class="w-4 h-4 -ml-1"></i>
+            <div class="w-3 xl:w-5 h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-300"></div>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 -ml-1"></i>
           </div>
         </div>
 
         <!-- Stage 3: FORM -->
-        <div class="flex flex-col items-center shrink-0 w-[170px]">
-          <div class="w-full glass-panel rounded-2xl p-4 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] transition-all group min-h-[190px]">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(168,85,247,0.25)]">
-              <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+        <div class="flex flex-col items-center flex-1 min-w-0 max-w-[155px]">
+          <div class="w-full glass-panel rounded-2xl p-3.5 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all group min-h-[175px]">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(168,85,247,0.25)]">
+              <i data-lucide="clipboard-list" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="text-sm font-extrabold text-white tracking-wider mb-1">FORM</h3>
-              <p class="text-[11px] text-slate-400 leading-snug">Captures lead information</p>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider mb-1 truncate">FORM</h3>
+              <p class="text-[10px] text-slate-400 leading-snug">Captures lead information</p>
             </div>
-            <div class="flex items-center gap-1.5 pt-3 mt-2 border-t border-white/5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-              <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+            <div class="flex items-center gap-1.5 pt-2.5 mt-2 border-t border-white/5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
           </div>
-          <div class="h-6"></div>
         </div>
 
         <!-- LEAK 1: Form -> CRM (Manual) -->
-        <div class="flex flex-col items-center justify-center shrink-0 w-24 relative py-2">
+        <div class="flex flex-col items-center justify-center shrink-0 pt-5 px-1 min-w-[50px] xl:min-w-[65px]">
           <!-- Top Tag -->
-          <div class="flex flex-col items-center gap-1 mb-1">
-            <span class="text-[10px] font-bold text-rose-400">Manual</span>
-            <div class="w-5 h-5 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-[10px] font-black shadow-[0_0_10px_rgba(244,63,94,0.4)]">!</div>
+          <div class="flex flex-col items-center gap-0.5 mb-1">
+            <span class="text-[9px] font-bold text-rose-400">Manual</span>
+            <div class="w-4 h-4 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-[9px] font-black shadow-[0_0_8px_rgba(244,63,94,0.4)]">!</div>
           </div>
           <!-- Leaking Dashed Connector Track -->
           <div class="w-full flex items-center justify-center relative my-1">
-            <div class="w-full border-t border-dashed border-rose-500/50"></div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-rose-400 absolute right-0"></i>
+            <div class="w-full border-t border-dashed border-rose-500/60"></div>
+            <i data-lucide="chevron-right" class="w-3 h-3 text-rose-400 absolute right-0"></i>
           </div>
           <!-- Bottom Drop Leak Badge -->
-          <div class="mt-2 flex flex-col items-center">
-            <div class="w-0.5 h-3 border-l border-dashed border-rose-500/50"></div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[9px] font-bold flex items-center gap-1 whitespace-nowrap shadow-[0_0_10px_rgba(244,63,94,0.2)]">
-              <i data-lucide="x" class="w-2.5 h-2.5"></i> Leads Lost
+          <div class="mt-1 flex flex-col items-center">
+            <div class="w-0.5 h-2.5 border-l border-dashed border-rose-500/60"></div>
+            <span class="px-1.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[8px] font-bold flex items-center gap-0.5 whitespace-nowrap shadow-[0_0_8px_rgba(244,63,94,0.2)]">
+              <i data-lucide="x" class="w-2 h-2"></i> Leads Lost
             </span>
           </div>
         </div>
 
         <!-- Stage 4: CRM -->
-        <div class="flex flex-col items-center shrink-0 w-[170px]">
-          <div class="w-full glass-panel rounded-2xl p-4 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] transition-all group min-h-[190px]">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(168,85,247,0.25)]">
-              <i data-lucide="users" class="w-5 h-5"></i>
+        <div class="flex flex-col items-center flex-1 min-w-0 max-w-[155px]">
+          <div class="w-full glass-panel rounded-2xl p-3.5 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all group min-h-[175px]">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(168,85,247,0.25)]">
+              <i data-lucide="users" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="text-sm font-extrabold text-white tracking-wider mb-1">CRM</h3>
-              <p class="text-[11px] text-slate-400 leading-snug">Stores & manages leads</p>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider mb-1 truncate">CRM</h3>
+              <p class="text-[10px] text-slate-400 leading-snug">Stores & manages leads</p>
             </div>
-            <div class="flex items-center gap-1.5 pt-3 mt-2 border-t border-white/5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <div class="flex items-center gap-1.5 pt-2.5 mt-2 border-t border-white/5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
             </div>
           </div>
-          <div class="h-6"></div>
         </div>
 
         <!-- LEAK 2: CRM -> Follow-Up (Disconnected) -->
-        <div class="flex flex-col items-center justify-center shrink-0 w-24 relative py-2">
+        <div class="flex flex-col items-center justify-center shrink-0 pt-5 px-1 min-w-[50px] xl:min-w-[65px]">
           <!-- Top Tag -->
-          <div class="flex flex-col items-center gap-1 mb-1">
-            <span class="text-[10px] font-bold text-rose-400">Disconnected</span>
-            <div class="w-5 h-5 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-[10px] font-black shadow-[0_0_10px_rgba(244,63,94,0.4)]">!</div>
+          <div class="flex flex-col items-center gap-0.5 mb-1">
+            <span class="text-[9px] font-bold text-rose-400">Disconnected</span>
+            <div class="w-4 h-4 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-[9px] font-black shadow-[0_0_8px_rgba(244,63,94,0.4)]">!</div>
           </div>
           <!-- Leaking Dashed Connector Track -->
           <div class="w-full flex items-center justify-center relative my-1">
-            <div class="w-full border-t border-dashed border-rose-500/50"></div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-rose-400 absolute right-0"></i>
+            <div class="w-full border-t border-dashed border-rose-500/60"></div>
+            <i data-lucide="chevron-right" class="w-3 h-3 text-rose-400 absolute right-0"></i>
           </div>
           <!-- Bottom Drop Leak Badge -->
-          <div class="mt-2 flex flex-col items-center">
-            <div class="w-0.5 h-3 border-l border-dashed border-rose-500/50"></div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[9px] font-bold flex items-center gap-1 whitespace-nowrap shadow-[0_0_10px_rgba(244,63,94,0.2)]">
-              <i data-lucide="x" class="w-2.5 h-2.5"></i> Leads Lost
+          <div class="mt-1 flex flex-col items-center">
+            <div class="w-0.5 h-2.5 border-l border-dashed border-rose-500/60"></div>
+            <span class="px-1.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[8px] font-bold flex items-center gap-0.5 whitespace-nowrap shadow-[0_0_8px_rgba(244,63,94,0.2)]">
+              <i data-lucide="x" class="w-2 h-2"></i> Leads Lost
             </span>
           </div>
         </div>
 
         <!-- Stage 5: FOLLOW-UP -->
-        <div class="flex flex-col items-center shrink-0 w-[170px]">
-          <div class="w-full glass-panel rounded-2xl p-4 flex flex-col justify-between border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_25px_rgba(56,197,210,0.2)] transition-all group min-h-[190px]">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(56,197,210,0.25)]">
-              <i data-lucide="mail" class="w-5 h-5"></i>
+        <div class="flex flex-col items-center flex-1 min-w-0 max-w-[155px]">
+          <div class="w-full glass-panel rounded-2xl p-3.5 flex flex-col justify-between border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(56,197,210,0.2)] transition-all group min-h-[175px]">
+            <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(56,197,210,0.25)]">
+              <i data-lucide="mail" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="text-sm font-extrabold text-white tracking-wider mb-1">FOLLOW-UP</h3>
-              <p class="text-[11px] text-slate-400 leading-snug">Nurtures & builds relationships</p>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider mb-1 truncate">FOLLOW-UP</h3>
+              <p class="text-[10px] text-slate-400 leading-snug">Nurtures & builds leads</p>
             </div>
-            <div class="flex items-center gap-1.5 pt-3 mt-2 border-t border-white/5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-              <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+            <div class="flex items-center gap-1.5 pt-2.5 mt-2 border-t border-white/5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
           </div>
-          <div class="h-6"></div>
         </div>
 
         <!-- LEAK 3: Follow-Up -> Appointment (Delayed) -->
-        <div class="flex flex-col items-center justify-center shrink-0 w-24 relative py-2">
+        <div class="flex flex-col items-center justify-center shrink-0 pt-5 px-1 min-w-[50px] xl:min-w-[65px]">
           <!-- Top Tag -->
-          <div class="flex flex-col items-center gap-1 mb-1">
-            <span class="text-[10px] font-bold text-rose-400">Delayed</span>
-            <div class="w-5 h-5 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-[10px] font-black shadow-[0_0_10px_rgba(244,63,94,0.4)]">!</div>
+          <div class="flex flex-col items-center gap-0.5 mb-1">
+            <span class="text-[9px] font-bold text-rose-400">Delayed</span>
+            <div class="w-4 h-4 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-[9px] font-black shadow-[0_0_8px_rgba(244,63,94,0.4)]">!</div>
           </div>
           <!-- Leaking Dashed Connector Track -->
           <div class="w-full flex items-center justify-center relative my-1">
-            <div class="w-full border-t border-dashed border-rose-500/50"></div>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-rose-400 absolute right-0"></i>
+            <div class="w-full border-t border-dashed border-rose-500/60"></div>
+            <i data-lucide="chevron-right" class="w-3 h-3 text-rose-400 absolute right-0"></i>
           </div>
           <!-- Bottom Drop Leak Badge -->
-          <div class="mt-2 flex flex-col items-center">
-            <div class="w-0.5 h-3 border-l border-dashed border-rose-500/50"></div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[9px] font-bold flex items-center gap-1 whitespace-nowrap shadow-[0_0_10px_rgba(244,63,94,0.2)]">
-              <i data-lucide="x" class="w-2.5 h-2.5"></i> Leads Lost
+          <div class="mt-1 flex flex-col items-center">
+            <div class="w-0.5 h-2.5 border-l border-dashed border-rose-500/60"></div>
+            <span class="px-1.5 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[8px] font-bold flex items-center gap-0.5 whitespace-nowrap shadow-[0_0_8px_rgba(244,63,94,0.2)]">
+              <i data-lucide="x" class="w-2 h-2"></i> Leads Lost
             </span>
           </div>
         </div>
 
         <!-- Stage 6: APPOINTMENT -->
-        <div class="flex flex-col items-center shrink-0 w-[170px]">
-          <div class="w-full glass-panel rounded-2xl p-4 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] transition-all group min-h-[190px]">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(168,85,247,0.25)]">
-              <i data-lucide="calendar" class="w-5 h-5"></i>
+        <div class="flex flex-col items-center flex-1 min-w-0 max-w-[155px]">
+          <div class="w-full glass-panel rounded-2xl p-3.5 flex flex-col justify-between border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all group min-h-[175px]">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-2.5 group-hover:scale-105 transition-transform shadow-[0_0_12px_rgba(168,85,247,0.25)]">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
             </div>
             <div>
-              <h3 class="text-sm font-extrabold text-white tracking-wider mb-1">APPOINTMENT</h3>
-              <p class="text-[11px] text-slate-400 leading-snug">Turns leads into customers</p>
+              <h3 class="text-xs sm:text-sm font-extrabold text-white tracking-wider mb-1 truncate">APPOINTMENT</h3>
+              <p class="text-[10px] text-slate-400 leading-snug">Turns leads to clients</p>
             </div>
-            <div class="flex items-center gap-1.5 pt-3 mt-2 border-t border-white/5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-              <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+            <div class="flex items-center gap-1.5 pt-2.5 mt-2 border-t border-white/5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
           </div>
-          <div class="h-6"></div>
         </div>
 
       </div>
 
       <!-- Mobile & Tablet Responsive Flow (Grid Layout) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:hidden gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-4">
         <!-- Stage 1 -->
-        <div class="glass-panel rounded-2xl p-5 border-white/10 flex flex-col justify-between relative">
-          <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
-              <i data-lucide="megaphone" class="w-5 h-5"></i>
+        <div class="glass-panel rounded-2xl p-4 border-white/10 flex flex-col justify-between relative">
+          <div class="flex items-center justify-between mb-2">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+              <i data-lucide="megaphone" class="w-4 h-4"></i>
             </div>
-            <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">New Leads</span>
+            <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[9px] font-semibold">New Leads</span>
           </div>
-          <h3 class="text-base font-extrabold text-white mb-1">AD</h3>
-          <p class="text-xs text-slate-400 mb-3">Attracts potential customers</p>
-          <div class="flex items-center gap-1.5 pt-3 border-t border-white/5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          <h3 class="text-sm font-extrabold text-white mb-0.5">AD</h3>
+          <p class="text-xs text-slate-400 mb-2">Attracts potential customers</p>
+          <div class="flex items-center gap-1.5 pt-2 border-t border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
           </div>
         </div>
 
         <!-- Stage 2 -->
-        <div class="glass-panel rounded-2xl p-5 border-white/10 flex flex-col justify-between relative">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-3">
-            <i data-lucide="layout" class="w-5 h-5"></i>
+        <div class="glass-panel rounded-2xl p-4 border-white/10 flex flex-col justify-between relative">
+          <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-2">
+            <i data-lucide="layout" class="w-4 h-4"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white mb-1">LANDING PAGE</h3>
-          <p class="text-xs text-slate-400 mb-3">Captures interest & collects details</p>
-          <div class="flex items-center gap-1.5 pt-3 border-t border-white/5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <h3 class="text-sm font-extrabold text-white mb-0.5">LANDING PAGE</h3>
+          <p class="text-xs text-slate-400 mb-2">Captures interest & collects details</p>
+          <div class="flex items-center gap-1.5 pt-2 border-t border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
           </div>
         </div>
 
         <!-- Stage 3 -->
-        <div class="glass-panel rounded-2xl p-5 border-white/10 flex flex-col justify-between relative">
-          <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
-              <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+        <div class="glass-panel rounded-2xl p-4 border-white/10 flex flex-col justify-between relative">
+          <div class="flex items-center justify-between mb-2">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+              <i data-lucide="clipboard-list" class="w-4 h-4"></i>
             </div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[10px] font-bold flex items-center gap-1">
-              <i data-lucide="alert-triangle" class="w-3 h-3"></i> Manual Drop
+            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[9px] font-bold flex items-center gap-1">
+              <i data-lucide="alert-triangle" class="w-2.5 h-2.5"></i> Manual Drop
             </span>
           </div>
-          <h3 class="text-base font-extrabold text-white mb-1">FORM</h3>
-          <p class="text-xs text-slate-400 mb-3">Captures lead information</p>
-          <div class="flex items-center gap-1.5 pt-3 border-t border-white/5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          <h3 class="text-sm font-extrabold text-white mb-0.5">FORM</h3>
+          <p class="text-xs text-slate-400 mb-2">Captures lead information</p>
+          <div class="flex items-center gap-1.5 pt-2 border-t border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
           </div>
         </div>
 
         <!-- Stage 4 -->
-        <div class="glass-panel rounded-2xl p-5 border-white/10 flex flex-col justify-between relative">
-          <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
-              <i data-lucide="users" class="w-5 h-5"></i>
+        <div class="glass-panel rounded-2xl p-4 border-white/10 flex flex-col justify-between relative">
+          <div class="flex items-center justify-between mb-2">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+              <i data-lucide="users" class="w-4 h-4"></i>
             </div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[10px] font-bold flex items-center gap-1">
-              <i data-lucide="alert-triangle" class="w-3 h-3"></i> Disconnected
+            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[9px] font-bold flex items-center gap-1">
+              <i data-lucide="alert-triangle" class="w-2.5 h-2.5"></i> Disconnected
             </span>
           </div>
-          <h3 class="text-base font-extrabold text-white mb-1">CRM</h3>
-          <p class="text-xs text-slate-400 mb-3">Stores & manages leads</p>
-          <div class="flex items-center gap-1.5 pt-3 border-t border-white/5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <h3 class="text-sm font-extrabold text-white mb-0.5">CRM</h3>
+          <p class="text-xs text-slate-400 mb-2">Stores & manages leads</p>
+          <div class="flex items-center gap-1.5 pt-2 border-t border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
           </div>
         </div>
 
         <!-- Stage 5 -->
-        <div class="glass-panel rounded-2xl p-5 border-white/10 flex flex-col justify-between relative">
-          <div class="flex items-center justify-between mb-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
-              <i data-lucide="mail" class="w-5 h-5"></i>
+        <div class="glass-panel rounded-2xl p-4 border-white/10 flex flex-col justify-between relative">
+          <div class="flex items-center justify-between mb-2">
+            <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+              <i data-lucide="mail" class="w-4 h-4"></i>
             </div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[10px] font-bold flex items-center gap-1">
-              <i data-lucide="alert-triangle" class="w-3 h-3"></i> Delayed
+            <span class="px-2 py-0.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[9px] font-bold flex items-center gap-1">
+              <i data-lucide="alert-triangle" class="w-2.5 h-2.5"></i> Delayed
             </span>
           </div>
-          <h3 class="text-base font-extrabold text-white mb-1">FOLLOW-UP</h3>
-          <p class="text-xs text-slate-400 mb-3">Nurtures & builds relationships</p>
-          <div class="flex items-center gap-1.5 pt-3 border-t border-white/5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          <h3 class="text-sm font-extrabold text-white mb-0.5">FOLLOW-UP</h3>
+          <p class="text-xs text-slate-400 mb-2">Nurtures & builds relationships</p>
+          <div class="flex items-center gap-1.5 pt-2 border-t border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
           </div>
         </div>
 
         <!-- Stage 6 -->
-        <div class="glass-panel rounded-2xl p-5 border-white/10 flex flex-col justify-between relative">
-          <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-3">
-            <i data-lucide="calendar" class="w-5 h-5"></i>
+        <div class="glass-panel rounded-2xl p-4 border-white/10 flex flex-col justify-between relative">
+          <div class="w-9 h-9 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center mb-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white mb-1">APPOINTMENT</h3>
-          <p class="text-xs text-slate-400 mb-3">Turns leads into customers</p>
-          <div class="flex items-center gap-1.5 pt-3 border-t border-white/5">
-            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          <h3 class="text-sm font-extrabold text-white mb-0.5">APPOINTMENT</h3>
+          <p class="text-xs text-slate-400 mb-2">Turns leads into customers</p>
+          <div class="flex items-center gap-1.5 pt-2 border-t border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
           </div>
         </div>
       </div>
