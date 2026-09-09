@@ -218,7 +218,7 @@
 
     <!-- 6-Stage Pipeline Flow (Contained & Fluid Responsive) -->
     <div class="relative py-4 w-full">
-      
+
       <!-- Desktop Pipeline Flow (6 Cards with Connectors & Leaks - Fits 100% inside container) -->
       <div class="hidden lg:flex items-start justify-between w-full gap-1.5 relative">
 
