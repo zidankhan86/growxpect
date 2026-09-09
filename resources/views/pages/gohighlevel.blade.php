@@ -41,141 +41,195 @@
         </div>
       </div>
 
-      <!-- Right Interactive Hub Graphic -->
-      <div class="lg:col-span-6 flex items-center justify-center pt-4 lg:pt-0">
-        <div class="relative w-full max-w-[500px] h-[380px] sm:h-[420px] flex items-center justify-center select-none">
+      <!-- Right Interactive Hub Graphic (100% Scalable Vector SVG) -->
+      <div class="lg:col-span-6 flex items-center justify-center pt-2 lg:pt-0">
+        <div class="w-full max-w-[580px] select-none relative">
           
           <!-- Background Ambient Glow -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/15 via-purple-600/15 to-indigo-500/15 rounded-full blur-[90px] -z-10 pointer-events-none"></div>
+          <div class="absolute inset-4 bg-gradient-to-tr from-cyan-500/20 via-purple-600/20 to-indigo-500/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
-          <!-- SVG Curved Connector Wires -->
-          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 540 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="w-full h-auto overflow-visible filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]" viewBox="0 0 620 480" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="cyanLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#38C5D2" stop-opacity="0.8" />
-                <stop offset="100%" stop-color="#818CF8" stop-opacity="0.5" />
+              <!-- Glowing Line Gradient -->
+              <linearGradient id="hubCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38C5D2" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#818CF8" stop-opacity="0.6" />
               </linearGradient>
-              <filter id="wireGlow" x="-20%" y="-20%" width="140%" height="140%">
+
+              <!-- Node Card Background Gradient -->
+              <linearGradient id="nodeBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0A1428" />
+                <stop offset="100%" stop-color="#060C1A" />
+              </linearGradient>
+
+              <!-- Center HighLevel Card Gradient -->
+              <linearGradient id="centerBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#071329" />
+                <stop offset="100%" stop-color="#040915" />
+              </linearGradient>
+
+              <!-- Neon Glow Filters -->
+              <filter id="centerGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="2.5" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
+
+              <filter id="nodeGlowCyan" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#38C5D2" flood-opacity="0.25" />
+              </filter>
+
+              <filter id="nodeGlowPurple" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#A855F7" flood-opacity="0.25" />
+              </filter>
             </defs>
 
-            <!-- 1. CRM (Top Left) -->
-            <path d="M 235 185 C 235 125, 175 105, 175 75" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
-            
-            <!-- 2. Funnels (Top Center) -->
-            <path d="M 270 185 C 270 140, 270 110, 270 75" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
-            
-            <!-- 3. Website (Top Right) -->
-            <path d="M 305 185 C 305 125, 365 105, 365 75" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- 1. CONNECTING WIRES (BEZIER CURVES TO NODES) -->
+            <!-- Wire to CRM (Top Left) -->
+            <path d="M 255 195 C 255 130, 190 120, 190 83" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- 4. Appointments (Right Top) -->
-            <path d="M 345 205 C 400 205, 435 175, 455 155" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- Wire to Funnels (Top Center) -->
+            <path d="M 310 195 C 310 145, 310 120, 310 83" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- 5. SMS (Right Bottom) -->
-            <path d="M 345 235 C 400 235, 435 265, 455 285" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- Wire to Website (Top Right) -->
+            <path d="M 365 195 C 365 130, 430 120, 430 83" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- 6. Email (Bottom Right) -->
-            <path d="M 305 255 C 305 315, 365 335, 365 365" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- Wire to Reputation (Left Top) -->
+            <path d="M 210 220 C 160 220, 145 170, 120 159" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- 7. Automation (Bottom Center) -->
-            <path d="M 270 255 C 270 300, 270 330, 270 365" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- Wire to Appointments (Right Top) -->
+            <path d="M 410 220 C 460 220, 475 170, 500 159" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- 8. AI (Left Bottom) -->
-            <path d="M 195 235 C 140 235, 105 265, 85 285" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- Wire to AI (Left Bottom) -->
+            <path d="M 210 260 C 160 260, 145 310, 120 319" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- 9. Reputation (Left Top) -->
-            <path d="M 195 205 C 140 205, 105 175, 85 155" stroke="url(#cyanLineGrad)" stroke-width="2" stroke-linecap="round" filter="url(#wireGlow)" />
+            <!-- Wire to SMS (Right Bottom) -->
+            <path d="M 410 260 C 460 260, 475 310, 500 319" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+
+            <!-- Wire to Automation (Bottom Left) -->
+            <path d="M 270 285 C 270 340, 255 355, 255 395" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+
+            <!-- Wire to Email (Bottom Right) -->
+            <path d="M 350 285 C 350 340, 372 355, 372 395" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+
+            <!-- 2. CENTRAL HIGHLEVEL CARD -->
+            <g class="cursor-pointer">
+              <!-- Outer Glow Rectangle -->
+              <rect x="210" y="195" width="200" height="90" rx="26" fill="url(#centerBgGrad)" stroke="#38C5D2" stroke-width="3" filter="url(#centerGlow)" />
+
+              <!-- HighLevel 3-Arrow Brand Logo Group -->
+              <g transform="translate(230, 222)">
+                <!-- Yellow Arrow (Left) -->
+                <path d="M 5 0 L 0 7.5 H 3.2 V 22 H 6.8 V 7.5 H 10 Z" fill="#F59E0B" />
+                <!-- Cyan Arrow (Middle) -->
+                <path d="M 17 4 L 12.5 10.5 H 15.2 V 22 H 18.8 V 10.5 H 21.5 Z" fill="#38BDF8" />
+                <!-- Green Arrow (Right) -->
+                <path d="M 29 -2 L 23.5 6.5 H 27 V 22 H 31 V 6.5 H 34.5 Z" fill="#10B981" />
+              </g>
+
+              <!-- HighLevel Wordmark -->
+              <text x="278" y="250" fill="#ffffff" font-size="23" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" letter-spacing="-0.5">HighLevel</text>
+            </g>
+
+            <!-- 3. TOP ROW NODES -->
+            <!-- Node 1: CRM (Top Left) -->
+            <g filter="url(#nodeGlowCyan)" class="transition-transform duration-300">
+              <rect x="150" y="15" width="80" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#38C5D2" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- User Icon -->
+              <circle cx="190" cy="39" r="6" stroke="#38C5D2" stroke-width="2" fill="none" />
+              <path d="M 179 53 C 179 48, 184 47, 190 47 C 196 47, 201 48, 201 53" stroke="#38C5D2" stroke-width="2" stroke-linecap="round" fill="none" />
+              <text x="190" y="70" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">CRM</text>
+            </g>
+
+            <!-- Node 2: Funnels (Top Center) -->
+            <g filter="url(#nodeGlowPurple)">
+              <rect x="270" y="15" width="80" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#A855F7" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Funnel Icon -->
+              <path d="M 300 34 L 320 34 L 313 43 V 51 L 307 48 V 43 Z" stroke="#C084FC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="none" />
+              <text x="310" y="70" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">Funnels</text>
+            </g>
+
+            <!-- Node 3: Website (Top Right) -->
+            <g filter="url(#nodeGlowCyan)">
+              <rect x="390" y="15" width="80" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#38C5D2" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Monitor Icon -->
+              <rect x="420" y="33" width="20" height="14" rx="2" stroke="#38C5D2" stroke-width="2" fill="none" />
+              <line x1="427" y1="51" x2="433" y2="51" stroke="#38C5D2" stroke-width="2" stroke-linecap="round" />
+              <line x1="430" y1="47" x2="430" y2="51" stroke="#38C5D2" stroke-width="2" />
+              <text x="430" y="70" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">Website</text>
+            </g>
+
+            <!-- 4. LEFT COLUMN NODES -->
+            <!-- Node 9: Reputation (Left Top) -->
+            <g filter="url(#nodeGlowPurple)">
+              <rect x="20" y="125" width="100" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#A855F7" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Star Icon -->
+              <path d="M 70 34 L 72.5 41 H 80 L 74 45.5 L 76.5 53 L 70 48.5 L 63.5 53 L 66 45.5 L 60 41 H 67.5 Z" transform="translate(0, 105)" stroke="#C084FC" stroke-width="1.8" stroke-linejoin="round" fill="none" />
+              <text x="70" y="180" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">Reputation</text>
+            </g>
+
+            <!-- Node 8: AI (Left Bottom) -->
+            <g filter="url(#nodeGlowPurple)">
+              <rect x="20" y="285" width="100" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#A855F7" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Sparkles/AI Icon -->
+              <path d="M 70 299 L 72.5 307 L 80.5 309.5 L 72.5 312 L 70 320 L 67.5 312 L 59.5 309.5 L 67.5 307 Z" stroke="#C084FC" stroke-width="1.8" stroke-linejoin="round" fill="none" />
+              <circle cx="78" cy="303" r="1.5" fill="#C084FC" />
+              <text x="70" y="340" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">AI</text>
+            </g>
+
+            <!-- 5. RIGHT COLUMN NODES -->
+            <!-- Node 4: Appointments (Right Top) -->
+            <g filter="url(#nodeGlowCyan)">
+              <rect x="500" y="125" width="105" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#38C5D2" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Calendar Icon -->
+              <rect x="543" y="139" width="18" height="15" rx="3" stroke="#38C5D2" stroke-width="2" fill="none" />
+              <line x1="543" y1="144" x2="561" y2="144" stroke="#38C5D2" stroke-width="1.5" />
+              <line x1="548" y1="136" x2="548" y2="139" stroke="#38C5D2" stroke-width="2" stroke-linecap="round" />
+              <line x1="556" y1="136" x2="556" y2="139" stroke="#38C5D2" stroke-width="2" stroke-linecap="round" />
+              <text x="552" y="180" fill="#E2E8F0" font-size="10.5" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">Appointments</text>
+            </g>
+
+            <!-- Node 5: SMS (Right Bottom) -->
+            <g filter="url(#nodeGlowCyan)">
+              <rect x="500" y="285" width="100" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#38C5D2" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Chat Bubble with 3 Dots -->
+              <path d="M 540 300 C 535 300, 531 304, 531 309 C 531 313, 534 316.5, 538 317.5 L 536 322 L 542 318 C 547 318, 551 314, 551 309 C 551 304, 547 300, 540 300 Z" stroke="#38C5D2" stroke-width="1.8" stroke-linejoin="round" fill="none" transform="translate(10, 0)" />
+              <circle cx="547" cy="309" r="1" fill="#38C5D2" />
+              <circle cx="551" cy="309" r="1" fill="#38C5D2" />
+              <circle cx="555" cy="309" r="1" fill="#38C5D2" />
+              <text x="550" y="340" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">SMS</text>
+            </g>
+
+            <!-- 6. BOTTOM ROW NODES -->
+            <!-- Node 7: Automation (Bottom Left) -->
+            <g filter="url(#nodeGlowCyan)">
+              <rect x="205" y="395" width="100" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#38C5D2" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Cog/Gear Icon -->
+              <circle cx="255" cy="419" r="4.5" stroke="#38C5D2" stroke-width="2" fill="none" />
+              <path d="M 255 410 V 412 M 255 426 V 428 M 246 419 H 248 M 262 419 H 264 M 248.5 412.5 L 250 414 M 260 424 L 261.5 425.5 M 248.5 425.5 L 250 424 M 260 414 L 261.5 412.5" stroke="#38C5D2" stroke-width="2" stroke-linecap="round" />
+              <text x="255" y="450" fill="#E2E8F0" font-size="10.5" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">Automation</text>
+            </g>
+
+            <!-- Node 6: Email (Bottom Right) -->
+            <g filter="url(#nodeGlowCyan)">
+              <rect x="330" y="395" width="85" height="68" rx="18" fill="url(#nodeBgGrad)" stroke="#38C5D2" stroke-width="1.5" stroke-opacity="0.7" />
+              <!-- Mail Envelope Icon -->
+              <rect x="361" y="411" width="22" height="15" rx="3" stroke="#38C5D2" stroke-width="2" fill="none" />
+              <path d="M 362 413 L 372 420 L 382 413" stroke="#38C5D2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+              <text x="372.5" y="450" fill="#E2E8F0" font-size="11" font-weight="700" text-anchor="middle" font-family="system-ui, sans-serif">Email</text>
+            </g>
+
           </svg>
-
-          <!-- Central Core: Official HighLevel 3-Arrow Box -->
-          <div class="relative z-30 px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl sm:rounded-3xl bg-[#061021] border-2 border-cyan-400/90 shadow-[0_0_35px_rgba(56,197,210,0.45)] flex items-center justify-center gap-3 transition-transform hover:scale-105 duration-300">
-            <!-- 3 Colored Vertical Arrows (Yellow, Cyan, Green) -->
-            <div class="flex items-end gap-1.5 h-7">
-              <!-- Yellow Arrow -->
-              <div class="flex flex-col items-center">
-                <svg class="w-3.5 h-3.5 text-amber-400 -mb-1" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L4 10H9V22H15V10H20L12 2Z"/>
-                </svg>
-              </div>
-              <!-- Blue/Cyan Arrow -->
-              <div class="flex flex-col items-center">
-                <svg class="w-3 h-3 text-cyan-400 -mb-1" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 4L5 11H9V22H15V11H19L12 4Z"/>
-                </svg>
-              </div>
-              <!-- Green Arrow -->
-              <div class="flex flex-col items-center">
-                <svg class="w-3.5 h-3.5 text-emerald-400 -mb-1" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0L3 9H8V22H16V9H21L12 0Z"/>
-                </svg>
-              </div>
-            </div>
-
-            <!-- Bold HighLevel Wordmark -->
-            <span class="text-lg sm:text-xl font-extrabold text-white tracking-tight">HighLevel</span>
-          </div>
-
-          <!-- 9 Surrounding Nodes (Matching media_1788984298035.png) -->
-          
-          <!-- 1. CRM (Top Left) -->
-          <div class="absolute top-2 left-[26%] sm:left-[28%] z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
-            <i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">CRM</span>
-          </div>
-
-          <!-- 2. Funnels (Top Center) -->
-          <div class="absolute top-2 left-1/2 -translate-x-1/2 z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-1 hover:border-purple-400 hover:scale-105 transition-all">
-            <i data-lucide="filter" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">Funnels</span>
-          </div>
-
-          <!-- 3. Website (Top Right) -->
-          <div class="absolute top-2 right-[26%] sm:right-[28%] z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
-            <i data-lucide="monitor" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">Website</span>
-          </div>
-
-          <!-- 4. Appointments (Right Top) -->
-          <div class="absolute top-[26%] right-0 z-20 w-20 sm:w-24 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
-            <i data-lucide="calendar" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
-            <span class="text-[9px] sm:text-[10px] font-bold text-slate-200 text-center leading-tight">Appointments</span>
-          </div>
-
-          <!-- 5. SMS (Right Bottom) -->
-          <div class="absolute bottom-[20%] right-0 z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
-            <i data-lucide="message-square" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">SMS</span>
-          </div>
-
-          <!-- 6. Email (Bottom Right) -->
-          <div class="absolute bottom-2 right-[26%] sm:right-[28%] z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
-            <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">Email</span>
-          </div>
-
-          <!-- 7. Automation (Bottom Center) -->
-          <div class="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 w-20 sm:w-24 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-cyan-500/30 shadow-[0_0_20px_rgba(56,197,210,0.2)] flex flex-col items-center justify-center gap-1 hover:border-cyan-400 hover:scale-105 transition-all">
-            <i data-lucide="settings" class="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200 text-center leading-tight">Automation</span>
-          </div>
-
-          <!-- 8. AI (Left Bottom) -->
-          <div class="absolute bottom-[20%] left-0 z-20 w-16 sm:w-20 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-1 hover:border-purple-400 hover:scale-105 transition-all">
-            <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200">AI</span>
-          </div>
-
-          <!-- 9. Reputation (Left Top) -->
-          <div class="absolute top-[26%] left-0 z-20 w-20 sm:w-24 p-2 sm:p-2.5 rounded-2xl bg-[#081226]/95 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] flex flex-col items-center justify-center gap-1 hover:border-purple-400 hover:scale-105 transition-all">
-            <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-400"></i>
-            <span class="text-[10px] sm:text-[11px] font-bold text-slate-200 text-center leading-tight">Reputation</span>
-          </div>
-
         </div>
       </div>
 
