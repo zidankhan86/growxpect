@@ -261,7 +261,66 @@
                 </div>
               @endforeach
             @else
-              <div class="text-slate-400 text-xs">Testimonials loading...</div>
+              <!-- Default Testimonial Cards Loop -->
+              @php
+                $defaultTestimonials = [
+                  [
+                    'initials' => 'SJ',
+                    'name' => 'Sarah Johnson',
+                    'role_company' => 'Founder & CEO, NovaHealth',
+                    'content' => 'Growxpect completely transformed our lead generation and sales process. Our booked consultations increased by 3x within 60 days. The team is incredible and truly understands modern healthcare funnel architecture.',
+                    'rating' => 5,
+                    'metric' => '+312% Show-Up Rate',
+                  ],
+                  [
+                    'initials' => 'MR',
+                    'name' => 'Marcus Reed',
+                    'role_company' => 'VP of Growth, CloudScale AI',
+                    'content' => 'Our sales team was drowning in unqualified meetings. Growxpect automated our lead triage, scoring, and demo assignment. Our close rate doubled and demo attendance jumped to 88%.',
+                    'rating' => 5,
+                    'metric' => '4.2x Revenue ROI',
+                  ],
+                  [
+                    'initials' => 'DK',
+                    'name' => 'David Kensington',
+                    'role_company' => 'Managing Broker, PrimeEstates',
+                    'content' => 'In luxury real estate, responding in 2 minutes vs 2 hours is the difference between closing a $3M buyer or losing them. Growxpect\'s instant WhatsApp qualification made us unstoppable.',
+                    'rating' => 5,
+                    'metric' => '+240% Pipeline Growth',
+                  ],
+                  [
+                    'initials' => 'EV',
+                    'name' => 'Elena Vance',
+                    'role_company' => 'Head of Operations, Apex Commerce',
+                    'content' => 'The multi-channel follow-up workflows and high-converting funnel design eliminated our funnel leaks completely. Conversion jumped by 73% in 30 days.',
+                    'rating' => 5,
+                    'metric' => '+73% Conversion',
+                  ],
+                ];
+              @endphp
+
+              @foreach(array_merge($defaultTestimonials, $defaultTestimonials) as $test)
+                <div class="w-[320px] sm:w-[380px] shrink-0 glass-panel p-5 rounded-2xl border-white/10 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-500 to-purple-600 text-white font-bold text-xs flex items-center justify-center">
+                        {{ $test['initials'] }}
+                      </div>
+                      <div>
+                        <h3 class="text-xs font-bold text-white">{{ $test['name'] }}</h3>
+                        <p class="text-[10px] text-slate-400">{{ $test['role_company'] }}</p>
+                      </div>
+                    </div>
+                    <div class="flex text-amber-400 text-xs">{{ str_repeat('★', $test['rating']) }}</div>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    "{{ $test['content'] }}"
+                  </p>
+                  <div class="inline-block px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[10px] font-bold">
+                    {{ $test['metric'] }}
+                  </div>
+                </div>
+              @endforeach
             @endif
           </div>
         </div>
@@ -474,7 +533,214 @@
           </div>
         @endforeach
       @else
-        <div class="col-span-3 text-center text-slate-400 py-8">Pricing tiers loading...</div>
+        <!-- Card 1: Growth Foundation (Starter) -->
+        <div class="glass-panel glass-panel-hover rounded-3xl p-8 flex flex-col justify-between border-white/10 relative group">
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+                <i data-lucide="filter" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">Foundation</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">Growth Foundation</h3>
+              <p class="text-xs text-slate-400 leading-relaxed min-h-[36px]">
+                Essential lead capture and CRM pipeline automation designed to eliminate lead drop-off.
+              </p>
+            </div>
+
+            <!-- Price Box -->
+            <div class="pt-4 pb-2 border-y border-white/[0.08]">
+              <div class="flex items-baseline gap-1.5">
+                <span class="text-3xl sm:text-4xl font-extrabold text-white">$1,490</span>
+                <span class="text-xs text-slate-400 font-medium">/ one-time setup</span>
+              </div>
+              <div class="text-[11px] text-cyan-400/80 font-medium mt-1">
+                Optional optimization & hosting: $290/mo
+              </div>
+            </div>
+
+            <!-- Feature List -->
+            <div class="space-y-3 pt-2">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-300">What's Included:</div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Custom High-Converting Landing Page / Funnel</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>CRM Configuration & Deal Pipeline Setup</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>3-Stage Instant Email & SMS Follow-Up Workflows</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Automated Booking Calendar & Form Integration</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Instant Team Alert Bot (Slack / WhatsApp / Email)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Essential Analytics & Conversion Tracking</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <a href="#booking" class="w-full py-3.5 px-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all group-hover:border-cyan-500/40">
+              <span>Start With Foundation</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Flagship Growth Engine (POPULAR - Highlighted) -->
+        <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border-2 border-cyan-400/60 shadow-[0_0_50px_rgba(56,197,210,0.25)] relative transform lg:-translate-y-2 bg-[#091226]/90">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white text-[11px] font-extrabold uppercase tracking-wider shadow-glow-cyan flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
+            <span>Most Popular &bull; Complete System</span>
+          </div>
+
+          <div class="space-y-6 pt-2">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-purple-600/30 border border-cyan-400/50 text-cyan-300 flex items-center justify-center shadow-glow-cyan">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300">All-in-One Engine</span>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-extrabold text-white mb-2">Flagship Growth Engine</h3>
+              <p class="text-xs text-slate-300 leading-relaxed min-h-[36px]">
+                The complete connected ecosystem: High-converting funnels, CRM automation, Paid Ads management, and AI Speed-to-Lead bot.
+              </p>
+            </div>
+
+            <!-- Price Box -->
+            <div class="pt-4 pb-2 border-y border-white/[0.12] bg-white/[0.02] rounded-xl px-4">
+              <div class="flex items-baseline gap-1.5">
+                <span class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">$2,750</span>
+                <span class="text-xs text-slate-400 font-medium">/ month</span>
+              </div>
+              <div class="text-[11px] text-cyan-300 font-medium mt-1 flex items-center gap-1">
+                <i data-lucide="check-circle" class="w-3 h-3 text-cyan-400"></i> Includes $1,990 one-time architecture setup
+              </div>
+            </div>
+
+            <!-- Feature List -->
+            <div class="space-y-3 pt-2">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-cyan-300">Everything In Foundation, Plus:</div>
+              <ul class="space-y-2.5 text-xs text-slate-200">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span class="font-semibold text-white">Full Multi-Stage Funnel Ecosystem (VSL + Lead Magnet + Booking)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span class="font-semibold text-white">Omnichannel Paid Ads Management (Meta & Google Ads)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span class="font-semibold text-cyan-300">AI Speed-to-Lead Instant Response Bot (&lt; 60s qualification)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Complete Lifecycle CRM Workflows & Multi-Touch Nurturing</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Continuous CRO A/B Split Testing & Copy Optimizations</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Dedicated Growth Strategist & Private Slack Channel</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <a href="#booking" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:scale-[1.02] active:scale-95 transition-all">
+              <span>Build My Growth Engine</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Custom Enterprise -->
+        <div class="glass-panel glass-panel-hover rounded-3xl p-8 flex flex-col justify-between border-white/10 relative group">
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                <i data-lucide="cpu" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">Enterprise</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">Custom Enterprise</h3>
+              <p class="text-xs text-slate-400 leading-relaxed min-h-[36px]">
+                Bespoke AI automation, high-volume multi-brand funnels, and enterprise API integrations.
+              </p>
+            </div>
+
+            <!-- Price Box -->
+            <div class="pt-4 pb-2 border-y border-white/[0.08]">
+              <div class="flex items-baseline gap-1.5">
+                <span class="text-3xl sm:text-4xl font-extrabold text-white">Custom</span>
+                <span class="text-xs text-slate-400 font-medium">/ tailored scope</span>
+              </div>
+              <div class="text-[11px] text-purple-400/90 font-medium mt-1">
+                Tailored for established firms & high ad spend
+              </div>
+            </div>
+
+            <!-- Feature List -->
+            <div class="space-y-3 pt-2">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-300">Enterprise Inclusions:</div>
+              <ul class="space-y-2.5 text-xs text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Multi-Brand / Multi-Location Funnel & CRM Systems</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Custom AI Agent Trained on Proprietary Business Knowledge</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Custom Database, ERP, or Proprietary Webhook Integrations</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Multi-Touch Revenue Attribution & Executive Reporting</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>White-Glove Team Onboarding & SOP Documentation</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Priority 24/7 Response Time & Dedicated Tech Lead</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-8">
+            <a href="#booking" class="w-full py-3.5 px-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all group-hover:border-purple-500/40">
+              <span>Talk to Solutions Architect</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
       @endif
     </div>
 

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             SettingsSeeder::class,
             CustomPageSeeder::class,
             HomepageContentSeeder::class,
+            PricingPlanSeeder::class,
         ]);
     }
 }
