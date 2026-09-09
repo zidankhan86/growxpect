@@ -50,10 +50,11 @@
 
           <svg class="w-full h-auto overflow-visible filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]" viewBox="0 0 620 480" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <!-- Glowing Line Gradient -->
-              <linearGradient id="hubCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#38C5D2" stop-opacity="0.9" />
-                <stop offset="100%" stop-color="#818CF8" stop-opacity="0.6" />
+              <!-- Glowing Line Gradient (userSpaceOnUse to prevent 0-width collapse) -->
+              <linearGradient id="hubCyanGrad" x1="0" y1="0" x2="620" y2="480" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#38C5D2" stop-opacity="0.95" />
+                <stop offset="50%" stop-color="#38C5D2" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#818CF8" stop-opacity="0.75" />
               </linearGradient>
 
               <!-- Node Card Background Gradient -->
@@ -77,8 +78,8 @@
                 </feMerge>
               </filter>
 
-              <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="2.5" result="blur" />
+              <filter id="lineGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
@@ -94,33 +95,33 @@
               </filter>
             </defs>
 
-            <!-- 1. CONNECTING WIRES (BEZIER CURVES TO NODES) -->
+            <!-- 1. CONNECTING WIRES (BEZIER CURVES TO ALL 9 NODES) -->
             <!-- Wire to CRM (Top Left) -->
-            <path d="M 255 195 C 255 130, 190 120, 190 83" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 255 195 C 255 130, 190 120, 190 83" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
-            <!-- Wire to Funnels (Top Center) -->
-            <path d="M 310 195 C 310 145, 310 120, 310 83" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <!-- Wire to Funnels (Top Center) - Visible, vibrant and perfectly connected -->
+            <path d="M 310 195 L 310 83" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to Website (Top Right) -->
-            <path d="M 365 195 C 365 130, 430 120, 430 83" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 365 195 C 365 130, 430 120, 430 83" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to Reputation (Left Top) -->
-            <path d="M 210 220 C 160 220, 145 170, 120 159" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 210 220 C 160 220, 145 170, 120 159" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to Appointments (Right Top) -->
-            <path d="M 410 220 C 460 220, 475 170, 500 159" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 410 220 C 460 220, 475 170, 500 159" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to AI (Left Bottom) -->
-            <path d="M 210 260 C 160 260, 145 310, 120 319" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 210 260 C 160 260, 145 310, 120 319" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to SMS (Right Bottom) -->
-            <path d="M 410 260 C 460 260, 475 310, 500 319" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 410 260 C 460 260, 475 310, 500 319" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to Automation (Bottom Left) -->
-            <path d="M 270 285 C 270 340, 255 355, 255 395" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 270 285 C 270 340, 255 355, 255 395" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- Wire to Email (Bottom Right) -->
-            <path d="M 350 285 C 350 340, 372 355, 372 395" stroke="url(#hubCyanGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <path d="M 350 285 C 350 340, 372 355, 372 395" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
 
             <!-- 2. CENTRAL HIGHLEVEL CARD -->
             <g class="cursor-pointer">
@@ -624,7 +625,7 @@
 
     <!-- 3 Formula Cards with + and = (Balanced, Responsive Flex Container) -->
     <div class="flex flex-col lg:flex-row items-center justify-center gap-5 xl:gap-6">
-      
+
       <!-- Card 1: HighLevel Platform -->
       <div class="w-full lg:flex-1 p-6 sm:p-8 rounded-3xl bg-[#081226] border border-cyan-500/30 shadow-2xl flex flex-col justify-between min-h-[340px] hover:border-cyan-400/60 transition-all">
         <div>
