@@ -95,33 +95,50 @@
               </filter>
             </defs>
 
-            <!-- 1. CONNECTING WIRES (BEZIER CURVES TO ALL 9 NODES) -->
-            <!-- Wire to CRM (Top Left) -->
-            <path d="M 255 195 C 255 130, 190 120, 190 83" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <!-- 1. CONNECTING WIRES (DUAL-LAYER BULLETPROOF NEON GLOW) -->
+            <!-- Soft Ambient Glow Underlay (Layer 1) -->
+            <g stroke="#38C5D2" stroke-width="6" stroke-opacity="0.25" stroke-linecap="round" fill="none">
+              <!-- CRM -->
+              <path d="M 255 195 C 255 130, 190 120, 190 83" />
+              <!-- Funnels -->
+              <path d="M 310 195 L 310 83" />
+              <!-- Website -->
+              <path d="M 365 195 C 365 130, 430 120, 430 83" />
+              <!-- Reputation -->
+              <path d="M 210 220 C 160 220, 145 170, 120 159" />
+              <!-- Appointments -->
+              <path d="M 410 220 C 460 220, 475 170, 500 159" />
+              <!-- AI -->
+              <path d="M 210 260 C 160 260, 145 310, 120 319" />
+              <!-- SMS -->
+              <path d="M 410 260 C 460 260, 475 310, 500 319" />
+              <!-- Automation -->
+              <path d="M 270 285 C 270 340, 255 355, 255 395" />
+              <!-- Email -->
+              <path d="M 350 285 C 350 340, 372 355, 372 395" />
+            </g>
 
-            <!-- Wire to Funnels (Top Center) - Visible, vibrant and perfectly connected -->
-            <path d="M 310 195 L 310 83" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to Website (Top Right) -->
-            <path d="M 365 195 C 365 130, 430 120, 430 83" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to Reputation (Left Top) -->
-            <path d="M 210 220 C 160 220, 145 170, 120 159" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to Appointments (Right Top) -->
-            <path d="M 410 220 C 460 220, 475 170, 500 159" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to AI (Left Bottom) -->
-            <path d="M 210 260 C 160 260, 145 310, 120 319" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to SMS (Right Bottom) -->
-            <path d="M 410 260 C 460 260, 475 310, 500 319" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to Automation (Bottom Left) -->
-            <path d="M 270 285 C 270 340, 255 355, 255 395" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
-
-            <!-- Wire to Email (Bottom Right) -->
-            <path d="M 350 285 C 350 340, 372 355, 372 395" stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" filter="url(#lineGlow)" />
+            <!-- Crisp Core Stroke (Layer 2) -->
+            <g stroke="#38C5D2" stroke-width="2.5" stroke-linecap="round" fill="none">
+              <!-- CRM -->
+              <path d="M 255 195 C 255 130, 190 120, 190 83" />
+              <!-- Funnels -->
+              <path d="M 310 195 L 310 83" />
+              <!-- Website -->
+              <path d="M 365 195 C 365 130, 430 120, 430 83" />
+              <!-- Reputation -->
+              <path d="M 210 220 C 160 220, 145 170, 120 159" />
+              <!-- Appointments -->
+              <path d="M 410 220 C 460 220, 475 170, 500 159" />
+              <!-- AI -->
+              <path d="M 210 260 C 160 260, 145 310, 120 319" />
+              <!-- SMS -->
+              <path d="M 410 260 C 460 260, 475 310, 500 319" />
+              <!-- Automation -->
+              <path d="M 270 285 C 270 340, 255 355, 255 395" />
+              <!-- Email -->
+              <path d="M 350 285 C 350 340, 372 355, 372 395" />
+            </g>
 
             <!-- 2. CENTRAL HIGHLEVEL CARD -->
             <g class="cursor-pointer">
