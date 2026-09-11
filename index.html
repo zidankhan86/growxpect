@@ -87,7 +87,7 @@
     }
     .grid-bg {
       background-size: 40px 40px;
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
@@ -143,7 +143,7 @@
 
   <!-- Left Side Drawer Panel -->
   <aside id="drawer-panel" class="fixed top-0 left-0 bottom-0 w-[290px] sm:w-[320px] bg-[#070C18] border-r border-white/10 z-50 flex flex-col justify-between transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
-    
+
     <!-- Drawer Top Header -->
     <div>
       <div class="p-5 border-b border-white/[0.08] flex items-center justify-between">
@@ -217,14 +217,20 @@
       </a>
 
       <div class="flex items-center justify-center gap-3 pt-2">
-        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors">
-          <i data-lucide="linkedin" class="w-4 h-4"></i>
+        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors" title="LinkedIn">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
         </a>
-        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors">
-          <i data-lucide="twitter" class="w-4 h-4"></i>
+        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors" title="Twitter / X">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
         </a>
-        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors">
-          <i data-lucide="youtube" class="w-4 h-4"></i>
+        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors" title="YouTube">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
         </a>
       </div>
 
@@ -243,7 +249,7 @@
     <!-- ========================================================================= -->
     <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#030712]/85 border-b border-white/[0.06] transition-all">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        
+
         <!-- Logo -->
         <a href="#" class="flex items-center group">
           <img src="logo.png" alt="Growxpect" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" />
@@ -284,12 +290,12 @@
     <!-- ========================================================================= -->
     <section class="relative pt-10 pb-20 md:pt-20 md:pb-28 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           <!-- Hero Left Column: Copy & CTAs -->
           <div class="lg:col-span-6 space-y-6 sm:space-y-7 text-center lg:text-left">
-            
+
             <!-- Category Tag Pills -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-[11px] sm:text-xs font-semibold tracking-wider uppercase backdrop-blur-md">
               <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -298,7 +304,7 @@
 
             <!-- Main Heading -->
             <h1 class="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-              Turn More Leads Into Customers With Smarter 
+              Turn More Leads Into Customers With Smarter
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 text-glow">
                 Growth Systems.
               </span>
@@ -326,7 +332,7 @@
           <!-- Hero Right Column: Interactive Futuristic Growth Engine Dashboard -->
           <div class="lg:col-span-6 relative">
             <div class="relative mx-auto max-w-lg lg:max-w-none">
-              
+
               <!-- Floating Top-Right Stat Badge -->
               <div class="absolute -top-5 right-2 sm:-right-2 z-20 glass-panel px-3.5 sm:px-4 py-2 rounded-2xl flex items-center gap-2.5 sm:gap-3 shadow-glow-card border-cyan-500/30">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300">
@@ -342,7 +348,7 @@
 
               <!-- Main Glass Card Stack -->
               <div class="glass-panel rounded-3xl p-4 sm:p-6 relative overflow-hidden border-white/10 shadow-2xl">
-                
+
                 <!-- Inner Dashboard Header -->
                 <div class="flex items-center justify-between pb-4 border-b border-white/[0.07]">
                   <div class="flex items-center gap-2">
@@ -357,7 +363,7 @@
 
                 <!-- Main Metric & Chart Preview -->
                 <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 pt-5 items-center">
-                  
+
                   <div class="sm:col-span-8 space-y-4">
                     <div>
                       <div class="text-xs text-slate-400">Captured Leads (30 Days)</div>
@@ -486,7 +492,7 @@
           <!-- Continuous Marquee Track -->
           <div class="relative overflow-hidden w-full py-2">
             <div class="animate-marquee flex items-center gap-10 sm:gap-16">
-              
+
               <!-- Set 1 -->
               <div class="flex items-center gap-10 sm:gap-16 shrink-0">
                 <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-500/10 text-white font-extrabold text-base sm:text-lg tracking-wide transition-all cursor-pointer">
@@ -565,9 +571,9 @@
     <!-- ========================================================================= -->
     <section class="py-20 relative overflow-hidden bg-slate-950/50 border-y border-white/[0.05]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
+
           <div class="lg:col-span-6 space-y-5 text-center sm:text-left">
             <div class="inline-block text-xs font-bold uppercase tracking-widest text-red-400 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">
               THE PROBLEM
@@ -596,7 +602,7 @@
 
               <!-- Pipeline Chain -->
               <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 sm:gap-2 items-center">
-                
+
                 <div class="p-3 rounded-2xl bg-white/[0.03] border border-white/10 text-center flex flex-col items-center">
                   <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-1.5">
                     <i data-lucide="layout-grid" class="w-4 h-4"></i>
@@ -651,9 +657,9 @@
     <!-- ========================================================================= -->
     <section class="py-20 sm:py-24 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
+
           <div class="lg:col-span-6 space-y-6 text-center sm:text-left">
             <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
               OUR SOLUTION
@@ -680,9 +686,9 @@
 
           <!-- Solution Right: 3D Cascading Frosted Glass Steps with Neon Circuit Traces (No BG Box) -->
           <div class="lg:col-span-6 relative flex items-center justify-center pt-6 pb-2 sm:py-6">
-            
+
             <div class="relative w-full max-w-lg lg:max-w-none">
-              
+
               <!-- Neon Circuit Trace Background SVG -->
               <svg class="absolute inset-0 w-full h-full pointer-events-none -z-0 overflow-visible opacity-70" viewBox="0 0 500 360" fill="none">
                 <defs>
@@ -735,7 +741,7 @@
 
               <!-- 4 Cascading 3D Floating Glass Steps -->
               <div class="relative z-10 flex flex-col gap-4 sm:gap-4.5">
-                
+
                 <!-- Step 1: Funnels -->
                 <div class="group relative w-full sm:w-[92%] mr-auto rounded-2xl p-[1px] bg-gradient-to-r from-purple-500/50 via-indigo-500/30 to-blue-500/10 shadow-[0_10px_35px_-10px_rgba(168,85,247,0.35)] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5">
                   <div class="flex items-center gap-3.5 sm:gap-4 px-4 sm:px-5 py-3.5 sm:py-4 rounded-[15px] bg-[#0E1428]/85 backdrop-blur-xl">
@@ -808,7 +814,7 @@
     <!-- ========================================================================= -->
     <section id="solutions" class="py-20 sm:py-24 relative bg-slate-950/70 border-t border-white/[0.06]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
             WHAT WE DO
@@ -822,7 +828,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
+
           <!-- Card 1 -->
           <div class="glass-panel glass-panel-hover rounded-2xl p-6 flex flex-col justify-between group">
             <div class="space-y-4">
@@ -849,7 +855,7 @@
                 Strategic funnels that turn traffic into qualified leads and paying customers with frictionless UX.
               </p>
             </div>
-            
+
             <a href="#booking" class="pt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
               <span>Explore</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
@@ -885,7 +891,7 @@
                 Keep your leads organized, follow up automatically, and never let high-value revenue slip through cracks.
               </p>
             </div>
-            
+
             <a href="#booking" class="pt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
               <span>Explore</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
@@ -913,7 +919,7 @@
                 Automate your multi-channel follow-ups, re-engage cold leads, and scale conversion on 24/7 autopilot.
               </p>
             </div>
-            
+
             <a href="#booking" class="pt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
               <span>Explore</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
@@ -945,7 +951,7 @@
                 Drive consistent, high-converting targeted traffic with full-funnel data-driven campaign architecture.
               </p>
             </div>
-            
+
             <a href="#booking" class="pt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
               <span>Explore</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
@@ -962,20 +968,20 @@
     <!-- ========================================================================= -->
     <section id="case-studies" class="py-20 sm:py-24 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+
         <div class="glass-panel rounded-3xl p-6 sm:p-10 border-white/10 relative overflow-hidden">
-          
+
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
+
             <div class="lg:col-span-6 space-y-6 text-center sm:text-left">
               <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
                 CASE STUDIES
               </div>
-              
+
               <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 Growth Systems Built To Perform.
               </h2>
-              
+
               <p class="text-slate-400 text-xs sm:text-base leading-relaxed">
                 Real businesses. Real results. See how we've helped companies scale predictability with custom automated growth systems.
               </p>
@@ -1014,7 +1020,7 @@
             <!-- Right Featured Case Study Card (MedSpa) -->
             <div class="lg:col-span-6">
               <div class="p-5 sm:p-7 rounded-2xl bg-[#070D1F] border border-cyan-500/30 shadow-2xl relative">
-                
+
                 <div class="flex items-center justify-between text-[11px] sm:text-xs text-cyan-400 font-bold tracking-wider uppercase mb-2">
                   <span>CASE STUDY</span>
                   <span class="text-slate-400 font-normal">Healthcare / Aesthetic</span>
@@ -1070,7 +1076,7 @@
     <!-- ========================================================================= -->
     <section class="py-20 sm:py-24 relative bg-slate-950/80 border-t border-white/[0.06]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
             TESTIMONIALS
@@ -1084,10 +1090,10 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
+
           <!-- LEFT 8 COLUMNS: AUTO-SCROLLING TESTIMONIAL & RESULTS CAROUSEL -->
           <div class="lg:col-span-8 flex flex-col justify-between space-y-4">
-            
+
             <!-- Controls & Counter Bar -->
             <div class="flex items-center justify-between px-1">
               <div class="flex items-center gap-2.5">
@@ -1110,11 +1116,11 @@
             <!-- Auto-Scrolling Track Container (Hover to pause) -->
             <div class="relative overflow-hidden w-full rounded-3xl" id="testimonial-slider-container">
               <div id="testimonial-slider-track" class="flex transition-transform duration-500 ease-out">
-                
+
                 <!-- SLIDE 1: NovaHealth (MedSpa / Healthcare) -->
                 <div class="testimonial-slide w-full shrink-0">
                   <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-                    
+
                     <!-- Quote Card (sm:col-span-7) -->
                     <div class="sm:col-span-7 glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-white/10">
                       <div class="space-y-4">
@@ -1157,7 +1163,7 @@
                         <span>THE RESULTS</span>
                         <span class="text-[9px] text-slate-400 font-normal">MedSpa</span>
                       </div>
-                      
+
                       <div class="space-y-3.5 my-auto py-3">
                         <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                           <div class="text-xl sm:text-2xl font-extrabold text-white">+42%</div>
@@ -1184,7 +1190,7 @@
                 <!-- SLIDE 2: CloudScale (B2B SaaS / Tech) -->
                 <div class="testimonial-slide w-full shrink-0">
                   <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-                    
+
                     <!-- Quote Card (sm:col-span-7) -->
                     <div class="sm:col-span-7 glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-white/10">
                       <div class="space-y-4">
@@ -1227,7 +1233,7 @@
                         <span>THE RESULTS</span>
                         <span class="text-[9px] text-slate-400 font-normal">B2B SaaS</span>
                       </div>
-                      
+
                       <div class="space-y-3.5 my-auto py-3">
                         <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                           <div class="text-xl sm:text-2xl font-extrabold text-white">+240%</div>
@@ -1254,7 +1260,7 @@
                 <!-- SLIDE 3: PrimeEstates (Real Estate / High-Ticket) -->
                 <div class="testimonial-slide w-full shrink-0">
                   <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-                    
+
                     <!-- Quote Card (sm:col-span-7) -->
                     <div class="sm:col-span-7 glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-white/10">
                       <div class="space-y-4">
@@ -1297,7 +1303,7 @@
                         <span>THE RESULTS</span>
                         <span class="text-[9px] text-slate-400 font-normal">Real Estate</span>
                       </div>
-                      
+
                       <div class="space-y-3.5 my-auto py-3">
                         <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                           <div class="text-xl sm:text-2xl font-extrabold text-white">+195%</div>
@@ -1324,7 +1330,7 @@
                 <!-- SLIDE 4: LuxeApparel (E-Commerce / DTC) -->
                 <div class="testimonial-slide w-full shrink-0">
                   <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-                    
+
                     <!-- Quote Card (sm:col-span-7) -->
                     <div class="sm:col-span-7 glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-white/10">
                       <div class="space-y-4">
@@ -1367,7 +1373,7 @@
                         <span>THE RESULTS</span>
                         <span class="text-[9px] text-slate-400 font-normal">E-Commerce</span>
                       </div>
-                      
+
                       <div class="space-y-3.5 my-auto py-3">
                         <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                           <div class="text-xl sm:text-2xl font-extrabold text-white">+$290k</div>
@@ -1445,7 +1451,7 @@
     <!-- ========================================================================= -->
     <section id="partner" class="py-20 sm:py-24 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
             TOGETHER FOR YOUR SUCCESS
@@ -1459,7 +1465,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
+
           <!-- Left Column -->
           <div class="lg:col-span-4 space-y-2.5">
             <div class="p-3 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center gap-3">
@@ -1545,7 +1551,7 @@
           <!-- Right Column -->
           <div class="lg:col-span-4 glass-panel rounded-3xl p-5 sm:p-7 border-white/10 space-y-4">
             <h4 class="text-xs font-bold uppercase tracking-widest text-cyan-400">WHY GROWXPECT</h4>
-            
+
             <div class="space-y-4">
               <div class="flex items-start gap-3">
                 <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
@@ -1599,7 +1605,7 @@
     <!-- ========================================================================= -->
     <section id="process" class="py-20 sm:py-24 relative bg-slate-950/70 border-t border-white/[0.06]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
             OUR PROCESS
@@ -1613,7 +1619,7 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          
+
           <div class="glass-panel glass-panel-hover rounded-2xl p-6 relative group">
             <div class="text-3xl font-extrabold text-slate-700 group-hover:text-cyan-400/40 transition-colors">01</div>
             <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center my-4">
@@ -1666,7 +1672,7 @@
     <!-- ========================================================================= -->
     <!-- 10. BOOK A STRATEGY CALL / CALENDAR SECTION -->
     <!-- ========================================================================= -->
-    
+
     <!-- ========================================================================= -->
     <!-- 9.5 TRANSPARENT PRICING PLANS SECTION -->
     <!-- ========================================================================= -->
@@ -1677,7 +1683,7 @@
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
@@ -1694,7 +1700,7 @@
 
         <!-- 3 Tier Pricing Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          
+
           <!-- Card 1: Growth Foundation (Starter) -->
           <div class="glass-panel glass-panel-hover rounded-3xl p-8 flex flex-col justify-between border-white/10 relative group">
             <div class="space-y-6">
@@ -1928,17 +1934,17 @@
     </section>
 
     <section id="booking" class="py-20 sm:py-24 relative overflow-hidden">
-      
+
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div class="w-[600px] h-[350px] bg-gradient-to-r from-cyan-500/20 to-blue-600/20 blur-[130px] rounded-full"></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         <div class="glass-panel rounded-3xl p-6 sm:p-12 border-cyan-500/30 shadow-2xl">
-          
+
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
+
             <div class="lg:col-span-6 space-y-6 text-center sm:text-left">
               <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
                 BOOK A FREE STRATEGY CALL
@@ -1979,14 +1985,14 @@
             <!-- Interactive Calendar Widget -->
             <div class="lg:col-span-6">
               <div class="p-5 sm:p-6 rounded-2xl bg-[#070D1F] border border-white/10 shadow-2xl space-y-5">
-                
+
                 <!-- Month Header & Controls -->
                 <div class="flex items-center justify-between pb-3 border-b border-white/10">
                   <div class="text-xs font-bold text-white flex items-center gap-2">
                     <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i>
                     <span>Select a Date & Time</span>
                   </div>
-                  
+
                   <div class="flex items-center gap-2">
                     <button id="cal-prev-month" class="w-6 h-6 rounded-md bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors" aria-label="Previous month">
                       <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
@@ -1999,7 +2005,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-12 gap-5">
-                  
+
                   <!-- Days Grid -->
                   <div class="sm:col-span-7 space-y-2">
                     <div class="grid grid-cols-7 gap-1 text-center text-[10px] text-slate-500 font-bold">
@@ -2036,15 +2042,15 @@
                   <!-- Available Times Selection -->
                   <div class="sm:col-span-5 flex flex-col gap-2" id="available-times-container">
                     <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Available Times</span>
-                    
+
                     <button class="time-slot-btn w-full py-2 px-3 rounded-xl bg-cyan-500/20 border border-cyan-400 text-cyan-300 text-xs font-semibold text-center hover:bg-cyan-500/30 transition-all shadow-glow-cyan" data-time="9:00 AM">
                       9:00 AM
                     </button>
-                    
+
                     <button class="time-slot-btn w-full py-2 px-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-xs font-semibold text-center hover:border-cyan-500/40 hover:text-white transition-all" data-time="10:30 AM">
                       10:30 AM
                     </button>
-                    
+
                     <button class="time-slot-btn w-full py-2 px-3 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-xs font-semibold text-center hover:border-cyan-500/40 hover:text-white transition-all" data-time="1:00 PM">
                       1:00 PM
                     </button>
@@ -2075,7 +2081,7 @@
 
       <!-- Modal Card -->
       <div class="relative w-full max-w-lg rounded-3xl p-6 sm:p-8 bg-[#091124] border border-cyan-500/40 shadow-[0_0_50px_rgba(6,182,212,0.25)] z-10 transition-transform duration-300 scale-95" id="booking-modal-card">
-        
+
         <!-- Close Button -->
         <button id="booking-modal-close" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white flex items-center justify-center hover:bg-white/10 transition-colors" aria-label="Close modal">
           <i data-lucide="x" class="w-4 h-4"></i>
@@ -2140,7 +2146,7 @@
           <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_25px_rgba(16,185,129,0.35)] animate-bounce">
             <i data-lucide="check" class="w-8 h-8"></i>
           </div>
-          
+
           <div class="space-y-1.5">
             <h3 class="text-xl font-extrabold text-white">You're All Set! 🎉</h3>
             <p class="text-xs text-slate-300 max-w-sm mx-auto">
@@ -2166,9 +2172,9 @@
     <!-- ========================================================================= -->
     <footer class="pt-16 pb-12 border-t border-white/[0.08] bg-[#02050E] relative z-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/[0.06]">
-          
+
           <div class="flex flex-col items-center md:items-start gap-2">
             <a href="#" class="flex items-center">
               <img src="logo.png" alt="Growxpect" class="h-8 w-auto object-contain" />
@@ -2185,14 +2191,20 @@
           </div>
 
           <div class="flex items-center gap-3">
-            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors">
-              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" title="LinkedIn">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
             </a>
-            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors">
-              <i data-lucide="twitter" class="w-4 h-4"></i>
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" title="Twitter / X">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
             </a>
-            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors">
-              <i data-lucide="youtube" class="w-4 h-4"></i>
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" title="YouTube">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
             </a>
           </div>
 
@@ -2215,11 +2227,11 @@
   <!-- FLOATING WHATSAPP BUTTON (ATTRACTIVE GLOW & TOOLTIP) -->
   <!-- ========================================================================= -->
   <div class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex items-center group">
-    
+
     <!-- Floating Tooltip / Live Badge -->
-    <a 
-      href="https://wa.me/1234567890?text=Hello%20Growxpect!%20I'm%20interested%20in%20scaling%20my%20business%20with%20your%20Growth%20Systems." 
-      target="_blank" 
+    <a
+      href="https://wa.me/1234567890?text=Hello%20Growxpect!%20I'm%20interested%20in%20scaling%20my%20business%20with%20your%20Growth%20Systems."
+      target="_blank"
       rel="noopener noreferrer"
       class="mr-3 px-4 py-2 rounded-full bg-[#0A1020]/95 border border-emerald-500/40 text-xs font-semibold text-white shadow-2xl backdrop-blur-xl hidden sm:flex items-center gap-2.5 transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:-translate-x-1"
     >
@@ -2229,10 +2241,10 @@
     </a>
 
     <!-- WhatsApp Floating Action Circle -->
-    <a 
-      href="https://wa.me/1234567890?text=Hello%20Growxpect!%20I'm%20interested%20in%20scaling%20my%20business%20with%20your%20Growth%20Systems." 
-      target="_blank" 
-      rel="noopener noreferrer" 
+    <a
+      href="https://wa.me/1234567890?text=Hello%20Growxpect!%20I'm%20interested%20in%20scaling%20my%20business%20with%20your%20Growth%20Systems."
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-[#075E54] via-[#128C7E] to-[#25D366] p-[2px] shadow-[0_10px_35px_rgba(37,211,102,0.45)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 active:scale-95"
     >
@@ -2415,7 +2427,7 @@
       bookingModal.classList.remove('opacity-100', 'pointer-events-auto');
       bookingModal.classList.add('opacity-0', 'pointer-events-none');
       document.body.classList.remove('overflow-hidden');
-      
+
       // Reset view after animation
       setTimeout(() => {
         if (bookingFormView) bookingFormView.classList.remove('hidden');
@@ -2443,7 +2455,7 @@
         const name = document.getElementById('book-name').value;
         const email = document.getElementById('book-email').value;
         const phone = document.getElementById('book-phone').value;
-        
+
         // Transition to success state
         bookingFormView.classList.add('hidden');
         bookingSuccessView.classList.remove('hidden');
