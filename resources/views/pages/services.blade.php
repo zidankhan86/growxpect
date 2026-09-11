@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Services & Solutions Pricing — Growxpect')
-@section('meta_description', 'Explore Growxpect's end-to-end growth solutions: High-converting funnels, CRM setup, marketing automation, paid advertising, and AI-powered sales systems with transparent pricing.')
+@section('meta_description', "Explore Growxpect's end-to-end growth solutions: High-converting funnels, CRM setup, marketing automation, paid advertising, and AI-powered sales systems with transparent pricing.")
 
 @section('content')
 <!-- 1. HERO HEADER -->

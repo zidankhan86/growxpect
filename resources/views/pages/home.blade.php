@@ -699,53 +699,172 @@
   </div>
 </section>
 
-<!-- 4. CORE SERVICES OVERVIEW -->
+<!-- 4. CORE SERVICES OVERVIEW / WHAT WE DO -->
 <section id="solutions" class="py-20 sm:py-28 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/20">
-        {{ $cms['services_overview_badge'] ?? 'CORE GROWTH CAPABILITIES' }}
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-14 sm:mb-16">
+      <div class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-4 py-1.5 rounded-full border border-cyan-500/30 shadow-[0_0_15px_rgba(56,197,210,0.15)]">
+        {{ $cms['services_overview_badge'] ?? 'WHAT WE DO' }}
       </div>
       <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
         {{ $cms['services_overview_title'] ?? 'Solutions That Drive Growth' }}
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base">
-        {{ $cms['services_overview_subtitle'] ?? 'We replace fragmented marketing agencies with connected, end-to-end growth infrastructure.' }}
+      <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        {{ $cms['services_overview_subtitle'] ?? 'Everything your business needs to attract, engage, and convert more customers — all under one cohesive strategy.' }}
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="glass-panel glass-panel-hover rounded-3xl p-6 space-y-4 border-white/10">
-        <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
-          <i data-lucide="filter" class="w-6 h-6"></i>
+
+      <!-- Card 1: High-Converting Funnels -->
+      <div class="glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between border-white/10 group">
+        <div class="space-y-4">
+          <!-- Mini UI Graphic: Funnel Mockup -->
+          <div class="h-32 sm:h-36 w-full rounded-2xl bg-[#060B18] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden relative shadow-inner">
+            <div class="flex items-center gap-1.5 border-b border-white/5 pb-2">
+              <span class="w-2 h-2 rounded-full bg-red-400/90"></span>
+              <span class="w-2 h-2 rounded-full bg-amber-400/90"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400/90"></span>
+              <div class="ml-2 h-1.5 w-16 rounded-full bg-white/10"></div>
+            </div>
+            <div class="space-y-2 py-1">
+              <div class="h-5 w-3/4 rounded-md bg-cyan-950/60 border border-cyan-500/30 px-2 flex items-center shadow-[0_0_10px_rgba(56,197,210,0.1)]"></div>
+              <div class="h-1.5 w-full bg-white/10 rounded-full"></div>
+              <div class="h-1.5 w-2/3 bg-white/10 rounded-full"></div>
+            </div>
+            <div class="h-5 w-24 rounded-md bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 self-end shadow-[0_0_15px_rgba(168,85,247,0.35)]"></div>
+          </div>
+
+          <!-- Icon Badge -->
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,197,210,0.2)] group-hover:scale-105 transition-transform">
+            <i data-lucide="filter" class="w-4 h-4"></i>
+          </div>
+
+          <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+            {{ $cms['services_overview_service_1_title'] ?? 'High-Converting Funnels' }}
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            {{ $cms['services_overview_service_1_desc'] ?? 'Strategic funnels that turn traffic into qualified leads and paying customers with frictionless UX.' }}
+          </p>
         </div>
-        <h3 class="text-base font-bold text-white">{{ $cms['services_overview_service_1_title'] ?? 'High-Converting Funnels' }}</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">{{ $cms['services_overview_service_1_desc'] ?? 'Strategic funnels that turn traffic into qualified leads and paying customers with frictionless UX.' }}</p>
+
+        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+          <span>Explore</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
 
-      <div class="glass-panel glass-panel-hover rounded-3xl p-6 space-y-4 border-white/10">
-        <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
-          <i data-lucide="database" class="w-6 h-6"></i>
+      <!-- Card 2: CRM Systems (Highlighted with subtle cyan border matching mockup) -->
+      <div class="glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between border-cyan-500/30 group relative shadow-[0_0_30px_rgba(56,197,210,0.08)]">
+        <div class="space-y-4">
+          <!-- Mini UI Graphic: Leads Pipeline -->
+          <div class="h-32 sm:h-36 w-full rounded-2xl bg-[#060B18] border border-white/10 p-3 sm:p-3.5 flex flex-col justify-between overflow-hidden shadow-inner">
+            <div class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">LEADS PIPELINE</div>
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between px-2 py-1 rounded-md bg-white/[0.04] text-[10px] border border-white/[0.05]">
+                <span class="text-slate-200 font-medium">Alex Morgan</span>
+                <span class="text-emerald-400 font-semibold">Qualified</span>
+              </div>
+              <div class="flex items-center justify-between px-2 py-1 rounded-md bg-white/[0.04] text-[10px] border border-white/[0.05]">
+                <span class="text-slate-200 font-medium">TechCorp Inc.</span>
+                <span class="text-cyan-400 font-semibold">Booked</span>
+              </div>
+              <div class="flex items-center justify-between px-2 py-1 rounded-md bg-white/[0.04] text-[10px] border border-white/[0.05]">
+                <span class="text-slate-200 font-medium">Elena Rostova</span>
+                <span class="text-purple-400 font-semibold">Proposal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Icon Badge -->
+          <div class="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 text-cyan-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,197,210,0.2)] group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-4 h-4"></i>
+          </div>
+
+          <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+            {{ $cms['services_overview_service_2_title'] ?? 'CRM Systems' }}
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            {{ $cms['services_overview_service_2_desc'] ?? 'Keep your leads organized, follow up automatically, and never let high-value revenue slip through cracks.' }}
+          </p>
         </div>
-        <h3 class="text-base font-bold text-white">{{ $cms['services_overview_service_2_title'] ?? 'CRM Systems' }}</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">{{ $cms['services_overview_service_2_desc'] ?? 'Keep your leads organized, follow up automatically, and never let high-value revenue slip through cracks.' }}</p>
+
+        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+          <span>Explore</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
 
-      <div class="glass-panel glass-panel-hover rounded-3xl p-6 space-y-4 border-white/10">
-        <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center">
-          <i data-lucide="zap" class="w-6 h-6"></i>
+      <!-- Card 3: Marketing Automation -->
+      <div class="glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between border-white/10 group">
+        <div class="space-y-4">
+          <!-- Mini UI Graphic: Automation Flow -->
+          <div class="h-32 sm:h-36 w-full rounded-2xl bg-[#060B18] border border-white/10 p-3 sm:p-3.5 flex flex-col justify-center items-center gap-2 overflow-hidden shadow-inner">
+            <div class="px-3 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-500/40 text-[10px] text-cyan-300 font-semibold shadow-[0_0_12px_rgba(56,197,210,0.2)]">
+              Trigger: New Form Submit
+            </div>
+            <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-slate-500"></i>
+            <div class="px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-500/40 text-[10px] text-purple-300 font-semibold shadow-[0_0_12px_rgba(168,85,247,0.2)]">
+              Action: Instant SMS &amp; Email
+            </div>
+          </div>
+
+          <!-- Icon Badge -->
+          <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.2)] group-hover:scale-105 transition-transform">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+          </div>
+
+          <h3 class="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+            {{ $cms['services_overview_service_3_title'] ?? 'Marketing Automation' }}
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            {{ $cms['services_overview_service_3_desc'] ?? 'Automate your multi-channel follow-ups, re-engage cold leads, and scale conversion on 24/7 autopilot.' }}
+          </p>
         </div>
-        <h3 class="text-base font-bold text-white">{{ $cms['services_overview_service_3_title'] ?? 'Marketing Automation' }}</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">{{ $cms['services_overview_service_3_desc'] ?? 'Automate your multi-channel follow-ups, re-engage cold leads, and scale conversion on 24/7 autopilot.' }}</p>
+
+        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+          <span>Explore</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
 
-      <div class="glass-panel glass-panel-hover rounded-3xl p-6 space-y-4 border-white/10">
-        <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
-          <i data-lucide="trending-up" class="w-6 h-6"></i>
+      <!-- Card 4: Lead Generation -->
+      <div class="glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between border-white/10 group">
+        <div class="space-y-4">
+          <!-- Mini UI Graphic: Growth Velocity Bar Chart -->
+          <div class="h-32 sm:h-36 w-full rounded-2xl bg-[#060B18] border border-white/10 p-3 sm:p-3.5 flex flex-col justify-between overflow-hidden shadow-inner">
+            <div class="flex items-center justify-between text-[10px]">
+              <span class="text-slate-400 font-medium">Growth Velocity</span>
+              <span class="text-cyan-400 font-extrabold tracking-wide">+184%</span>
+            </div>
+            <div class="h-16 flex items-end gap-2 pt-2">
+              <div class="flex-1 bg-slate-800 rounded-t-sm h-[32%]"></div>
+              <div class="flex-1 bg-slate-700/70 rounded-t-sm h-[48%]"></div>
+              <div class="flex-1 bg-cyan-900/80 rounded-t-sm h-[64%]"></div>
+              <div class="flex-1 bg-cyan-600/90 rounded-t-sm h-[82%]"></div>
+              <div class="flex-1 bg-cyan-400 rounded-t-sm h-[100%] shadow-[0_0_15px_rgba(56,197,210,0.6)]"></div>
+            </div>
+          </div>
+
+          <!-- Icon Badge -->
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,197,210,0.2)] group-hover:scale-105 transition-transform">
+            <i data-lucide="trending-up" class="w-4 h-4"></i>
+          </div>
+
+          <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+            {{ $cms['services_overview_service_4_title'] ?? 'Lead Generation' }}
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            {{ $cms['services_overview_service_4_desc'] ?? 'Drive consistent, high-converting targeted traffic with full-funnel data-driven campaign architecture.' }}
+          </p>
         </div>
-        <h3 class="text-base font-bold text-white">{{ $cms['services_overview_service_4_title'] ?? 'Lead Generation' }}</h3>
-        <p class="text-xs text-slate-400 leading-relaxed">{{ $cms['services_overview_service_4_desc'] ?? 'Drive consistent, high-converting targeted traffic with full-funnel data-driven campaign architecture.' }}</p>
+
+        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+          <span>Explore</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
+
     </div>
   </div>
 </section>

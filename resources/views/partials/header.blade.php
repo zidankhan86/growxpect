@@ -12,11 +12,7 @@
       <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">About Us</a>
       <a href="{{ route('case-studies') }}" class="{{ request()->routeIs('case-studies') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">Case Studies</a>
       <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">Services & Pricing</a>
-      <a href="{{ route('home') }}#pricing" class="text-slate-300 hover:text-white transition-colors">Pricing</a>
-      @if(!request()->routeIs('gohighlevel') && !request()->routeIs('get-gohighlevel'))
-        <a href="{{ route('home') }}#process" class="text-slate-300 hover:text-white transition-colors">Process</a>
-      @endif
-      <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-bold relative after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full' : 'text-slate-300 hover:text-white' }} transition-colors">GoHighLevel</a>
+      <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-bold relative after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full' : 'text-slate-300 hover:text-white' }} transition-colors">Get GoHighLevel</a>
     </nav>
 
     <!-- Right Action CTA -->

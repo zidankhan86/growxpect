@@ -47,24 +47,6 @@
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
       </a>
 
-      <a href="{{ route('home') }}#pricing" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
-        <span class="flex items-center gap-3">
-          <i data-lucide="tag" class="w-4 h-4 text-purple-400"></i>
-          Pricing Plans
-        </span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
-      </a>
-
-      @if(!request()->routeIs('gohighlevel') && !request()->routeIs('get-gohighlevel'))
-      <a href="{{ route('home') }}#process" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white font-medium text-sm transition-colors">
-        <span class="flex items-center gap-3">
-          <i data-lucide="sparkles" class="w-4 h-4 text-sky-400"></i>
-          Our Process
-        </span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
-      </a>
-      @endif
-
       <a href="{{ route('gohighlevel') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-bold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
         <span class="flex items-center gap-3">
           <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
