@@ -39,13 +39,31 @@
         <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
       </a>
 
-      <a href="{{ route('services') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('services') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
-        <span class="flex items-center gap-3">
-          <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i>
-          Services & Pricing
-        </span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
-      </a>
+      <!-- Services with Sublinks -->
+      <div class="space-y-1">
+        <a href="{{ route('services') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->is('services*') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
+          <span class="flex items-center gap-3">
+            <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i>
+            Services Overview
+          </span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+        </a>
+
+        <div class="pl-6 pr-2 py-1 space-y-1">
+          <a href="{{ route('services.funnels') }}" class="drawer-link flex items-center px-3 py-2 rounded-lg text-xs {{ request()->routeIs('services.funnels') ? 'bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5' }} transition-colors">
+            <span>High-Converting Funnels</span>
+          </a>
+          <a href="{{ route('services.crm') }}" class="drawer-link flex items-center px-3 py-2 rounded-lg text-xs {{ request()->routeIs('services.crm') ? 'bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5' }} transition-colors">
+            <span>CRM Systems</span>
+          </a>
+          <a href="{{ route('services.ai-automation') }}" class="drawer-link flex items-center px-3 py-2 rounded-lg text-xs {{ request()->routeIs('services.ai-automation') ? 'bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5' }} transition-colors">
+            <span>AI Automation & Appointment</span>
+          </a>
+          <a href="{{ route('services.lead-generation') }}" class="drawer-link flex items-center px-3 py-2 rounded-lg text-xs {{ request()->routeIs('services.lead-generation') ? 'bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5' }} transition-colors">
+            <span>Lead Generation & Paid Ads</span>
+          </a>
+        </div>
+      </div>
 
       <a href="{{ route('gohighlevel') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-bold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
         <span class="flex items-center gap-3">

@@ -10,20 +10,48 @@
     <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
       <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">Home</a>
       <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">About Us</a>
+
+      <!-- Services Hover Dropdown -->
+      <div class="relative group py-4">
+        <a href="{{ route('services') }}" class="flex items-center gap-1.5 {{ request()->is('services*') ? 'text-cyan-400 font-semibold' : 'text-slate-300 group-hover:text-white' }} transition-colors">
+          <span>Services</span>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-cyan-400"></i>
+        </a>
+
+        <!-- Dropdown Card -->
+        <div class="absolute top-[80%] left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 ease-out z-50 min-w-[285px]">
+          <div class="rounded-2xl p-2 bg-[#091024]/95 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_25px_rgba(168,85,247,0.15)] space-y-1">
+
+            <a href="{{ route('services.funnels') }}" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all {{ request()->routeIs('services.funnels') ? 'bg-[#8C2AA6] text-white font-semibold shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
+              <span class="text-xs">High-Converting Funnels</span>
+            </a>
+
+            <a href="{{ route('services.crm') }}" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all {{ request()->routeIs('services.crm') ? 'bg-[#8C2AA6] text-white font-semibold shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
+              <span class="text-xs">CRM Systems</span>
+            </a>
+
+            <a href="{{ route('services.ai-automation') }}" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all {{ request()->routeIs('services.ai-automation') ? 'bg-[#8C2AA6] text-white font-semibold shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
+              <span class="text-xs">AI Automation & Appointment Setter</span>
+            </a>
+
+            <a href="{{ route('services.lead-generation') }}" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all {{ request()->routeIs('services.lead-generation') ? 'bg-[#8C2AA6] text-white font-semibold shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
+              <span class="text-xs">Lead Generation & Paid Ads</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
       <a href="{{ route('case-studies') }}" class="{{ request()->routeIs('case-studies') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">Case Studies</a>
-      <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">Services</a>
-      <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-bold relative after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full' : 'text-slate-300 hover:text-white' }} transition-colors">Get GoHighLevel</a>
+      <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-bold relative after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full' : 'text-slate-300 hover:text-white' }} transition-colors">GoHighLevel</a>
     </nav>
 
     <!-- Right Action CTA -->
     <div class="hidden md:flex items-center gap-4">
-      <a href="{{ route('home') }}#booking" class="relative group overflow-hidden rounded-full p-[1px] font-semibold text-xs transition-all duration-300 hover:scale-[1.02] shadow-glow-cyan">
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 rounded-full transition-all group-hover:opacity-90"></div>
-        <div class="relative px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white flex items-center gap-2 font-semibold">
-          <span>Book a Strategy Call</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
-        </div>
-      </a>
+      <button onclick="window.openBookingModal && window.openBookingModal()" class="px-5 py-2.5 rounded-full bg-[#38C5D2] hover:bg-[#2EB3C0] text-slate-950 font-bold text-xs flex items-center gap-2 transition-all duration-200 hover:scale-[1.02] shadow-[0_0_20px_rgba(56,197,210,0.35)] active:scale-95">
+        <span>Book a Free Strategy Call</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </button>
     </div>
 
     <!-- Mobile Menu Hamburger Button -->

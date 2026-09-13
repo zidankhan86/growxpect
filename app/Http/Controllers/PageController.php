@@ -49,6 +49,30 @@ class PageController extends Controller
         return view('pages.services', compact('seo', 'pricingPlans'));
     }
 
+    public function serviceFunnels()
+    {
+        $seo = Seo::where('page_slug', 'services-funnels')->first();
+        return view('pages.services.funnels', compact('seo'));
+    }
+
+    public function serviceCrm()
+    {
+        $seo = Seo::where('page_slug', 'services-crm')->first();
+        return view('pages.services.crm', compact('seo'));
+    }
+
+    public function serviceAiAutomation()
+    {
+        $seo = Seo::where('page_slug', 'services-ai-automation')->first();
+        return view('pages.services.ai-automation', compact('seo'));
+    }
+
+    public function serviceLeadGeneration()
+    {
+        $seo = Seo::where('page_slug', 'services-lead-generation')->first();
+        return view('pages.services.lead-generation', compact('seo'));
+    }
+
     public function gohighlevel()
     {
         $seo = Seo::where('page_slug', 'gohighlevel')->first();

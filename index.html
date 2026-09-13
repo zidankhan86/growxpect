@@ -241,11 +241,43 @@
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
           <a href="index.html" class="text-cyan-400 font-semibold transition-colors hover:text-cyan-300">Home</a>
           <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+
+          <!-- Services Hover Dropdown -->
+          <div class="relative group py-4">
+            <a href="services.html" class="flex items-center gap-1.5 hover:text-white transition-colors">
+              <span>Services</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-cyan-400"></i>
+            </a>
+
+            <!-- Dropdown Card -->
+            <div class="absolute top-[80%] left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 ease-out z-50 min-w-[285px]">
+              <div class="rounded-2xl p-2 bg-[#091024]/95 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_25px_rgba(168,85,247,0.15)] space-y-1">
+
+                <a href="/services/high-converting-funnels" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all text-slate-300 hover:text-white hover:bg-white/5">
+                  <span class="text-xs">High-Converting Funnels</span>
+                </a>
+
+                <a href="/services/crm-systems" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all text-slate-300 hover:text-white hover:bg-white/5">
+                  <span class="text-xs">CRM Systems</span>
+                </a>
+
+                <a href="/services/ai-automation-appointment-setter" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all text-slate-300 hover:text-white hover:bg-white/5">
+                  <span class="text-xs">AI Automation & Appointment Setter</span>
+                </a>
+
+                <a href="/services/lead-generation-paid-ads" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all text-slate-300 hover:text-white hover:bg-white/5">
+                  <span class="text-xs">Lead Generation & Paid Ads</span>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
           <a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a>
-          <a href="services.html" class="hover:text-white transition-colors">Services & Pricing</a>
+          <a href="/gohighlevel" class="hover:text-white transition-colors">GoHighLevel</a>
         </nav>
 
         <!-- Right Action CTA -->
