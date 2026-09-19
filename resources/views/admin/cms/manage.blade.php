@@ -747,6 +747,40 @@
                             </div>
                         </div>
 
+                        <!-- 9. FOOTER SECTION -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sec-footer">
+                                    9. Footer Section
+                                </button>
+                            </h2>
+                            <div id="sec-footer" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <form class="cms-form" action="{{ route('admin.cms.update') }}" method="POST" data-section="Footer">
+                                        @csrf
+                                        <input type="hidden" name="section" value="footer">
+
+                                        <label class="cf-label">Privacy Policy Link Text</label>
+                                        <input type="text" name="privacy_text" class="form-control cf-control" value="{{ $cms['footer_privacy_text'] ?? 'Privacy Policy' }}">
+
+                                        <label class="cf-label">Privacy Policy Link URL</label>
+                                        <input type="text" name="privacy_url" class="form-control cf-control" value="{{ $cms['footer_privacy_url'] ?? '#' }}">
+
+                                        <label class="cf-label">Terms & Conditions Link Text</label>
+                                        <input type="text" name="terms_text" class="form-control cf-control" value="{{ $cms['footer_terms_text'] ?? 'Terms & Conditions' }}">
+
+                                        <label class="cf-label">Terms & Conditions Link URL</label>
+                                        <input type="text" name="terms_url" class="form-control cf-control" value="{{ $cms['footer_terms_url'] ?? '#' }}">
+
+                                        <label class="cf-label">Copyright Text</label>
+                                        <textarea name="copyright_text" rows="2" class="form-control cf-control">{{ $cms['footer_copyright_text'] ?? '© ' . date('Y') . ' Growxpect. All rights reserved.' }}</textarea>
+
+                                        <button type="submit" class="btn cms-save-btn">Save Footer Section</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

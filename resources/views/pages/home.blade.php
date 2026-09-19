@@ -204,22 +204,19 @@
       <div class="flex items-center justify-center gap-3">
         <div class="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-transparent to-cyan-400"></div>
         <span class="text-xs sm:text-sm font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 uppercase">
-          TRUSTED BY GROWING BUSINESSES
+          {{ $cms['partner_badge'] ?? 'TRUSTED BY GROWING BUSINESSES' }}
         </span>
         <div class="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-400 to-transparent"></div>
       </div>
 
       <!-- Main Headline -->
       <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-        Built for Businesses <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">
-          Ready to Grow
-        </span>
+        {!! $cms['partner_title'] ?? 'Built for Businesses <br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">Ready to Grow</span>' !!}
       </h2>
 
       <!-- Subtitle Description -->
       <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-        Growxpect helps businesses build scalable growth systems — combining funnels, CRM and automation to capture more leads, nurture relationships and drive predictable revenue.
+        {{ $cms['partner_subtitle'] ?? 'Growxpect helps businesses build scalable growth systems — combining funnels, CRM and automation to capture more leads, nurture relationships and drive predictable revenue.' }}
       </p>
     </div>
 
@@ -345,17 +342,16 @@
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
       <div class="flex items-center justify-center gap-3">
         <div class="h-0.5 w-10 sm:w-16 bg-gradient-to-r from-transparent to-cyan-400"></div>
-        <span class="text-xs sm:text-sm font-extrabold tracking-widest text-cyan-400 uppercase">THE PROBLEM</span>
+        <span class="text-xs sm:text-sm font-extrabold tracking-widest text-cyan-400 uppercase">{{ $cms['problem_badge'] ?? 'THE PROBLEM' }}</span>
         <div class="h-0.5 w-10 sm:w-16 bg-gradient-to-r from-purple-500 to-transparent"></div>
       </div>
 
       <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-        Your Leads Are Leaking<br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">Between Systems.</span>
+        {!! $cms['problem_title'] ?? 'Your Leads Are Leaking<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">Between Systems.</span>' !!}
       </h2>
 
       <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-        Disconnected tools, slow follow-ups, and manual processes can cause valuable leads to disappear before they ever become customers.
+        {{ $cms['problem_subtitle'] ?? 'Disconnected tools, slow follow-ups, and manual processes can cause valuable leads to disappear before they ever become customers.' }}
       </p>
     </div>
 
@@ -672,7 +668,7 @@
         </div>
         <div class="h-5 w-px bg-rose-500/30 hidden sm:block"></div>
         <p class="text-sm sm:text-lg font-bold text-white tracking-tight">
-          Missed Lead = <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 font-extrabold">Missed Revenue</span>
+          {{ $cms['problem_callout'] ?? 'Over 68% of warm inbound inquiries go cold due to manual delays and siloed systems.' }}
         </p>
       </div>
     </div>
@@ -989,21 +985,40 @@
       <div class="flex items-center justify-center gap-3">
         <div class="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-transparent to-cyan-400"></div>
         <span class="text-xs sm:text-sm font-extrabold tracking-widest text-cyan-400 uppercase">
-          CASE STUDIES
+          {{ $cms['case_studies_overview_badge'] ?? 'CASE STUDIES' }}
         </span>
         <div class="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-400 to-transparent"></div>
       </div>
 
       <!-- Main Headline -->
       <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15]">
-        Growth Systems <br />
-        Built To <span class="text-cyan-400">Perform</span><span class="text-purple-400">.</span>
+        {!! $cms['case_studies_overview_title'] ?? 'Growth Systems <br />Built To <span class="text-cyan-400">Perform</span><span class="text-purple-400">.</span>' !!}
       </h2>
 
       <!-- Subtitle Description -->
       <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-        Real businesses. Real results. See how we've helped companies scale predictability with custom automated growth systems.
+        {{ $cms['case_studies_overview_subtitle'] ?? 'Real businesses. Real results. See how we\'ve helped companies scale predictability with custom automated growth systems.' }}
       </p>
+
+      <!-- Dynamic Overview Stats Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto pt-4">
+        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
+          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_1_val'] ?? '+287%' }}</div>
+          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_1_label'] ?? 'Average Lead Growth' }}</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
+          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_2_val'] ?? '+156%' }}</div>
+          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_2_label'] ?? 'Increase Appointments' }}</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
+          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_3_val'] ?? '+73%' }}</div>
+          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_3_label'] ?? 'Higher Conversion' }}</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
+          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_4_val'] ?? '-42%' }}</div>
+          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_4_label'] ?? 'Lower Cost Per Lead' }}</div>
+        </div>
+      </div>
     </div>
 
     <!-- Below: 2 Responsive Case Study Cards (Side by Side on Desktop) -->
@@ -1585,7 +1600,7 @@
 
       <!-- Main Headline -->
       <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-        From Strategy to <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">Growth.</span>
+        {!! $cms['process_title'] ?? 'From Strategy to <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">Growth.</span>' !!}
       </h2>
 
       <!-- Subtitle -->
@@ -2673,20 +2688,25 @@
           </div>
 
           <div>
+            <div class="inline-block text-[10px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20 mb-2">
+              {{ $cms['booking_cta_badge'] ?? 'BOOK A FREE STRATEGY CALL' }}
+            </div>
             <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight mb-1.5">
-              Ready to Build a Smarter<br class="hidden sm:inline" />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-300">Growth System?</span>
+              {{ $cms['booking_cta_title'] ?? 'Ready to Build a Growth System That Works?' }}
             </h3>
-            <p class="text-xs sm:text-sm text-slate-400 max-w-lg leading-relaxed">
-              Let's connect the systems that help your business attract, manage, nurture and convert more leads.
+            <p class="text-xs sm:text-sm text-slate-400 max-w-lg leading-relaxed mb-1">
+              {{ $cms['booking_cta_subtitle'] ?? 'Let\'s turn your leads, funnels and follow-ups into a connected revenue engine. Schedule a 1-on-1 strategy session with our lead architects.' }}
             </p>
+            @if(!empty($cms['booking_cta_footnote']))
+              <div class="text-[11px] text-cyan-400/90 font-medium">{{ $cms['booking_cta_footnote'] }}</div>
+            @endif
           </div>
         </div>
 
         <!-- Right: Action Button -->
         <div class="shrink-0">
           <button onclick="window.openBookingModal && window.openBookingModal()" class="px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] hover:scale-[1.03] active:scale-95 transition-all">
-            <span>Book a Free Strategy Call</span>
+            <span>{{ $cms['booking_cta_button_text'] ?? 'Book A Free Growth Strategy Call' }}</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
         </div>

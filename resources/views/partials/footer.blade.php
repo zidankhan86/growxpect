@@ -256,12 +256,12 @@
     <!-- 3. BOTTOM COPYRIGHT & LEGAL BAR -->
     <!-- ========================================================================= -->
     <div class="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-      <p>&copy; {{ date('Y') }} Growxpect. All rights reserved.</p>
+      <p>{!! $cms['footer_copyright_text'] ?? '&copy; ' . date('Y') . ' Growxpect. All rights reserved.' !!}</p>
 
       <div class="flex items-center gap-3">
-        <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="{{ $cms['footer_privacy_url'] ?? '#' }}" class="hover:text-slate-300 transition-colors">{{ $cms['footer_privacy_text'] ?? 'Privacy Policy' }}</a>
         <span class="text-slate-700">|</span>
-        <a href="#" class="hover:text-slate-300 transition-colors">Terms &amp; Conditions</a>
+        <a href="{{ $cms['footer_terms_url'] ?? '#' }}" class="hover:text-slate-300 transition-colors">{{ $cms['footer_terms_text'] ?? 'Terms & Conditions' }}</a>
       </div>
     </div>
 
