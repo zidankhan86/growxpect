@@ -64,66 +64,153 @@
                 <!-- Stat Cards -->
                 <div class="row row-cards mb-4">
 
-                    <!-- Total Request -->
+                    <!-- Strategy Call Bookings Card -->
                     <div class="col-sm-6 col-lg-3">
-                        <div class="card stat-card text-white" style="background:#007bff;">
+                        <a href="{{ route('admin.bookings.index') }}" class="text-decoration-none">
+                            <div class="card stat-card text-white" style="background:#0284c7;">
+                                <div class="card-body d-flex align-items-center gap-3">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                                    </div>
+                                    <div>
+                                        <div class="label">Total Strategy Calls</div>
+                                        <div class="value">{{ $totalBookings ?? 0 }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Pending Calls Card -->
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="{{ route('admin.bookings.index', ['status' => 'pending']) }}" class="text-decoration-none">
+                            <div class="card stat-card text-white" style="background:#eab308;">
+                                <div class="card-body d-flex align-items-center gap-3">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    </div>
+                                    <div>
+                                        <div class="label">Pending Strategy Calls</div>
+                                        <div class="value">{{ $pendingBookings ?? 0 }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Registered Users Card -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card stat-card text-white" style="background:#10b981;">
                             <div class="card-body d-flex align-items-center gap-3">
                                 <div class="icon">
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
                                 </div>
                                 <div>
-                                    <div class="label">Total Requests</div>
-                                    <div class="value">10</div>
+                                    <div class="label">Registered Users</div>
+                                    <div class="value">{{ $totalUsers ?? 0 }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Users -->
+                    <!-- Completed Calls Card -->
                     <div class="col-sm-6 col-lg-3">
-                        <div class="card stat-card text-white" style="background:#198754;">
-                            <div class="card-body d-flex align-items-center gap-3">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-                                </div>
-                                <div>
-                                    <div class="label">Users</div>
-                                    <div class="value">50</div>
+                        <a href="{{ route('admin.bookings.index', ['status' => 'completed']) }}" class="text-decoration-none">
+                            <div class="card stat-card text-white" style="background:#8b5cf6;">
+                                <div class="card-body d-flex align-items-center gap-3">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    </div>
+                                    <div>
+                                        <div class="label">Completed Calls</div>
+                                        <div class="value">{{ \App\Models\Booking::where('status', 'completed')->count() }}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
-                    <!-- Total Visitors -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card stat-card text-white" style="background:#fd7e14;">
-                            <div class="card-body d-flex align-items-center gap-3">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-icon lucide-book"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
-                                </div>
-                                <div>
-                                    <div class="label">Total Visitors</div>
-                                    <div class="value">100</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
 
-                    <!-- Approve Request -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card stat-card text-white" style="background:#6f42c1;">
-                            <div class="card-body d-flex align-items-center gap-3">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
-                                </div>
-                                <div>
-                                    <div class="label">Approve Request</div>
-                                    <div class="value">10</div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Recent Strategy Call Bookings Widget -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h3 class="card-title mb-0">
+                            ⚡ Recent Strategy Call Appointments
+                        </h3>
+                        <a href="{{ route('admin.bookings.index') }}" class="btn btn-sm btn-outline-primary">
+                            View All Bookings &rarr;
+                        </a>
                     </div>
-
+                    <div class="table-responsive">
+                        <table class="table table-vcenter card-table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Email & Phone</th>
+                                    <th>Scheduled Date & Time</th>
+                                    <th>Revenue</th>
+                                    <th>Focus Service</th>
+                                    <th>Status</th>
+                                    <th class="text-end">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($recentBookings ?? [] as $recent)
+                                    <tr>
+                                        <td class="font-weight-bold text-dark">{{ $recent->name }}</td>
+                                        <td>
+                                            <div><a href="mailto:{{ $recent->email }}" class="text-muted small text-decoration-none">{{ $recent->email }}</a></div>
+                                            @if($recent->phone)<div class="small text-dark">{{ $recent->phone }}</div>@endif
+                                        </td>
+                                        <td>
+                                            <div class="font-weight-bold text-primary">{{ $recent->booking_date }}</div>
+                                            <div class="small text-muted">⏰ {{ $recent->booking_time }} @if($recent->timezone)<span class="badge bg-light text-dark border ms-1">{{ $recent->timezone }}</span>@endif</div>
+                                             @if($recent->bangladesh_time)
+                                                 <div class="font-weight-bold text-danger mt-1" style="font-size: 13px; color: #dc3545 !important;">Bangladesh Time: {{ $recent->bangladesh_time }}</div>
+                                             @endif
+                                        </td>
+                                        <td>
+                                            @if($recent->monthly_revenue)
+                                                <span class="badge bg-green-lt">{{ $recent->monthly_revenue }}</span>
+                                            @else
+                                                <span class="text-muted small">-</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-blue-lt">{{ $recent->service_interested ?? 'General Strategy' }}</span>
+                                        </td>
+                                        <td>
+                                            @if($recent->status === 'pending')
+                                                <span class="badge bg-warning text-dark">Pending</span>
+                                            @elseif($recent->status === 'confirmed')
+                                                <span class="badge bg-primary">Confirmed</span>
+                                            @elseif($recent->status === 'completed')
+                                                <span class="badge bg-success">Completed</span>
+                                            @else
+                                                <span class="badge bg-secondary">Cancelled</span>
+                                            @endif
+                                        </td>
+                                        <td class="text-end">
+                                            @if($recent->status !== 'completed')
+                                                <form action="{{ route('admin.bookings.complete', $recent->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-success" title="Mark call completed">
+                                                        Completed
+                                                    </button>
+                                                </form>
+                                            @endif
+                                            <a href="{{ route('admin.bookings.index') }}" class="btn btn-sm btn-outline-secondary">Manage</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="7" class="text-center py-4 text-muted">No appointments booked yet.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- Charts Row 1 -->

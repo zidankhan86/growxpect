@@ -24,7 +24,24 @@ class CaseStudy extends Model
         'metric_3_val',
         'metric_3_label',
         'tech_stack',
+        'location',
+        'duration',
+        'image',
+        'images',
+        'client_name',
+        'client_logo',
+        'project_url',
+        'challenge',
+        'solution',
+        'full_content',
+        'results_detail',
+        'testimonial_quote',
+        'testimonial_author',
         'is_featured',
         'sort_order',
+    ];
+
+    protected $casts = [
+        'images' => 'array',
     ];
 }

@@ -13,7 +13,7 @@
 
       <!-- Services Hover Dropdown -->
       <div class="relative group py-4">
-        <a href="{{ route('services') }}" class="flex items-center gap-1.5 {{ request()->is('services*') ? 'text-cyan-400 font-semibold' : 'text-slate-300 group-hover:text-white' }} transition-colors">
+        <a href="javascript:void(0)" class="cursor-pointer flex items-center gap-1.5 {{ request()->is('services*') ? 'text-cyan-400 font-semibold' : 'text-slate-300 group-hover:text-white' }} transition-colors">
           <span>Services</span>
           <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-cyan-400"></i>
         </a>
@@ -43,7 +43,7 @@
       </div>
 
       <a href="{{ route('case-studies') }}" class="{{ request()->routeIs('case-studies') ? 'text-cyan-400 font-semibold' : 'text-slate-300 hover:text-white' }} transition-colors">Case Studies</a>
-      <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-bold relative after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full' : 'text-slate-300 hover:text-white' }} transition-colors">GoHighLevel</a>
+      <a href="{{ route('gohighlevel') }}" class="{{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'text-cyan-400 font-bold relative after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full' : 'text-slate-300 hover:text-white' }} transition-colors">Get GoHighLevel</a>
     </nav>
 
     <!-- Right Action CTA -->

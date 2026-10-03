@@ -14,19 +14,50 @@ use Illuminate\Support\Facades\Validator;
 
 class BookingController extends Controller
 {
+    /**
+     * Fetch all active booked time slots for a given date.
+     */
+    public function getBookedSlots(Request $request)
+    {
+        $date = $request->query('booking_date') ?: $request->query('date');
+        
+        if (!$date) {
+            return response()->json([
+                'success' => true,
+                'booked_slots' => []
+            ]);
+        }
+
+        // Active bookings lock the time slots. Completed/cancelled bookings unlock the slots.
+        $activeBookings = Booking::active()
+            ->where('booking_date', $date)
+            ->get();
+
+        $bookedSlots = $activeBookings->map(function ($b) {
+            return Booking::cleanTimeSlot($b->booking_time);
+        })->filter()->unique()->values()->all();
+
+        return response()->json([
+            'success' => true,
+            'booking_date' => $date,
+            'booked_slots' => $bookedSlots
+        ]);
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'nullable|string|max:50',
-            'company_name' => 'nullable|string|max:255',
-            'website_url' => 'nullable|string|max:255',
-            'monthly_revenue' => 'nullable|string|max:100',
-            'service_interested' => 'nullable|string|max:255',
-            'booking_date' => 'nullable|string|max:100',
-            'booking_time' => 'nullable|string|max:100',
-            'message' => 'nullable|string|max:2000',
+            'phone' => 'required|string|max:50',
+            'company_name' => 'required|string|max:255',
+            'website_url' => 'required|string|max:255',
+            'monthly_revenue' => 'required|string|max:100',
+            'service_interested' => 'required|string|max:255',
+            'booking_date' => 'required|string|max:100',
+            'booking_time' => 'required|string|max:100',
+            'timezone' => 'nullable|string|max:50',
+            'message' => 'required|string|max:2000',
         ]);
 
         if ($validator->fails()) {
@@ -39,6 +70,30 @@ class BookingController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        // Check Calendly-style slot availability (only 1 customer per active slot until completed)
+        $bookingDate = $request->booking_date;
+        $requestedTimeClean = Booking::cleanTimeSlot($request->booking_time);
+
+        $existingActiveBooking = Booking::active()
+            ->where('booking_date', $bookingDate)
+            ->get()
+            ->first(function ($b) use ($requestedTimeClean) {
+                return Booking::cleanTimeSlot($b->booking_time) === $requestedTimeClean;
+            });
+
+        if ($existingActiveBooking) {
+            if ($request->ajax() || $request->wantsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'This time slot (' . $request->booking_time . ') is already reserved for ' . $bookingDate . '. Please select another time slot.',
+                    'errors' => [
+                        'booking_time' => ['This time slot is already reserved. Please select another time slot.']
+                    ]
+                ], 422);
+            }
+            return redirect()->back()->withErrors(['booking_time' => 'This time slot is already reserved.'])->withInput();
+        }
+
         $booking = Booking::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -47,8 +102,9 @@ class BookingController extends Controller
             'website_url' => $request->website_url,
             'monthly_revenue' => $request->monthly_revenue,
             'service_interested' => $request->service_interested,
-            'booking_date' => $request->booking_date ?? 'September 10, 2026',
-            'booking_time' => $request->booking_time ?? '9:00 AM EST',
+            'booking_date' => $bookingDate,
+            'booking_time' => $request->booking_time,
+            'timezone' => $request->timezone ?? 'EST',
             'message' => $request->message,
             'status' => 'pending',
             'ip_address' => $request->ip(),

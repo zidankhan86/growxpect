@@ -104,16 +104,112 @@ class HomepageContentSeeder extends Seeder
             ['section' => 'booking_cta', 'field_key' => 'subtitle', 'field_value' => 'Let\'s turn your leads, funnels and follow-ups into a connected revenue engine. Schedule a 1-on-1 strategy session with our lead architects.', 'field_type' => 'textarea'],
             ['section' => 'booking_cta', 'field_key' => 'button_text', 'field_value' => 'Book A Free Growth Strategy Call', 'field_type' => 'text'],
             ['section' => 'booking_cta', 'field_key' => 'footnote', 'field_value' => '30-Minute Call • 100% Free • No Obligation', 'field_type' => 'text'],
+
+            // =========================================================================
+            // ABOUT PAGE SECTIONS
+            // =========================================================================
+            ['section' => 'about_hero', 'field_key' => 'badge_text', 'field_value' => 'ABOUT GROWXPECT', 'field_type' => 'text'],
+            ['section' => 'about_hero', 'field_key' => 'heading_line1', 'field_value' => 'We Build Growth Systems That', 'field_type' => 'text'],
+            ['section' => 'about_hero', 'field_key' => 'heading_highlight', 'field_value' => 'Turn Attention Into Revenue', 'field_type' => 'text'],
+            ['section' => 'about_hero', 'field_key' => 'description', 'field_value' => 'Growxpect is a digital growth agency helping businesses generate more leads, convert more customers, and scale with smarter marketing systems.', 'field_type' => 'textarea'],
+            ['section' => 'about_hero', 'field_key' => 'box_text', 'field_value' => 'We combine high-converting funnels, CRM, marketing automation, paid advertising, and AI-powered solutions to create connected growth systems that work together — not isolated marketing services.', 'field_type' => 'textarea'],
+            ['section' => 'about_hero', 'field_key' => 'goal_badge', 'field_value' => 'OUR GOAL IS SIMPLE', 'field_type' => 'text'],
+            ['section' => 'about_hero', 'field_key' => 'goal_text', 'field_value' => 'Help businesses grow faster, operate smarter, and turn more opportunities into revenue.', 'field_type' => 'textarea'],
+
+            ['section' => 'about_system', 'field_key' => 'badge_text', 'field_value' => 'MORE THAN MARKETING', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'heading_line1', 'field_value' => 'A Complete', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'heading_highlight', 'field_value' => 'Growth System.', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'paragraph_1', 'field_value' => 'Getting traffic is only one part of the equation.', 'field_type' => 'textarea'],
+            ['section' => 'about_system', 'field_key' => 'paragraph_2', 'field_value' => 'If leads are not captured properly, follow-ups are slow, sales processes are unorganized, or customers fall through the cracks, businesses lose revenue every day.', 'field_type' => 'textarea'],
+            ['section' => 'about_system', 'field_key' => 'paragraph_3', 'field_value' => 'That\'s where Growxpect comes in.', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'paragraph_4', 'field_value' => 'We design and implement the systems behind your marketing and sales process — from the moment someone discovers your business to the moment they become a customer.', 'field_type' => 'textarea'],
+            ['section' => 'about_system', 'field_key' => 'card_title', 'field_value' => 'Our Systems Help You:', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'benefit_1', 'field_value' => 'Attract the right audience with targeted advertising', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'benefit_2', 'field_value' => 'Capture high-intent leads with conversion-focused funnels', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'benefit_3', 'field_value' => 'Nurture prospects automatically with smart CRM workflows', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'benefit_4', 'field_value' => 'Convert more leads into paying customers with streamlined sales systems', 'field_type' => 'text'],
+            ['section' => 'about_system', 'field_key' => 'benefit_5', 'field_value' => 'Scale predictably with data-driven optimization', 'field_type' => 'text'],
+
+            ['section' => 'about_founder', 'field_key' => 'badge_text', 'field_value' => 'MEET THE FOUNDER', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'years_experience', 'field_value' => '7+ Years', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'experience_label', 'field_value' => 'Experience', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'greeting_1', 'field_value' => 'Hi, I\'m', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'name_1', 'field_value' => 'Rezaee', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'name_2', 'field_value' => 'Rabbi.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'role_text', 'field_value' => 'Founder & Digital Growth Strategist at', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'role_company', 'field_value' => 'Growxpect', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'description', 'field_value' => 'I help businesses grow through proven digital systems — including sales funnels, GoHighLevel, CRM & marketing automation, lead generation, paid advertising and conversion optimization.', 'field_type' => 'textarea'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_1_title', 'field_value' => 'Sales Funnels', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_1_desc', 'field_value' => 'Turn visitors into customers.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_2_title', 'field_value' => 'GoHighLevel', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_2_desc', 'field_value' => 'All-in-one platform. Real results.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_3_title', 'field_value' => 'CRM & Marketing Automation', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_3_desc', 'field_value' => 'Nurture. Engage. Convert.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_4_title', 'field_value' => 'Lead Generation', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_4_desc', 'field_value' => 'Scale with data, not guesswork.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_5_title', 'field_value' => 'Paid Advertising', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_5_desc', 'field_value' => 'More qualified leads. Faster.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_6_title', 'field_value' => 'Conversion Optimization', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'expertise_6_desc', 'field_value' => 'Higher traffic. Better results.', 'field_type' => 'text'],
+            ['section' => 'about_founder', 'field_key' => 'quote_text', 'field_value' => '“Don\'t just generate more leads. Build a system that knows what to do with them.”', 'field_type' => 'textarea'],
+            ['section' => 'about_founder', 'field_key' => 'founder_title', 'field_value' => 'Founder, Growxpect', 'field_type' => 'text'],
+
+            ['section' => 'about_capabilities', 'field_key' => 'badge_text', 'field_value' => 'OUR CAPABILITIES', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'heading', 'field_value' => 'What We Do', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'subheading', 'field_value' => 'We help businesses build and optimize every stage of their customer acquisition and retention process:', 'field_type' => 'textarea'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_1_title', 'field_value' => 'High-Converting Funnels & Landing Pages', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_1_desc', 'field_value' => 'Custom-designed funnels built to turn visitors into qualified leads and sales.', 'field_type' => 'textarea'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_2_title', 'field_value' => 'CRM & Pipeline Setup', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_2_desc', 'field_value' => 'Organized systems to manage leads, track deals, and improve sales efficiency.', 'field_type' => 'textarea'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_3_title', 'field_value' => 'Marketing & Sales Automation', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_3_desc', 'field_value' => 'Automated email, SMS, and workflow follow-ups that engage prospects instantly.', 'field_type' => 'textarea'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_4_title', 'field_value' => 'Paid Advertising (Meta & Google Ads)', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_4_desc', 'field_value' => 'Targeted campaigns designed to generate consistent, qualified traffic.', 'field_type' => 'textarea'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_5_title', 'field_value' => 'AI & Smart Growth Solutions', 'field_type' => 'text'],
+            ['section' => 'about_capabilities', 'field_key' => 'cap_5_desc', 'field_value' => 'AI-powered tools and automations that speed up lead response and improve conversion rates.', 'field_type' => 'textarea'],
+
+            ['section' => 'about_why', 'field_key' => 'badge_text', 'field_value' => 'WHY GROWXPECT?', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'heading_line1', 'field_value' => 'We Focus on the', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'heading_highlight', 'field_value' => 'Entire System.', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'paragraph_1', 'field_value' => 'Most agencies focus on only one piece of the puzzle — running ads without fixing the funnel, or building a website without follow-up systems.', 'field_type' => 'textarea'],
+            ['section' => 'about_why', 'field_key' => 'paragraph_2', 'field_value' => 'At Growxpect, we focus on the entire system.', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_1_title', 'field_value' => 'Connected Strategy', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_1_desc', 'field_value' => 'Marketing, sales, and automation working together.', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_2_title', 'field_value' => 'Speed to Lead', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_2_desc', 'field_value' => 'Instant follow-ups so you never lose high-intent prospects.', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_3_title', 'field_value' => 'Conversion-Driven Design', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_3_desc', 'field_value' => 'Built to generate revenue, not just look good.', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_4_title', 'field_value' => 'Scalable Systems', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_4_desc', 'field_value' => 'Processes and technology that grow with your business.', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_5_title', 'field_value' => 'Results-Focused', 'field_type' => 'text'],
+            ['section' => 'about_why', 'field_key' => 'reason_5_desc', 'field_value' => 'We measure success by leads, conversions, and growth.', 'field_type' => 'text'],
+
+            ['section' => 'about_mission', 'field_key' => 'badge_text', 'field_value' => 'OUR MISSION', 'field_type' => 'text'],
+            ['section' => 'about_mission', 'field_key' => 'heading_line1', 'field_value' => 'To help ambitious businesses build scalable growth infrastructure that turns marketing into a', 'field_type' => 'textarea'],
+            ['section' => 'about_mission', 'field_key' => 'heading_highlight', 'field_value' => 'predictable revenue engine.', 'field_type' => 'text'],
+            ['section' => 'about_mission', 'field_key' => 'cta_heading', 'field_value' => 'Ready to Build Your Growth System?', 'field_type' => 'text'],
+            ['section' => 'about_mission', 'field_key' => 'cta_description', 'field_value' => 'Let\'s turn your marketing into a connected, high-performing system that drives real results.', 'field_type' => 'textarea'],
+            ['section' => 'about_mission', 'field_key' => 'cta_btn1_text', 'field_value' => 'Book a Strategy Call', 'field_type' => 'text'],
+            ['section' => 'about_mission', 'field_key' => 'cta_btn1_link', 'field_value' => '/#booking', 'field_type' => 'text'],
+            ['section' => 'about_mission', 'field_key' => 'cta_btn2_text', 'field_value' => 'Explore Services & Pricing', 'field_type' => 'text'],
+            ['section' => 'about_mission', 'field_key' => 'cta_btn2_link', 'field_value' => '/services', 'field_type' => 'text'],
         ];
 
-        foreach ($fields as &$row) {
-            $row['created_at'] = $now;
-            $row['updated_at'] = $now;
+        foreach ($fields as $item) {
+            DB::table('homepage_contents')->updateOrInsert(
+                [
+                    'section' => $item['section'],
+                    'field_key' => $item['field_key']
+                ],
+                [
+                    'field_value' => $item['field_value'],
+                    'field_type' => $item['field_type'],
+                    'updated_at' => $now,
+                    'created_at' => $now
+                ]
+            );
         }
 
-        DB::table('homepage_contents')->truncate();
-        DB::table('homepage_contents')->insert($fields);
-
-        $this->command->info('Homepage CMS seeded successfully!');
+        $this->command->info('Homepage & About CMS seeded successfully!');
     }
 }

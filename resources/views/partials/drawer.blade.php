@@ -41,12 +41,12 @@
 
       <!-- Services with Sublinks -->
       <div class="space-y-1">
-        <a href="{{ route('services') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->is('services*') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
+        <a href="javascript:void(0)" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->is('services*') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-semibold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors cursor-default">
           <span class="flex items-center gap-3">
             <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i>
-            Services Overview
+            Services
           </span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-slate-600"></i>
         </a>
 
         <div class="pl-6 pr-2 py-1 space-y-1">
@@ -68,7 +68,7 @@
       <a href="{{ route('gohighlevel') }}" class="drawer-link flex items-center justify-between px-4 py-3 rounded-xl {{ request()->routeIs('gohighlevel') || request()->routeIs('get-gohighlevel') ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 border border-cyan-500/30 text-cyan-400 font-bold shadow-glow-pill' : 'text-slate-300 hover:bg-white/5 hover:text-white font-medium' }} text-sm transition-colors">
         <span class="flex items-center gap-3">
           <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
-          GoHighLevel
+          Get GoHighLevel
         </span>
         <span class="text-[10px] uppercase font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">All-in-One</span>
       </a>

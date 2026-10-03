@@ -1211,7 +1211,7 @@
           <div class="text-sm font-semibold tracking-wider font-mono">
             <span id="t-counter-current" class="text-cyan-400 font-bold text-base">01</span>
             <span class="text-slate-500"> / </span>
-            <span id="t-counter-total" class="text-slate-500">04</span>
+            <span id="t-counter-total" class="text-slate-500">{{ sprintf('%02d', isset($testimonials) && count($testimonials) > 0 ? count($testimonials) : 4) }}</span>
           </div>
 
           <!-- Arrow Controls -->
@@ -1229,275 +1229,99 @@
         <div class="relative overflow-hidden rounded-3xl" id="t-slider-container">
           <div id="t-slider-track" class="flex transition-transform duration-500 ease-out">
 
-            <!-- SLIDE 1: PrimeEstates (Real Estate) -->
-            <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <!-- Quote Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative">
-                <div>
-                  <div class="flex items-center justify-between mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.25)]">
-                      <i data-lucide="quote" class="w-5 h-5"></i>
-                    </div>
-                    <div class="flex items-center gap-1 text-amber-400">
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                    </div>
-                  </div>
-                  <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
-                    "In luxury real estate, responding in 2 minutes vs 2 hours is the difference between closing a $3M buyer or losing them. Growxpect's instant WhatsApp qualification made us unstoppable."
-                  </p>
-                </div>
-                <div class="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 text-white font-bold text-xs flex items-center justify-center border border-purple-400/40 shadow-sm">
-                      DK
-                    </div>
+            @if(isset($testimonials) && count($testimonials) > 0)
+              @foreach($testimonials as $t)
+                <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                  <!-- Quote Card -->
+                  <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative">
                     <div>
-                      <h4 class="text-sm font-bold text-white leading-tight">David Kensington</h4>
-                      <p class="text-[11px] text-slate-400">Managing Broker, PrimeEstates</p>
+                      <div class="flex items-center justify-between mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.25)]">
+                          <i data-lucide="quote" class="w-5 h-5"></i>
+                        </div>
+                        <div class="flex items-center gap-1 text-amber-400">
+                          @for($i = 0; $i < ($t->rating ?? 5); $i++)
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          @endfor
+                        </div>
+                      </div>
+                      <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
+                        "{{ $t->content }}"
+                      </p>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        @if($t->avatar)
+                          <img src="{{ asset($t->avatar) }}" alt="{{ $t->name }}" class="w-10 h-10 rounded-full object-cover border border-purple-400/40 shadow-sm" />
+                        @else
+                          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 text-white font-bold text-xs flex items-center justify-center border border-purple-400/40 shadow-sm">
+                            {{ strtoupper(substr($t->name, 0, 2)) }}
+                          </div>
+                        @endif
+                        <div>
+                          <h4 class="text-sm font-bold text-white leading-tight">{{ $t->name }}</h4>
+                          <p class="text-[11px] text-slate-400">{{ $t->role_company }}</p>
+                        </div>
+                      </div>
+                      <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">
+                        Verified
+                      </span>
                     </div>
                   </div>
-                  <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">
-                    Verified
-                  </span>
-                </div>
-              </div>
 
-              <!-- Results Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
-                <div>
-                  <div class="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
-                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-cyan-400">THE RESULTS</span>
-                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">REAL ESTATE</span>
-                  </div>
-                  <div class="space-y-3">
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-white leading-tight">+195%</div>
-                      <div class="text-xs text-slate-400 mt-0.5">High-Net Inquiries</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-cyan-300 leading-tight">&lt;45s</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Instant WhatsApp Speed</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-emerald-400 leading-tight">$3.2M</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Closed Properties</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="pt-3 text-right">
-                  <span class="text-[10px] text-slate-500 font-medium">Verified Agency Audit</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 2: NovaHealth (MedSpa & Healthcare) -->
-            <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <!-- Quote Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative">
-                <div>
-                  <div class="flex items-center justify-between mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,197,210,0.25)]">
-                      <i data-lucide="quote" class="w-5 h-5"></i>
-                    </div>
-                    <div class="flex items-center gap-1 text-amber-400">
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                    </div>
-                  </div>
-                  <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
-                    "Before Growxpect, patient inquiries were dropping off because our front desk couldn't keep up. Their automated system booked 42 qualified consultations in our first 30 days."
-                  </p>
-                </div>
-                <div class="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-600 to-blue-600 text-white font-bold text-xs flex items-center justify-center border border-cyan-400/40 shadow-sm">
-                      SJ
-                    </div>
+                  <!-- Results Card -->
+                  <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
                     <div>
-                      <h4 class="text-sm font-bold text-white leading-tight">Sarah Johnson</h4>
-                      <p class="text-[11px] text-slate-400">Clinical Director, NovaHealth</p>
-                    </div>
-                  </div>
-                  <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">
-                    Verified
-                  </span>
-                </div>
-              </div>
+                      <div class="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-cyan-400">THE RESULTS</span>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">SUCCESS STORY</span>
+                      </div>
 
-              <!-- Results Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
-                <div>
-                  <div class="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
-                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-cyan-400">THE RESULTS</span>
-                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">HEALTHCARE</span>
-                  </div>
-                  <div class="space-y-3">
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-white leading-tight">+42%</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Qualified Consultations</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-cyan-300 leading-tight">+312%</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Show-Up Rate</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-emerald-400 leading-tight">&lt;2min</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Lead Response Time</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="pt-3 text-right">
-                  <span class="text-[10px] text-slate-500 font-medium">Verified Agency Audit</span>
-                </div>
-              </div>
-            </div>
+                      @if($t->highlight_metric)
+                        <div class="p-4 rounded-2xl bg-[#060a14] border border-white/5 mb-3">
+                          <div class="text-xl sm:text-2xl font-black text-emerald-400 leading-tight">{{ $t->highlight_metric }}</div>
+                          <div class="text-xs text-slate-400 mt-1">Growth Metric Achieved</div>
+                        </div>
+                      @endif
 
-            <!-- SLIDE 3: CloudScale AI (B2B SaaS) -->
-            <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <!-- Quote Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative">
-                <div>
-                  <div class="flex items-center justify-between mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.25)]">
-                      <i data-lucide="quote" class="w-5 h-5"></i>
+                      @if($t->video_url)
+                        <div class="mt-3 p-4 rounded-2xl bg-gradient-to-r from-purple-950/40 to-cyan-950/40 border border-cyan-500/30">
+                          <div class="flex items-center gap-3">
+                            <a href="{{ $t->video_url }}" target="_blank" class="w-10 h-10 rounded-full bg-cyan-500 text-slate-950 flex items-center justify-center shrink-0 hover:scale-110 transition-transform shadow-[0_0_15px_rgba(56,197,210,0.5)]">
+                              <i data-lucide="play" class="w-4 h-4 fill-slate-950 translate-x-0.5"></i>
+                            </a>
+                            <div>
+                              <div class="text-xs font-bold text-white">Watch Video Story</div>
+                              <a href="{{ $t->video_url }}" target="_blank" class="text-[11px] text-cyan-400 hover:underline">Click to view testimonial video ↗</a>
+                            </div>
+                          </div>
+                        </div>
+                      @else
+                        <div class="p-4 rounded-2xl bg-[#060a14] border border-white/5">
+                          <div class="text-xs text-slate-300 leading-relaxed">
+                            "System architecture implemented with automated lead qualification, instant CRM sync, and multi-channel follow-ups."
+                          </div>
+                        </div>
+                      @endif
                     </div>
-                    <div class="flex items-center gap-1 text-amber-400">
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                    </div>
-                  </div>
-                  <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
-                    "Our outbound sales team was spending 60% of their day on manual follow-ups. Growxpect's AI workflows tripled our qualified demo pipeline in under 60 days."
-                  </p>
-                </div>
-                <div class="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-bold text-xs flex items-center justify-center border border-indigo-400/40 shadow-sm">
-                      MR
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-bold text-white leading-tight">Marcus Reed</h4>
-                      <p class="text-[11px] text-slate-400">VP of Growth, CloudScale AI</p>
-                    </div>
-                  </div>
-                  <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">
-                    Verified
-                  </span>
-                </div>
-              </div>
-
-              <!-- Results Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
-                <div>
-                  <div class="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
-                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-cyan-400">THE RESULTS</span>
-                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">B2B SAAS</span>
-                  </div>
-                  <div class="space-y-3">
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-white leading-tight">+240%</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Demo Pipeline</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-cyan-300 leading-tight">88.4%</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Show-Up Rate</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-emerald-400 leading-tight">4.2x</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Customer ROI</div>
+                    <div class="pt-3 text-right">
+                      <span class="text-[10px] text-slate-500 font-medium">Verified Client Review</span>
                     </div>
                   </div>
                 </div>
-                <div class="pt-3 text-right">
-                  <span class="text-[10px] text-slate-500 font-medium">Verified Agency Audit</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 4: Apex Climate (Home Services) -->
-            <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <!-- Quote Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative">
-                <div>
-                  <div class="flex items-center justify-between mb-5">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.25)]">
-                      <i data-lucide="quote" class="w-5 h-5"></i>
-                    </div>
-                    <div class="flex items-center gap-1 text-amber-400">
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                      <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
-                    </div>
-                  </div>
-                  <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
-                    "Growxpect transformed our seasonal HVAC business into an all-year revenue machine. The automated SMS dispatch and quote funnels doubled our emergency booked calls."
-                  </p>
-                </div>
-                <div class="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-600 text-white font-bold text-xs flex items-center justify-center border border-emerald-400/40 shadow-sm">
-                      MT
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-bold text-white leading-tight">Marcus Torres</h4>
-                      <p class="text-[11px] text-slate-400">Operations Director, Apex Services</p>
-                    </div>
-                  </div>
-                  <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-[10px] font-semibold">
-                    Verified
-                  </span>
-                </div>
-              </div>
-
-              <!-- Results Card -->
-              <div class="bg-[#0a0f1d] border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
-                <div>
-                  <div class="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
-                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-cyan-400">THE RESULTS</span>
-                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">HOME SERVICES</span>
-                  </div>
-                  <div class="space-y-3">
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-white leading-tight">+$180K</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Pipeline Revenue</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-cyan-300 leading-tight">+140%</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Emergency Bookings</div>
-                    </div>
-                    <div class="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
-                      <div class="text-2xl sm:text-3xl font-black text-emerald-400 leading-tight">45 Days</div>
-                      <div class="text-xs text-slate-400 mt-0.5">Time to Result</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="pt-3 text-right">
-                  <span class="text-[10px] text-slate-500 font-medium">Verified Agency Audit</span>
-                </div>
-              </div>
-            </div>
+              @endforeach
+            @endif
 
           </div>
         </div>
 
         <!-- Slider Pagination Indicator Dots -->
         <div class="flex items-center gap-2 pt-2" id="t-dots-container">
-          <button class="t-dot h-2 rounded-full transition-all duration-300 w-6 bg-cyan-400 shadow-[0_0_10px_#38C5D2]" data-index="0" aria-label="Go to slide 1"></button>
-          <button class="t-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-700 hover:bg-slate-500" data-index="1" aria-label="Go to slide 2"></button>
-          <button class="t-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-700 hover:bg-slate-500" data-index="2" aria-label="Go to slide 3"></button>
-          <button class="t-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-700 hover:bg-slate-500" data-index="3" aria-label="Go to slide 4"></button>
+          @if(isset($testimonials) && count($testimonials) > 0)
+            @foreach($testimonials as $idx => $t)
+              <button class="t-dot h-2 rounded-full transition-all duration-300 {{ $idx === 0 ? 'w-6 bg-cyan-400 shadow-[0_0_10px_#38C5D2]' : 'w-2 bg-slate-700 hover:bg-slate-500' }}" data-index="{{ $idx }}" aria-label="Go to slide {{ $idx + 1 }}"></button>
+            @endforeach
+          @endif
         </div>
 
       </div>
@@ -2776,7 +2600,7 @@
     const nextBtn = document.getElementById('t-next-btn');
     const counterCurrent = document.getElementById('t-counter-current');
     const dots = document.querySelectorAll('.t-dot');
-    const totalSlides = 4;
+    const totalSlides = {{ isset($testimonials) && count($testimonials) > 0 ? count($testimonials) : 4 }};
     let currentIndex = 0;
     let autoSlideInterval = null;
 

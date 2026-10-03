@@ -19,8 +19,72 @@ class Booking extends Model
         'service_interested',
         'booking_date',
         'booking_time',
+        'timezone',
         'message',
         'status',
         'ip_address',
     ];
+
+    protected $appends = ['bangladesh_time'];
+
+    /**
+     * Scope for active bookings (pending or confirmed).
+     * Completed or cancelled bookings release the time slot.
+     */
+    public function scopeActive($query)
+    {
+        return $query->whereIn('status', ['pending', 'confirmed']);
+    }
+
+    /**
+     * Map frontend timezone abbreviations to standard IANA timezone identifiers.
+     */
+    public static function getIanaTimezone($tz)
+    {
+        $tz = strtoupper(trim($tz ?? ''));
+        if (str_contains($tz, 'EST')) return 'America/New_York';
+        if (str_contains($tz, 'CST')) return 'America/Chicago';
+        if (str_contains($tz, 'PST')) return 'America/Los_Angeles';
+        if (str_contains($tz, 'GMT')) return 'Europe/London';
+        if (str_contains($tz, 'CET')) return 'Europe/Paris';
+        if (str_contains($tz, 'GST') || str_contains($tz, 'DUBAI')) return 'Asia/Dubai';
+        if (str_contains($tz, 'DHAKA') || str_contains($tz, 'BST (DHAKA)')) return 'Asia/Dhaka';
+        if (str_contains($tz, 'SGT') || str_contains($tz, 'SINGAPORE')) return 'Asia/Singapore';
+        if (str_contains($tz, 'AEST') || str_contains($tz, 'SYDNEY')) return 'Australia/Sydney';
+        return 'America/New_York';
+    }
+
+    /**
+     * Convert client scheduled appointment date & time to Bangladesh Local Time (Asia/Dhaka).
+     */
+    public function getBangladeshTimeAttribute()
+    {
+        try {
+            $cleanTime = self::cleanTimeSlot($this->booking_time);
+            if (!$this->booking_date || !$cleanTime) return null;
+
+            $dateTimeString = trim($this->booking_date . ' ' . $cleanTime);
+            $sourceTz = self::getIanaTimezone($this->timezone);
+
+            $dt = \Carbon\Carbon::parse($dateTimeString, $sourceTz);
+            $dt->setTimezone('Asia/Dhaka');
+
+            return $dt->format('M j, Y \a\t h:i A');
+        } catch (\Throwable $e) {
+            return null;
+        }
+    }
+
+    /**
+     * Helper to clean / extract standard time string e.g. "09:00 AM" from "09:00 AM (EST)".
+     */
+    public static function cleanTimeSlot($timeString)
+    {
+        if (!$timeString) return '';
+        // Extract pattern like "09:00 AM" or "9:00 AM"
+        if (preg_match('/(\d{1,2}:\d{2}\s*(?:AM|PM))/i', $timeString, $matches)) {
+            return strtoupper(trim($matches[1]));
+        }
+        return trim($timeString);
+    }
 }

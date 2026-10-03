@@ -14,11 +14,14 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\PricingPlanController;
+use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PaymentGatewayController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\EnrollmentController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -104,9 +107,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
         Route::get('{id}/view', [SeoController::class, 'view'])->name('view');
     });
 
-    // Homepage CMS
+    // Homepage & About CMS
     Route::group(['prefix' => 'cms', 'as' => 'cms.'], function () {
         Route::get('manage',              [HomepageCmsController::class, 'manage'])->name('manage');
+        Route::get('about-manage',        [HomepageCmsController::class, 'manageAbout'])->name('about.manage');
         Route::post('hero',               [HomepageCmsController::class, 'updateHero'])->name('hero.update');
         Route::post('social-proof',       [HomepageCmsController::class, 'updateSocialProof'])->name('social-proof.update');
         Route::post('proof-gallery',      [HomepageCmsController::class, 'updateProofGallery'])->name('proof-gallery.update');
@@ -115,7 +119,39 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
         Route::post('why-listen',         [HomepageCmsController::class, 'updateWhyListen'])->name('why-listen.update');
         Route::post('footer',             [HomepageCmsController::class, 'updateFooter'])->name('footer.update');
         Route::post('update',             [HomepageCmsController::class, 'updateCms'])->name('update');
+    });
 
+    // Strategy Call Bookings Management
+    Route::group(['prefix' => 'bookings', 'as' => 'bookings.'], function () {
+        Route::get('/', [AdminBookingController::class, 'index'])->name('index');
+        Route::get('{id}', [AdminBookingController::class, 'show'])->name('show');
+        Route::post('{id}/status', [AdminBookingController::class, 'updateStatus'])->name('status');
+        Route::post('{id}/complete', [AdminBookingController::class, 'complete'])->name('complete');
+        Route::delete('{id}', [AdminBookingController::class, 'destroy'])->name('destroy');
+    });
+
+    // Testimonials Management
+    Route::group(['prefix' => 'testimonials', 'as' => 'testimonials.'], function () {
+        Route::get('/', [TestimonialController::class, 'index'])->name('index');
+        Route::post('store', [TestimonialController::class, 'store'])->name('store');
+        Route::post('{id}/update', [TestimonialController::class, 'update'])->name('update');
+        Route::delete('{id}', [TestimonialController::class, 'destroy'])->name('destroy');
+    });
+
+    // Pricing Plans (TRANSPARENT GROWTH TIERS) Management
+    Route::group(['prefix' => 'pricing-plans', 'as' => 'pricing-plans.'], function () {
+        Route::get('/', [PricingPlanController::class, 'index'])->name('index');
+        Route::post('store', [PricingPlanController::class, 'store'])->name('store');
+        Route::post('{id}/update', [PricingPlanController::class, 'update'])->name('update');
+        Route::delete('{id}', [PricingPlanController::class, 'destroy'])->name('destroy');
+    });
+
+    // Case Studies Management
+    Route::group(['prefix' => 'case-studies', 'as' => 'case-studies.'], function () {
+        Route::get('/', [CaseStudyController::class, 'index'])->name('index');
+        Route::post('store', [CaseStudyController::class, 'store'])->name('store');
+        Route::post('{id}/update', [CaseStudyController::class, 'update'])->name('update');
+        Route::delete('{id}', [CaseStudyController::class, 'destroy'])->name('destroy');
     });
 
 });

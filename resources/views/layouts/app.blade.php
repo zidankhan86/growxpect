@@ -187,28 +187,260 @@
     if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
     drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
 
-    // Global Modal Logic
+    // Global Modal, Month Calendar & Timezone Logic
     const bookingModal = document.getElementById('booking-modal');
     const bookingModalBackdrop = document.getElementById('booking-modal-backdrop');
     const bookingModalClose = document.getElementById('booking-modal-close');
     const bookingModalCard = document.getElementById('booking-modal-card');
     const bookingForm = document.getElementById('booking-lead-form');
-    const bookingFormView = document.getElementById('booking-form-view');
+    const step1View = document.getElementById('booking-step-1');
+    const step2View = document.getElementById('booking-step-2');
     const bookingSuccessView = document.getElementById('booking-success-view');
 
-    window.openBookingModal = function(slotTime) {
-      if (slotTime) {
-        const modalSlotDisplay = document.getElementById('modal-slot-display');
-        const hiddenDateInput = document.getElementById('modal-input-date');
-        const hiddenTimeInput = document.getElementById('modal-input-time');
-        if (modalSlotDisplay) modalSlotDisplay.innerText = slotTime;
-        if (hiddenTimeInput) hiddenTimeInput.value = slotTime;
+    const gotoStep2Btn = document.getElementById('goto-step-2-btn');
+    const backToStep1Btn = document.getElementById('back-to-step-1-btn');
+    const modalSlotDisplay = document.getElementById('modal-slot-display');
+    const hiddenDateInput = document.getElementById('modal-input-date');
+    const hiddenTimeInput = document.getElementById('modal-input-time');
+    const hiddenTzInput = document.getElementById('modal-input-tz');
+    const timezoneSelect = document.getElementById('booking-timezone-select');
+
+    const calMonthYear = document.getElementById('cal-month-year');
+    const calDaysGrid = document.getElementById('cal-days-grid');
+    const calPrevMonthBtn = document.getElementById('cal-prev-month');
+    const calNextMonthBtn = document.getElementById('cal-next-month');
+
+    let todayDate = new Date();
+    let currentCalMonth = todayDate.getMonth();
+    let currentCalYear = todayDate.getFullYear();
+
+    let selectedDateObj = new Date();
+    selectedDateObj.setDate(selectedDateObj.getDate() + 1); // default tomorrow
+    let selectedTimeStr = ""; // No auto pre-selected time slot!
+    let selectedTzStr = "EST";
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    function updateSlotDisplay() {
+      if (!modalSlotDisplay) return;
+      const formattedDate = selectedDateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      if (selectedTimeStr) {
+        modalSlotDisplay.innerText = `${formattedDate} at ${selectedTimeStr} (${selectedTzStr})`;
+      } else {
+        modalSlotDisplay.innerText = `${formattedDate} — Please select a time slot below`;
       }
+      if (hiddenDateInput) hiddenDateInput.value = formattedDate;
+      if (hiddenTimeInput) hiddenTimeInput.value = selectedTimeStr || '';
+      if (hiddenTzInput) hiddenTzInput.value = selectedTzStr;
+    }
+
+    function fetchBookedSlots(dateStr) {
+      if (!dateStr) return;
+      fetch("{{ route('booking.slots') }}?booking_date=" + encodeURIComponent(dateStr))
+        .then(res => res.json())
+        .then(data => {
+          const bookedList = (data.success && data.booked_slots) ? data.booked_slots : [];
+          updateSlotAvailability(bookedList);
+        })
+        .catch(err => {
+          console.error('Error fetching booked slots:', err);
+          updateSlotAvailability([]);
+        });
+    }
+
+    function updateSlotAvailability(bookedList) {
+      const slotButtons = document.querySelectorAll('.time-slot-btn');
+
+      if (selectedTimeStr && bookedList.includes(selectedTimeStr)) {
+        selectedTimeStr = "";
+      }
+
+      slotButtons.forEach(btn => {
+        const timeVal = btn.getAttribute('data-time');
+        const isBooked = bookedList.includes(timeVal);
+
+        if (isBooked) {
+          btn.disabled = true;
+          btn.classList.add('cursor-not-allowed', 'bg-red-500/20', 'border-red-500/40', 'text-red-300', 'font-bold');
+          btn.classList.remove('opacity-40', 'line-through', 'bg-cyan-500/20', 'border-cyan-400', 'text-cyan-300', 'bg-white/5', 'border-white/10', 'text-slate-200');
+          btn.innerText = 'Booked';
+          btn.title = `${timeVal} is already booked`;
+        } else {
+          btn.disabled = false;
+          btn.classList.remove('opacity-40', 'line-through', 'cursor-not-allowed', 'bg-red-500/20', 'border-red-500/40', 'text-red-300', 'font-bold');
+          btn.removeAttribute('title');
+          btn.innerText = timeVal;
+        }
+      });
+
+      slotButtons.forEach(btn => {
+        const timeVal = btn.getAttribute('data-time');
+        if (!btn.disabled && selectedTimeStr && timeVal === selectedTimeStr) {
+          btn.classList.remove('bg-white/5', 'border-white/10', 'text-slate-200');
+          btn.classList.add('bg-cyan-500/20', 'border-cyan-400', 'text-cyan-300', 'font-bold');
+        } else if (!btn.disabled) {
+          btn.classList.remove('bg-cyan-500/20', 'border-cyan-400', 'text-cyan-300', 'font-bold');
+          btn.classList.add('bg-white/5', 'border-white/10', 'text-slate-200');
+        }
+      });
+
+      updateSlotDisplay();
+    }
+
+    function renderMonthCalendar(month, year) {
+      if (!calDaysGrid || !calMonthYear) return;
+
+      calMonthYear.innerText = `${monthNames[month]} ${year}`;
+      calDaysGrid.innerHTML = '';
+
+      const firstDayIndex = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      // Blank cells before day 1
+      for (let i = 0; i < firstDayIndex; i++) {
+        const blank = document.createElement('div');
+        blank.className = 'py-1.5 text-xs text-transparent select-none';
+        blank.innerText = '.';
+        calDaysGrid.appendChild(blank);
+      }
+
+      const todayZero = new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate());
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const thisDate = new Date(year, month, day);
+        const isPast = thisDate < todayZero;
+        const isSelected = selectedDateObj.getFullYear() === year && selectedDateObj.getMonth() === month && selectedDateObj.getDate() === day;
+
+        const dayBtn = document.createElement('button');
+        dayBtn.type = 'button';
+
+        if (isPast) {
+          dayBtn.className = 'py-1.5 rounded-lg text-xs font-medium text-slate-600 cursor-not-allowed opacity-40';
+          dayBtn.disabled = true;
+        } else if (isSelected) {
+          dayBtn.className = 'py-1.5 rounded-lg text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 shadow-[0_0_12px_rgba(56,197,210,0.4)] active-day-cell';
+        } else {
+          dayBtn.className = 'py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:bg-cyan-500/20 hover:text-cyan-300 transition-colors';
+        }
+
+        dayBtn.innerText = day;
+
+        if (!isPast) {
+          dayBtn.addEventListener('click', function() {
+            selectedDateObj = new Date(year, month, day);
+            selectedTimeStr = ""; // reset time selection on date change
+            renderMonthCalendar(month, year);
+            const formatted = selectedDateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            fetchBookedSlots(formatted);
+          });
+        }
+
+        calDaysGrid.appendChild(dayBtn);
+      }
+    }
+
+    if (calPrevMonthBtn) {
+      calPrevMonthBtn.addEventListener('click', function() {
+        if (currentCalMonth === 0) {
+          currentCalMonth = 11;
+          currentCalYear--;
+        } else {
+          currentCalMonth--;
+        }
+        renderMonthCalendar(currentCalMonth, currentCalYear);
+      });
+    }
+
+    if (calNextMonthBtn) {
+      calNextMonthBtn.addEventListener('click', function() {
+        if (currentCalMonth === 11) {
+          currentCalMonth = 0;
+          currentCalYear++;
+        } else {
+          currentCalMonth++;
+        }
+        renderMonthCalendar(currentCalMonth, currentCalYear);
+      });
+    }
+
+    if (timezoneSelect) {
+      timezoneSelect.addEventListener('change', function() {
+        selectedTzStr = timezoneSelect.value;
+        updateSlotDisplay();
+      });
+    }
+
+    // Time Slot click listener
+    document.querySelectorAll('.time-slot-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (btn.disabled) return;
+        document.querySelectorAll('.time-slot-btn').forEach(b => {
+          if (!b.disabled) {
+            b.classList.remove('bg-cyan-500/20', 'border-cyan-400', 'text-cyan-300', 'font-bold');
+            b.classList.add('bg-white/5', 'border-white/10', 'text-slate-200');
+          }
+        });
+        btn.classList.remove('bg-white/5', 'border-white/10', 'text-slate-200');
+        btn.classList.add('bg-cyan-500/20', 'border-cyan-400', 'text-cyan-300', 'font-bold');
+
+        selectedTimeStr = btn.getAttribute('data-time') || '';
+        updateSlotDisplay();
+      });
+    });
+
+    // Step Switching
+    if (gotoStep2Btn) {
+      gotoStep2Btn.addEventListener('click', function() {
+        const nameInput = document.getElementById('step1-name');
+        const emailInput = document.getElementById('step1-email');
+        const phoneInput = document.getElementById('step1-phone');
+        const companyInput = document.getElementById('step1-company');
+        const websiteInput = document.getElementById('step1-website');
+
+        const inputs = [nameInput, emailInput, phoneInput, companyInput, websiteInput];
+        for (let input of inputs) {
+          if (input && !input.checkValidity()) {
+            input.reportValidity();
+            return;
+          }
+        }
+
+        step1View.classList.add('hidden');
+        step2View.classList.remove('hidden');
+        renderMonthCalendar(currentCalMonth, currentCalYear);
+        const formatted = selectedDateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        fetchBookedSlots(formatted);
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      });
+    }
+
+    if (backToStep1Btn) {
+      backToStep1Btn.addEventListener('click', function() {
+        step2View.classList.add('hidden');
+        step1View.classList.remove('hidden');
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      });
+    }
+
+    window.openBookingModal = function(slotTime) {
+      currentCalMonth = todayDate.getMonth();
+      currentCalYear = todayDate.getFullYear();
+      renderMonthCalendar(currentCalMonth, currentCalYear);
+
+      selectedTimeStr = slotTime ? (slotTime.split(' ')[0] + ' ' + (slotTime.split(' ')[1] || 'AM')) : "";
+      const formatted = selectedDateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      fetchBookedSlots(formatted);
+
+      if (step1View) step1View.classList.remove('hidden');
+      if (step2View) step2View.classList.add('hidden');
+      if (bookingSuccessView) bookingSuccessView.classList.add('hidden');
+
       bookingModal.classList.remove('opacity-0', 'pointer-events-none');
       bookingModal.classList.add('opacity-100', 'pointer-events-auto');
       bookingModalCard.classList.remove('scale-95');
       bookingModalCard.classList.add('scale-100');
       document.body.classList.add('overflow-hidden');
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     };
 
     window.closeBookingModal = function() {
@@ -222,10 +454,22 @@
     if (bookingModalClose) bookingModalClose.addEventListener('click', window.closeBookingModal);
     if (bookingModalBackdrop) bookingModalBackdrop.addEventListener('click', window.closeBookingModal);
 
-    // AJAX Booking Form Submit
+    // Form Submit
     if (bookingForm) {
       bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
+
+        const messageInput = document.getElementById('step2-message');
+        if (messageInput && !messageInput.checkValidity()) {
+          messageInput.reportValidity();
+          return;
+        }
+
+        if (!selectedTimeStr) {
+          alert('Please click and select an available time slot before submitting.');
+          return;
+        }
+
         const submitBtn = document.getElementById('modal-submit-btn');
         const originalBtnHtml = submitBtn.innerHTML;
         submitBtn.disabled = true;
@@ -248,8 +492,10 @@
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnHtml;
           if (result.success) {
-            bookingFormView.classList.add('hidden');
+            step2View.classList.add('hidden');
+            step1View.classList.add('hidden');
             bookingSuccessView.classList.remove('hidden');
+            if (typeof lucide !== 'undefined') lucide.createIcons();
           } else {
             alert(result.message || 'Please check your inputs and try again.');
           }
@@ -257,8 +503,10 @@
         .catch(err => {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnHtml;
-          bookingFormView.classList.add('hidden');
+          step2View.classList.add('hidden');
+          step1View.classList.add('hidden');
           bookingSuccessView.classList.remove('hidden');
+          if (typeof lucide !== 'undefined') lucide.createIcons();
         });
       });
     }

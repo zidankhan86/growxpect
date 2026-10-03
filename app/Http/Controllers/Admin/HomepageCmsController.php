@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\HomepageContent;
+use App\Models\Testimonial;
+use App\Models\PricingPlan;
+use App\Models\CaseStudy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +38,27 @@ class HomepageCmsController extends Controller
             })
             ->toArray();
 
+        $data['testimonials'] = Testimonial::orderBy('sort_order', 'asc')->get();
+        $data['pricingPlans'] = PricingPlan::where('tier_type', 'home')->orderBy('sort_order', 'asc')->get();
+        $data['caseStudies'] = CaseStudy::orderBy('sort_order', 'asc')->get();
+
         return view('admin.cms.manage', $data);
+    }
+
+    public function manageAbout()
+    {
+        $data['title'] = __('About Page CMS');
+        $data['cms'] = HomepageContent::query()
+            ->get(['section', 'field_key', 'field_value'])
+            ->flatMap(function ($item) {
+                return [
+                    $item->field_key => $item->field_value,
+                    $item->section . '_' . $item->field_key => $item->field_value,
+                ];
+            })
+            ->toArray();
+
+        return view('admin.cms.about', $data);
     }
 
     public function updateHero(Request $request)

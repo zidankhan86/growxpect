@@ -573,16 +573,145 @@
                                             </div>
                                         </div>
 
-                                        <button type="submit" class="btn cms-save-btn">Save Case Studies Section</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                                         <button type="submit" class="btn cms-save-btn">Save Case Studies Section</button>
+                                     </form>
+                                 </div>
+                             </div>
+                         </div>
 
-                        <!-- 6. PARTNER & WHY GROWXPECT SECTION -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sec-partner">
+                         <!-- 5.0 CASE STUDY ITEMS LIST -->
+                         <div class="accordion-item">
+                             <h2 class="accordion-header">
+                                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sec-casestudies-list">
+                                     5.0 Manage & Post Case Studies
+                                 </button>
+                             </h2>
+                             <div id="sec-casestudies-list" class="accordion-collapse collapse">
+                                 <div class="accordion-body">
+                                     <div class="d-flex justify-content-between align-items-center mb-3">
+                                         <span class="fw-bold text-dark small">Case Study Database ({{ isset($caseStudies) ? count($caseStudies) : 0 }})</span>
+                                         <a href="{{ route('admin.case-studies.index') }}" class="btn btn-xs btn-primary font-weight-bold" style="font-size:11px;">+ Manage & Post Case Studies</a>
+                                     </div>
+
+                                     @if(isset($caseStudies) && count($caseStudies) > 0)
+                                         <div class="space-y-2">
+                                             @foreach($caseStudies as $cs)
+                                                 <div class="p-2 border rounded bg-white mb-2 shadow-sm">
+                                                     <div class="d-flex justify-content-between align-items-start">
+                                                         <div>
+                                                             <div class="fw-bold text-dark" style="font-size:12px;">{{ $cs->title }}</div>
+                                                             <div class="text-muted" style="font-size:11px;">Category: <strong>{{ $cs->category_label }}</strong> &bull; {{ $cs->metric_1_val }} {{ $cs->metric_1_label }}</div>
+                                                         </div>
+                                                         <div class="d-flex gap-1">
+                                                             <a href="{{ route('admin.case-studies.index') }}" class="btn btn-xs btn-outline-info" style="font-size:10px; padding: 2px 6px;">Manage</a>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             @endforeach
+                                         </div>
+                                     @else
+                                         <div class="text-muted small text-center py-2">No case studies added yet.</div>
+                                     @endif
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- 5.1 TESTIMONIALS SECTION -->
+                         <div class="accordion-item">
+                             <h2 class="accordion-header">
+                                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sec-testimonials">
+                                     5.1 Client Testimonials & Videos
+                                 </button>
+                             </h2>
+                             <div id="sec-testimonials" class="accordion-collapse collapse">
+                                 <div class="accordion-body">
+                                     <div class="d-flex justify-content-between align-items-center mb-3">
+                                         <span class="fw-bold text-dark small">Manage Testimonials</span>
+                                         <button type="button" class="btn btn-xs btn-primary font-weight-bold" data-bs-toggle="modal" data-bs-target="#addTestimonialModal" style="font-size:11px;">+ Add Testimonial</button>
+                                     </div>
+
+                                     @if(isset($testimonials) && count($testimonials) > 0)
+                                         <div class="space-y-2">
+                                             @foreach($testimonials as $t)
+                                                 <div class="p-2 border rounded bg-white mb-2 shadow-sm">
+                                                     <div class="d-flex justify-content-between align-items-start">
+                                                         <div>
+                                                             <div class="fw-bold text-dark" style="font-size:12px;">{{ $t->name }}</div>
+                                                             <div class="text-muted" style="font-size:11px;">{{ $t->role_company }}</div>
+                                                             @if($t->video_url)
+                                                                 <span class="badge bg-purple text-white mt-1" style="font-size:9px;">📹 Video Attached</span>
+                                                             @endif
+                                                         </div>
+                                                         <div class="d-flex gap-1">
+                                                             <button type="button" class="btn btn-xs btn-outline-info edit-testimonial-btn" data-testimonial="{{ json_encode($t) }}" data-bs-toggle="modal" data-bs-target="#editTestimonialModal" style="font-size:10px; padding: 2px 6px;">Edit</button>
+                                                             <form action="{{ route('admin.testimonials.destroy', $t->id) }}" method="POST" class="d-inline delete-testimonial-form">
+                                                                 @csrf
+                                                                 @method('DELETE')
+                                                                 <button type="submit" class="btn btn-xs btn-outline-danger" onclick="return confirm('Delete this testimonial?')" style="font-size:10px; padding: 2px 6px;">Del</button>
+                                                             </form>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             @endforeach
+                                         </div>
+                                     @else
+                                         <div class="text-muted small text-center py-2">No testimonials added yet.</div>
+                                     @endif
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- 5.2 PRICING PLANS SECTION (TRANSPARENT GROWTH TIERS) -->
+                         <div class="accordion-item">
+                             <h2 class="accordion-header">
+                                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sec-pricing-plans">
+                                     5.2 Transparent Growth Tiers (Pricing)
+                                 </button>
+                             </h2>
+                             <div id="sec-pricing-plans" class="accordion-collapse collapse">
+                                 <div class="accordion-body">
+                                     <div class="d-flex justify-content-between align-items-center mb-3">
+                                         <span class="fw-bold text-dark small">Manage Pricing Plans</span>
+                                         <button type="button" class="btn btn-xs btn-success font-weight-bold" data-bs-toggle="modal" data-bs-target="#addPricingPlanModal" style="font-size:11px;">+ Add Pricing Plan</button>
+                                     </div>
+
+                                     @if(isset($pricingPlans) && count($pricingPlans) > 0)
+                                         <div class="space-y-2">
+                                             @foreach($pricingPlans as $plan)
+                                                 <div class="p-2 border rounded bg-white mb-2 shadow-sm border-start border-3 {{ $plan->is_popular ? 'border-primary' : 'border-secondary' }}">
+                                                     <div class="d-flex justify-content-between align-items-start">
+                                                         <div>
+                                                             <div class="fw-bold text-dark" style="font-size:12px;">
+                                                                 {{ $plan->name }}
+                                                                 @if($plan->is_popular)
+                                                                     <span class="badge bg-cyan-lt ms-1" style="font-size:9px;">Popular ⭐</span>
+                                                                 @endif
+                                                             </div>
+                                                             <div class="text-primary fw-bold" style="font-size:11px;">{{ $plan->price }} <span class="text-muted fw-normal">{{ $plan->price_period }}</span></div>
+                                                         </div>
+                                                         <div class="d-flex gap-1">
+                                                             <button type="button" class="btn btn-xs btn-outline-info edit-pricing-btn" data-plan="{{ json_encode($plan) }}" data-bs-toggle="modal" data-bs-target="#editPricingPlanModal" style="font-size:10px; padding: 2px 6px;">Edit</button>
+                                                             <form action="{{ route('admin.pricing-plans.destroy', $plan->id) }}" method="POST" class="d-inline delete-pricing-form">
+                                                                 @csrf
+                                                                 @method('DELETE')
+                                                                 <button type="submit" class="btn btn-xs btn-outline-danger" onclick="return confirm('Delete this pricing plan?')" style="font-size:10px; padding: 2px 6px;">Del</button>
+                                                             </form>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             @endforeach
+                                         </div>
+                                     @else
+                                         <div class="text-muted small text-center py-2">No pricing plans added yet.</div>
+                                     @endif
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- 6. PARTNER & WHY GROWXPECT SECTION -->
+                         <div class="accordion-item">
+                             <h2 class="accordion-header">
+                                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sec-partner">
                                     6. Partner & Why Growxpect
                                 </button>
                             </h2>
@@ -803,8 +932,243 @@
             </div>
 
         </div>
+        </div>
         <div id="cmsToasts"></div>
     </div>
+
+<!-- Modal: Add Testimonial -->
+<div class="modal fade" id="addTestimonialModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form action="{{ route('admin.testimonials.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold">Add New Testimonial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body space-y-2">
+                    <label class="cf-label">Client Name *</label>
+                    <input type="text" name="name" required class="form-control cf-control" placeholder="e.g. David Kensington">
+
+                    <label class="cf-label">Role & Company *</label>
+                    <input type="text" name="role_company" required class="form-control cf-control" placeholder="e.g. Managing Broker, PrimeEstates">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="cf-label">Rating (1-5)</label>
+                            <select name="rating" class="form-control cf-control">
+                                <option value="5" selected>5 Stars ★★★★★</option>
+                                <option value="4">4 Stars ★★★★</option>
+                                <option value="3">3 Stars ★★★</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label class="cf-label">Sort Order</label>
+                            <input type="number" name="sort_order" value="0" class="form-control cf-control">
+                        </div>
+                    </div>
+
+                    <label class="cf-label">Highlight Metric / Results</label>
+                    <input type="text" name="highlight_metric" class="form-control cf-control" placeholder="e.g. +195% Inquiries | $3.2M Closed">
+
+                    <label class="cf-label">Video URL (YouTube / Vimeo / MP4)</label>
+                    <input type="url" name="video_url" class="form-control cf-control" placeholder="e.g. https://www.youtube.com/watch?v=...">
+
+                    <label class="cf-label">Quote / Testimonial Content *</label>
+                    <textarea name="content" rows="3" required class="form-control cf-control" placeholder="Client review text..."></textarea>
+
+                    <label class="cf-label">Client Avatar Image</label>
+                    <input type="file" name="avatar" class="form-control cf-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary font-weight-bold">Save Testimonial</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Edit Testimonial -->
+<div class="modal fade" id="editTestimonialModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="editTestimonialForm" action="" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold">Edit Testimonial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body space-y-2">
+                    <label class="cf-label">Client Name *</label>
+                    <input type="text" name="name" id="edit-t-name" required class="form-control cf-control">
+
+                    <label class="cf-label">Role & Company *</label>
+                    <input type="text" name="role_company" id="edit-t-role" required class="form-control cf-control">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="cf-label">Rating (1-5)</label>
+                            <select name="rating" id="edit-t-rating" class="form-control cf-control">
+                                <option value="5">5 Stars ★★★★★</option>
+                                <option value="4">4 Stars ★★★★</option>
+                                <option value="3">3 Stars ★★★</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label class="cf-label">Sort Order</label>
+                            <input type="number" name="sort_order" id="edit-t-sort" class="form-control cf-control">
+                        </div>
+                    </div>
+
+                    <label class="cf-label">Highlight Metric / Results</label>
+                    <input type="text" name="highlight_metric" id="edit-t-metric" class="form-control cf-control">
+
+                    <label class="cf-label">Video URL (YouTube / Vimeo / MP4)</label>
+                    <input type="text" name="video_url" id="edit-t-video" class="form-control cf-control">
+
+                    <label class="cf-label">Quote / Testimonial Content *</label>
+                    <textarea name="content" id="edit-t-content" rows="3" required class="form-control cf-control"></textarea>
+
+                    <label class="cf-label">Replace Client Avatar Image</label>
+                    <input type="file" name="avatar" class="form-control cf-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary font-weight-bold">Update Testimonial</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Add Pricing Plan -->
+<div class="modal fade" id="addPricingPlanModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form action="{{ route('admin.pricing-plans.store') }}" method="POST">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold">Add New Pricing Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body space-y-2">
+                    <label class="cf-label">Plan / Tier Name *</label>
+                    <input type="text" name="name" required class="form-control cf-control" placeholder="e.g. Flagship Growth Engine">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="cf-label">Price *</label>
+                            <input type="text" name="price" required class="form-control cf-control" placeholder="e.g. $2,750">
+                        </div>
+                        <div class="col-6">
+                            <label class="cf-label">Price Period</label>
+                            <input type="text" name="price_period" class="form-control cf-control" placeholder="e.g. / month">
+                        </div>
+                    </div>
+
+                    <label class="cf-label">Badge / Tagline</label>
+                    <input type="text" name="badge" class="form-control cf-control" placeholder="e.g. Most Popular • Complete System">
+
+                    <label class="cf-label">Sub Price Note</label>
+                    <input type="text" name="sub_price_note" class="form-control cf-control" placeholder="e.g. Includes $1,990 one-time setup">
+
+                    <label class="cf-label">Short Description *</label>
+                    <textarea name="description" rows="2" required class="form-control cf-control" placeholder="Brief plan summary..."></textarea>
+
+                    <label class="cf-label">Included Features (1 per line)</label>
+                    <textarea name="features" rows="4" class="form-control cf-control" placeholder="Full Multi-Stage Funnel Ecosystem&#10;Omnichannel Paid Ads Management&#10;AI Speed-to-Lead Instant Response Bot"></textarea>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="cf-label">CTA Button Text</label>
+                            <input type="text" name="cta_text" value="Build My Growth Engine" class="form-control cf-control">
+                        </div>
+                        <div class="col-6">
+                            <label class="cf-label">CTA Link / Target</label>
+                            <input type="text" name="cta_link" value="#booking" class="form-control cf-control">
+                        </div>
+                    </div>
+
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" name="is_popular" value="1" id="add_is_popular">
+                        <label class="form-check-label font-weight-bold text-dark" for="add_is_popular">
+                            Mark as "Most Popular" (Highlighted Center Card)
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success font-weight-bold">Save Pricing Plan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Edit Pricing Plan -->
+<div class="modal fade" id="editPricingPlanModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="editPricingForm" action="" method="POST">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold">Edit Pricing Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body space-y-2">
+                    <label class="cf-label">Plan / Tier Name *</label>
+                    <input type="text" name="name" id="edit-p-name" required class="form-control cf-control">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="cf-label">Price *</label>
+                            <input type="text" name="price" id="edit-p-price" required class="form-control cf-control">
+                        </div>
+                        <div class="col-6">
+                            <label class="cf-label">Price Period</label>
+                            <input type="text" name="price_period" id="edit-p-period" class="form-control cf-control">
+                        </div>
+                    </div>
+
+                    <label class="cf-label">Badge / Tagline</label>
+                    <input type="text" name="badge" id="edit-p-badge" class="form-control cf-control">
+
+                    <label class="cf-label">Sub Price Note</label>
+                    <input type="text" name="sub_price_note" id="edit-p-subnote" class="form-control cf-control">
+
+                    <label class="cf-label">Short Description *</label>
+                    <textarea name="description" id="edit-p-desc" rows="2" required class="form-control cf-control"></textarea>
+
+                    <label class="cf-label">Included Features (1 per line)</label>
+                    <textarea name="features" id="edit-p-features" rows="4" class="form-control cf-control"></textarea>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="cf-label">CTA Button Text</label>
+                            <input type="text" name="cta_text" id="edit-p-cta-text" class="form-control cf-control">
+                        </div>
+                        <div class="col-6">
+                            <label class="cf-label">CTA Link / Target</label>
+                            <input type="text" name="cta_link" id="edit-p-cta-link" class="form-control cf-control">
+                        </div>
+                    </div>
+
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" name="is_popular" value="1" id="edit_is_popular">
+                        <label class="form-check-label font-weight-bold text-dark" for="edit_is_popular">
+                            Mark as "Most Popular" (Highlighted Center Card)
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success font-weight-bold">Update Pricing Plan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('script')
@@ -847,6 +1211,43 @@
                     }, 320);
                 }, 3500);
             }
+
+            // Edit Testimonial modal population
+            document.querySelectorAll('.edit-testimonial-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var data = JSON.parse(btn.getAttribute('data-testimonial'));
+                    var form = document.getElementById('editTestimonialForm');
+                    form.action = '/admin/testimonials/' + data.id + '/update';
+                    document.getElementById('edit-t-name').value = data.name || '';
+                    document.getElementById('edit-t-role').value = data.role_company || '';
+                    document.getElementById('edit-t-rating').value = data.rating || 5;
+                    document.getElementById('edit-t-sort').value = data.sort_order || 0;
+                    document.getElementById('edit-t-metric').value = data.highlight_metric || '';
+                    document.getElementById('edit-t-video').value = data.video_url || '';
+                    document.getElementById('edit-t-content').value = data.content || '';
+                });
+            });
+
+            // Edit Pricing Plan modal population
+            document.querySelectorAll('.edit-pricing-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var data = JSON.parse(btn.getAttribute('data-plan'));
+                    var form = document.getElementById('editPricingForm');
+                    form.action = '/admin/pricing-plans/' + data.id + '/update';
+                    document.getElementById('edit-p-name').value = data.name || '';
+                    document.getElementById('edit-p-price').value = data.price || '';
+                    document.getElementById('edit-p-period').value = data.price_period || '';
+                    document.getElementById('edit-p-badge').value = data.badge || '';
+                    document.getElementById('edit-p-subnote').value = data.sub_price_note || '';
+                    document.getElementById('edit-p-desc').value = data.description || '';
+                    document.getElementById('edit-p-cta-text').value = data.cta_text || '';
+                    document.getElementById('edit-p-cta-link').value = data.cta_link || '';
+                    document.getElementById('edit_is_popular').checked = !!data.is_popular;
+
+                    var feats = Array.isArray(data.features) ? data.features.join("\n") : (data.features || '');
+                    document.getElementById('edit-p-features').value = feats;
+                });
+            });
 
             document.querySelectorAll('.cms-form').forEach(function(form) {
                 form.addEventListener('submit', function(e) {

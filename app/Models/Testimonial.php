@@ -16,6 +16,7 @@ class Testimonial extends Model
         'rating',
         'content',
         'highlight_metric',
+        'video_url',
         'is_active',
         'sort_order',
     ];

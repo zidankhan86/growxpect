@@ -33,13 +33,20 @@ class PageController extends Controller
         $category = $request->query('category');
         $query = CaseStudy::query();
 
-        if ($category && in_array($category, ['healthcare', 'saas', 'realestate', 'ecommerce'])) {
+        if ($category && in_array($category, ['insurance', 'realestate', 'healthcare', 'homeservices', 'professionalservices'])) {
             $query->where('category', $category);
         }
 
         $caseStudies = $query->orderBy('sort_order')->get();
 
         return view('pages.case-studies', compact('seo', 'caseStudies', 'category'));
+    }
+
+    public function caseStudyShow($slug)
+    {
+        $case = CaseStudy::where('slug', $slug)->firstOrFail();
+        $relatedCases = CaseStudy::where('id', '!=', $case->id)->take(3)->get();
+        return view('pages.case-study-show', compact('case', 'relatedCases'));
     }
 
     public function services()

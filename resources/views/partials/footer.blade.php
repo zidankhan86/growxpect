@@ -115,7 +115,7 @@
           </li>
           <li>
             <a href="{{ route('gohighlevel') }}" class="group flex items-center justify-between hover:text-cyan-300 transition-colors">
-              <span>GoHighLevel</span>
+              <span>Get GoHighLevel</span>
               <span class="text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all text-sm">&rarr;</span>
             </a>
           </li>

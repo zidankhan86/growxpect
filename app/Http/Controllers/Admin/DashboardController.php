@@ -22,13 +22,18 @@ class DashboardController extends Controller
     {
         $totalUsers    = User::count();
 
+        // Strategy Call Booking Stats
+        $totalBookings    = \App\Models\Booking::count();
+        $pendingBookings  = \App\Models\Booking::where('status', 'pending')->count();
+        $recentBookings   = \App\Models\Booking::orderBy('id', 'desc')->take(6)->get();
+
         // New user registrations per day (last 7)
         $newUsersData = collect(range(6, 0))->map(
             fn($d) => User::whereDate('created_at', now()->subDays($d)->toDateString())->count()
         )->values();
 
         return view('admin.dashboard', compact(
-            'totalUsers','newUsersData'
+            'totalUsers','newUsersData', 'totalBookings', 'pendingBookings', 'recentBookings'
         ));
     }
 
