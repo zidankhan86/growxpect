@@ -57,7 +57,7 @@
             <span>CRM Systems</span>
           </a>
           <a href="{{ route('services.ai-automation') }}" class="drawer-link flex items-center px-3 py-2 rounded-lg text-xs {{ request()->routeIs('services.ai-automation') ? 'bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5' }} transition-colors">
-            <span>AI Automation & Appointment</span>
+            <span>Marketing Automation</span>
           </a>
           <a href="{{ route('services.lead-generation') }}" class="drawer-link flex items-center px-3 py-2 rounded-lg text-xs {{ request()->routeIs('services.lead-generation') ? 'bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/5' }} transition-colors">
             <span>Lead Generation & Paid Ads</span>

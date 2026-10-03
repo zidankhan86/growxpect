@@ -70,7 +70,7 @@
           </li>
           <li>
             <a href="{{ route('services.ai-automation') }}" class="group flex items-center justify-between hover:text-cyan-300 transition-colors">
-              <span>AI Automation &amp; Appointment Setter</span>
+              <span>Marketing Automation</span>
               <span class="text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all text-sm">&rarr;</span>
             </a>
           </li>

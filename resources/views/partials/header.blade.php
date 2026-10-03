@@ -31,7 +31,7 @@
             </a>
 
             <a href="{{ route('services.ai-automation') }}" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all {{ request()->routeIs('services.ai-automation') ? 'bg-[#8C2AA6] text-white font-semibold shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-              <span class="text-xs">AI Automation & Appointment Setter</span>
+              <span class="text-xs">Marketing Automation</span>
             </a>
 
             <a href="{{ route('services.lead-generation') }}" class="flex items-center px-3.5 py-2.5 rounded-xl transition-all {{ request()->routeIs('services.lead-generation') ? 'bg-[#8C2AA6] text-white font-semibold shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">

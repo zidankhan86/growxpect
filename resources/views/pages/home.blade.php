@@ -29,9 +29,9 @@
           {{ $cms['hero_subtitle'] ?? 'Growxpect builds conversion-focused funnels, CRM systems, and automated workflows that help businesses capture, nurture and convert more leads.' }}
         </p>
 
-        <!-- CTA Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-          <a href="{{ $cms['hero_primary_btn_link'] ?? '#booking' }}" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-[1.03]">
+        <!-- CTA Action Buttons (Desktop Only) -->
+        <div class="hidden lg:flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+          <a href="{{ $cms['hero_primary_btn_link'] ?? '#booking' }}" onclick="window.openBookingModal && window.openBookingModal(); return false;" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-[1.03]">
             <span>{{ $cms['hero_primary_btn_text'] ?? 'Build My Growth System' }}</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -179,6 +179,19 @@
 
           </div>
         </div>
+      </div>
+
+      <!-- CTA Action Buttons (Mobile Only - Positioned Below Dashboard) -->
+      <div class="lg:hidden col-span-1 w-full max-w-md mx-auto pt-2 flex flex-col gap-3.5 text-center">
+        <a href="{{ $cms['hero_primary_btn_link'] ?? '#booking' }}" onclick="window.openBookingModal && window.openBookingModal(); return false;" class="w-full px-7 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-[1.03]">
+          <span>{{ $cms['hero_primary_btn_text'] ?? 'Build My Growth System' }}</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+
+        <a href="{{ $cms['hero_secondary_btn_link'] ?? '#process' }}" class="w-full px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 text-slate-200 font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-200 backdrop-blur-md">
+          <i data-lucide="play-circle" class="w-4 h-4 text-cyan-400"></i>
+          <span>{{ $cms['hero_secondary_btn_text'] ?? 'See How It Works' }}</span>
+        </a>
       </div>
 
     </div>
@@ -691,7 +704,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
       <!-- Left Column: Copy & CTA -->
-      <div class="lg:col-span-6 space-y-6 text-left">
+      <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
         <!-- Eyebrow Badge -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(56,197,210,0.15)]">
           {{ $cms['solution_badge'] ?? 'OUR SOLUTION' }}
@@ -706,13 +719,13 @@
         </h2>
 
         <!-- Subtitle Paragraph -->
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
           {{ $cms['solution_subtitle'] ?? 'We connect the dots — from first click to final sale — with high-converting funnels, smart CRM and powerful automation. Everything works together seamlessly, so you can focus on what matters most: growing your business.' }}
         </p>
 
         <!-- CTA Button -->
         <div class="pt-2">
-          <a href="#booking" class="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-xs sm:text-sm shadow-glow-cyan hover:scale-[1.02] active:scale-95 transition-all">
+          <a href="{{ route('services.funnels') }}" class="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-xs sm:text-sm shadow-glow-cyan hover:scale-[1.02] active:scale-95 transition-all">
             <span>Explore Our Services</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -838,14 +851,16 @@
           </div>
 
           <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
-            {{ $cms['services_overview_service_1_title'] ?? 'High-Converting Funnels' }}
+            <a href="{{ route('services.funnels') }}" class="no-underline hover:text-cyan-300 transition-colors">
+              {{ $cms['services_overview_service_1_title'] ?? 'High-Converting Funnels' }}
+            </a>
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed">
             {{ $cms['services_overview_service_1_desc'] ?? 'Strategic funnels that turn traffic into qualified leads and paying customers with frictionless UX.' }}
           </p>
         </div>
 
-        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+        <a href="{{ route('services.funnels') }}" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
           <span>Explore</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
@@ -879,14 +894,16 @@
           </div>
 
           <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
-            {{ $cms['services_overview_service_2_title'] ?? 'CRM Systems' }}
+            <a href="{{ route('services.crm') }}" class="no-underline hover:text-cyan-300 transition-colors">
+              {{ $cms['services_overview_service_2_title'] ?? 'CRM Systems' }}
+            </a>
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed">
             {{ $cms['services_overview_service_2_desc'] ?? 'Keep your leads organized, follow up automatically, and never let high-value revenue slip through cracks.' }}
           </p>
         </div>
 
-        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+        <a href="{{ route('services.crm') }}" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
           <span>Explore</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
@@ -912,14 +929,16 @@
           </div>
 
           <h3 class="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
-            {{ $cms['services_overview_service_3_title'] ?? 'Marketing Automation' }}
+            <a href="{{ route('services.ai-automation') }}" class="no-underline hover:text-purple-300 transition-colors">
+              {{ $cms['services_overview_service_3_title'] ?? 'Marketing Automation' }}
+            </a>
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed">
             {{ $cms['services_overview_service_3_desc'] ?? 'Automate your multi-channel follow-ups, re-engage cold leads, and scale conversion on 24/7 autopilot.' }}
           </p>
         </div>
 
-        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+        <a href="{{ route('services.ai-automation') }}" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
           <span>Explore</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
@@ -949,14 +968,16 @@
           </div>
 
           <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
-            {{ $cms['services_overview_service_4_title'] ?? 'Lead Generation' }}
+            <a href="{{ route('services.lead-generation') }}" class="no-underline hover:text-cyan-300 transition-colors">
+              {{ $cms['services_overview_service_4_title'] ?? 'Lead Generation' }}
+            </a>
           </h3>
           <p class="text-xs text-slate-400 leading-relaxed">
             {{ $cms['services_overview_service_4_desc'] ?? 'Drive consistent, high-converting targeted traffic with full-funnel data-driven campaign architecture.' }}
           </p>
         </div>
 
-        <a href="#booking" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
+        <a href="{{ route('services.lead-generation') }}" class="pt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 group-hover:gap-2.5 transition-all">
           <span>Explore</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
@@ -967,208 +988,303 @@
 </section>
 
 <!-- ========================================================================= -->
-<!-- 4.5 CASE STUDIES SHOWCASE SECTION (FULL-WIDTH STATS + 2 CASE STUDY CARDS) -->
+<!-- 4.5 CASE STUDIES SHOWCASE SECTION (CLEAN & ULTRA-READABLE EDITORIAL DESIGN) -->
 <!-- ========================================================================= -->
 <section id="case-studies" class="py-20 sm:py-28 relative overflow-hidden bg-[#030712] border-t border-white/[0.06]">
   <!-- Ambient Background Glows -->
   <div class="absolute inset-0 pointer-events-none z-0">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-cyan-500/10 via-purple-600/10 to-indigo-600/10 blur-[150px] rounded-full"></div>
-    <div class="absolute inset-0 grid-bg opacity-25"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-r from-cyan-500/10 via-indigo-600/10 to-purple-600/10 blur-[170px] rounded-full"></div>
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
 
-    <!-- Centered Header -->
+    <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto space-y-4">
-
-      <!-- Eyebrow Badge with Gradient Accent Lines -->
-      <div class="flex items-center justify-center gap-3">
-        <div class="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-transparent to-cyan-400"></div>
-        <span class="text-xs sm:text-sm font-extrabold tracking-widest text-cyan-400 uppercase">
-          {{ $cms['case_studies_overview_badge'] ?? 'CASE STUDIES' }}
-        </span>
-        <div class="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-400 to-transparent"></div>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        {{ $cms['case_studies_overview_badge'] ?? 'REAL CLIENT SUCCESS STORIES' }}
       </div>
 
-      <!-- Main Headline -->
       <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15]">
-        {!! $cms['case_studies_overview_title'] ?? 'Growth Systems <br />Built To <span class="text-cyan-400">Perform</span><span class="text-purple-400">.</span>' !!}
+        {!! $cms['case_studies_overview_title'] ?? 'Growth Systems Built To <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400">Perform.</span>' !!}
       </h2>
 
-      <!-- Subtitle Description -->
-      <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-        {{ $cms['case_studies_overview_subtitle'] ?? 'Real businesses. Real results. See how we\'ve helped companies scale predictability with custom automated growth systems.' }}
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+        {{ $cms['case_studies_overview_subtitle'] ?? 'Discover how we help businesses solve pipeline bottlenecks, automate lead follow-up, and generate predictable revenue.' }}
       </p>
-
-      <!-- Dynamic Overview Stats Bar -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto pt-4">
-        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
-          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_1_val'] ?? '+287%' }}</div>
-          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_1_label'] ?? 'Average Lead Growth' }}</div>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
-          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_2_val'] ?? '+156%' }}</div>
-          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_2_label'] ?? 'Increase Appointments' }}</div>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
-          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_3_val'] ?? '+73%' }}</div>
-          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_3_label'] ?? 'Higher Conversion' }}</div>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-[#091126] border border-cyan-500/20 text-center">
-          <div class="text-xl sm:text-2xl font-black text-cyan-300">{{ $cms['case_studies_overview_stat_4_val'] ?? '-42%' }}</div>
-          <div class="text-[11px] text-slate-400 font-medium">{{ $cms['case_studies_overview_stat_4_label'] ?? 'Lower Cost Per Lead' }}</div>
-        </div>
-      </div>
     </div>
 
-    <!-- Below: 2 Responsive Case Study Cards (Side by Side on Desktop) -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 
-      <!-- Case Study Card 1 (Healthcare / MedSpa) -->
-      <div class="glass-panel rounded-3xl p-6 sm:p-8 bg-[#070D1F]/90 border border-cyan-500/30 shadow-[0_0_30px_rgba(56,197,210,0.12)] relative overflow-hidden group hover:border-cyan-400/60 transition-all flex flex-col justify-between">
+    <!-- Case Study Cards Grid (3 Columns matching Case Studies Page) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="case-grid">
+      @forelse($featuredCaseStudies as $case)
+        <div class="case-card glass-panel glass-panel-hover rounded-3xl p-6 sm:p-7 border-white/10 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+          
+          <div class="space-y-4">
+            <!-- 1. Category Badge -->
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                {{ $case->category_label }}
+              </span>
+              @if($case->badge_text)
+                <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                  {{ $case->badge_text }}
+                </span>
+              @endif
+            </div>
 
-        <!-- Glow Corner Accent -->
-        <div class="absolute -top-12 -right-12 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <!-- 2. Headline -->
+            <h3 class="text-lg sm:text-xl font-extrabold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+              <a href="{{ route('case-studies.show', $case->slug) }}" class="no-underline hover:no-underline hover:text-cyan-300 transition-colors">
+                {{ $case->title }}
+              </a>
+            </h3>
 
-        <div class="relative z-10">
-          <!-- Card Header: Badge & Category -->
-          <div class="flex items-center justify-between text-xs font-bold tracking-wider uppercase mb-3">
-            <span class="text-cyan-400">CASE STUDY</span>
-            <span class="text-slate-400 font-medium">HEALTHCARE / AESTHETIC</span>
+            <!-- 3. Company Name -->
+            @if($case->client_name)
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                <i data-lucide="building-2" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                <span>{{ $case->client_name }}</span>
+              </div>
+            @endif
+
+            <!-- 4. Thumbnail Image -->
+            <a href="{{ route('case-studies.show', $case->slug) }}" class="block relative overflow-hidden rounded-2xl aspect-video bg-slate-900/80 border border-white/10 group-hover:border-cyan-500/40 transition-all">
+              @if($case->image)
+                <img src="{{ Str::startsWith($case->image, 'http') ? $case->image : asset($case->image) }}" 
+                     alt="{{ $case->title }}" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              @else
+                <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-cyan-950/40 via-slate-900 to-purple-950/30 p-4 text-center">
+                  <i data-lucide="layout" class="w-8 h-8 text-cyan-400 mb-2 opacity-80"></i>
+                  <span class="text-xs font-bold text-slate-300">{{ $case->headline ?? $case->title }}</span>
+                </div>
+              @endif
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+            </a>
+
+            <!-- 5. Key Growth Metrics -->
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-cyan-400 leading-none">{{ $case->metric_1_val }}</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">{{ $case->metric_1_label }}</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-purple-400 leading-none">{{ $case->metric_2_val }}</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">{{ $case->metric_2_label }}</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-emerald-400 leading-none">{{ $case->metric_3_val }}</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">{{ $case->metric_3_label }}</div>
+              </div>
+            </div>
+
+            <!-- 6. Short Description -->
+            <p class="text-xs text-slate-300 leading-relaxed line-clamp-3">
+              {{ $case->description }}
+            </p>
           </div>
 
-          <!-- Case Study Title & Subtitle -->
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-            MedSpa — Lead to Appointment
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-            Built a high-converting funnel + CRM + automation system for a multi-location MedSpa, multiplying booked appointments by 312% in 60 days.
-          </p>
+          <!-- 7. View Case Study Button -->
+          <div class="pt-5 border-t border-white/10 mt-4">
+            <a href="{{ route('case-studies.show', $case->slug) }}" 
+               class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-purple-500/20 hover:from-cyan-500 hover:via-indigo-600 hover:to-purple-600 border border-cyan-500/40 hover:border-cyan-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all group-hover:shadow-glow-cyan">
+              <span>View Case Study</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors"></i>
+            </a>
+          </div>
 
-          <!-- Before & After Comparison Pill -->
-          <div class="rounded-2xl bg-[#030712]/90 border border-white/10 p-4 sm:p-5 mb-6 flex items-center justify-around">
-
-            <!-- Before -->
-            <div class="text-center">
-              <span class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider">BEFORE</span>
-              <div class="text-xl sm:text-2xl font-black text-white mt-0.5">1.1%</div>
-              <span class="text-[10px] text-slate-500 font-medium">Conv. Rate</span>
+        </div>
+      @empty
+        <!-- Fallback Static 3 Cards -->
+        <!-- Card 1: Healthcare / MedSpa -->
+        <div class="case-card glass-panel glass-panel-hover rounded-3xl p-6 sm:p-7 border-white/10 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                Healthcare / Aesthetic
+              </span>
+              <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                60 Days Case Study
+              </span>
             </div>
 
-            <!-- Flow Arrow -->
-            <div class="w-8 h-8 rounded-full bg-cyan-500/15 border border-cyan-500/40 text-cyan-400 flex items-center justify-center shadow-[0_0_12px_rgba(56,197,210,0.3)]">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <h3 class="text-lg sm:text-xl font-extrabold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+              <a href="{{ url('/case-studies') }}" class="no-underline hover:no-underline hover:text-cyan-300 transition-colors">
+                MedSpa — 312% Increase in Booked Appointments
+              </a>
+            </h3>
+
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i data-lucide="building-2" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Glow MedSpa Group</span>
             </div>
 
-            <!-- After -->
-            <div class="text-center">
-              <span class="text-[10px] sm:text-xs text-cyan-400 font-bold uppercase tracking-wider">AFTER</span>
-              <div class="text-xl sm:text-2xl font-black text-cyan-300 mt-0.5">4.7%</div>
-              <span class="text-[10px] text-cyan-300/80 font-medium">Conv. Rate</span>
+            <a href="{{ url('/case-studies') }}" class="block relative overflow-hidden rounded-2xl aspect-video bg-slate-900/80 border border-white/10 group-hover:border-cyan-500/40 transition-all">
+              <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-cyan-950/40 via-slate-900 to-purple-950/30 p-4 text-center">
+                <i data-lucide="activity" class="w-8 h-8 text-cyan-400 mb-2 opacity-80"></i>
+                <span class="text-xs font-bold text-slate-300">Aesthetic Growth System</span>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+            </a>
+
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-cyan-400 leading-none">+312%</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Appointments</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-purple-400 leading-none">4.7%</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Conv Rate</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-emerald-400 leading-none">-42%</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Cost/Lead</div>
+              </div>
             </div>
 
+            <p class="text-xs text-slate-300 leading-relaxed line-clamp-3">
+              A multi-location MedSpa eliminated manual follow-up delays by implementing high-converting funnels, instant AI setters, and CRM pipeline automation.
+            </p>
+          </div>
+
+          <div class="pt-5 border-t border-white/10 mt-4">
+            <a href="{{ url('/case-studies') }}" 
+               class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-purple-500/20 hover:from-cyan-500 hover:via-indigo-600 hover:to-purple-600 border border-cyan-500/40 hover:border-cyan-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all group-hover:shadow-glow-cyan">
+              <span>View Case Study</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Bottom 2 Highlight Badges -->
-        <div class="grid grid-cols-2 gap-3.5 relative z-10">
-          <div class="p-3.5 sm:p-4 rounded-2xl bg-[#091126] border border-cyan-500/25 flex flex-col justify-center">
-            <div class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none mb-1">
-              312%
+        <!-- Card 2: Home Services / HVAC -->
+        <div class="case-card glass-panel glass-panel-hover rounded-3xl p-6 sm:p-7 border-white/10 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                Home Services / HVAC
+              </span>
+              <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                45 Days Case Study
+              </span>
             </div>
-            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">
-              More Appointments
+
+            <h3 class="text-lg sm:text-xl font-extrabold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+              <a href="{{ url('/case-studies') }}" class="no-underline hover:no-underline hover:text-cyan-300 transition-colors">
+                Apex HVAC — $180K Revenue Boost via SMS
+              </a>
+            </h3>
+
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i data-lucide="building-2" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Apex Heating & Air</span>
             </div>
+
+            <a href="{{ url('/case-studies') }}" class="block relative overflow-hidden rounded-2xl aspect-video bg-slate-900/80 border border-white/10 group-hover:border-cyan-500/40 transition-all">
+              <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-cyan-950/40 via-slate-900 to-purple-950/30 p-4 text-center">
+                <i data-lucide="flame" class="w-8 h-8 text-purple-400 mb-2 opacity-80"></i>
+                <span class="text-xs font-bold text-slate-300">SMS Automation System</span>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+            </a>
+
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-cyan-400 leading-none">+$180K</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Revenue</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-purple-400 leading-none">24%</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Close Rate</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-emerald-400 leading-none">2-Way</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">SMS Sync</div>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed line-clamp-3">
+              Automated 2-way SMS follow-ups and pipeline tracking recovered off-hours commercial inquiries and tripled deal close rates.
+            </p>
           </div>
 
-          <div class="p-3.5 sm:p-4 rounded-2xl bg-[#091126] border border-cyan-500/25 flex flex-col justify-center">
-            <div class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none mb-1">
-              60 Days
-            </div>
-            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">
-              Time to Result
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Case Study Card 2 (Home Services / HVAC) -->
-      <div class="glass-panel rounded-3xl p-6 sm:p-8 bg-[#070D1F]/90 border border-purple-500/30 shadow-[0_0_30px_rgba(168,85,247,0.12)] relative overflow-hidden group hover:border-purple-400/60 transition-all flex flex-col justify-between">
-
-        <!-- Glow Corner Accent -->
-        <div class="absolute -top-12 -right-12 w-36 h-36 bg-purple-500/10 rounded-full blur-2xl pointer-events-none"></div>
-
-        <div class="relative z-10">
-          <!-- Card Header: Badge & Category -->
-          <div class="flex items-center justify-between text-xs font-bold tracking-wider uppercase mb-3">
-            <span class="text-purple-400">CASE STUDY</span>
-            <span class="text-slate-400 font-medium">HOME SERVICES / HVAC</span>
-          </div>
-
-          <!-- Case Study Title & Subtitle -->
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-            Apex HVAC — Pipeline & SMS Follow-Up
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-            Revamped lead capture workflows and instant SMS response automations, eliminating lost leads and boosting closed revenue by $180k.
-          </p>
-
-          <!-- Before & After Comparison Pill -->
-          <div class="rounded-2xl bg-[#030712]/90 border border-white/10 p-4 sm:p-5 mb-6 flex items-center justify-around">
-
-            <!-- Before -->
-            <div class="text-center">
-              <span class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider">BEFORE</span>
-              <div class="text-xl sm:text-2xl font-black text-white mt-0.5">8%</div>
-              <span class="text-[10px] text-slate-500 font-medium">Close Rate</span>
-            </div>
-
-            <!-- Flow Arrow -->
-            <div class="w-8 h-8 rounded-full bg-purple-500/15 border border-purple-500/40 text-purple-400 flex items-center justify-center shadow-[0_0_12px_rgba(168,85,247,0.3)]">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </div>
-
-            <!-- After -->
-            <div class="text-center">
-              <span class="text-[10px] sm:text-xs text-purple-400 font-bold uppercase tracking-wider">AFTER</span>
-              <div class="text-xl sm:text-2xl font-black text-purple-300 mt-0.5">24%</div>
-              <span class="text-[10px] text-purple-300/80 font-medium">Close Rate</span>
-            </div>
-
+          <div class="pt-5 border-t border-white/10 mt-4">
+            <a href="{{ url('/case-studies') }}" 
+               class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-purple-500/20 hover:from-cyan-500 hover:via-indigo-600 hover:to-purple-600 border border-cyan-500/40 hover:border-cyan-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all group-hover:shadow-glow-cyan">
+              <span>View Case Study</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Bottom 2 Highlight Badges -->
-        <div class="grid grid-cols-2 gap-3.5 relative z-10">
-          <div class="p-3.5 sm:p-4 rounded-2xl bg-[#091126] border border-purple-500/25 flex flex-col justify-center">
-            <div class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none mb-1">
-              +$180K
+        <!-- Card 3: Insurance / Commercial -->
+        <div class="case-card glass-panel glass-panel-hover rounded-3xl p-6 sm:p-7 border-white/10 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                Insurance / Financial
+              </span>
+              <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                90 Days Case Study
+              </span>
             </div>
-            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">
-              Pipeline Revenue
+
+            <h3 class="text-lg sm:text-xl font-extrabold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+              <a href="{{ url('/case-studies') }}" class="no-underline hover:no-underline hover:text-cyan-300 transition-colors">
+                Vanguard Insurance — 4.2x Qualified Policy Leads
+              </a>
+            </h3>
+
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i data-lucide="building-2" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+              <span>Vanguard Risk Brokers</span>
             </div>
+
+            <a href="{{ url('/case-studies') }}" class="block relative overflow-hidden rounded-2xl aspect-video bg-slate-900/80 border border-white/10 group-hover:border-cyan-500/40 transition-all">
+              <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-cyan-950/40 via-slate-900 to-purple-950/30 p-4 text-center">
+                <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 mb-2 opacity-80"></i>
+                <span class="text-xs font-bold text-slate-300">Commercial Qualification System</span>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+            </a>
+
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-cyan-400 leading-none">4.2x</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Lead Volume</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-purple-400 leading-none">&lt;15m</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Response</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                <div class="text-base sm:text-lg font-black text-emerald-400 leading-none">+$240K</div>
+                <div class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Contract Val</div>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed line-clamp-3">
+              Built an automated lead qualification funnel and instant agent assignment workflow to scale high-intent commercial policy inquiries.
+            </p>
           </div>
 
-          <div class="p-3.5 sm:p-4 rounded-2xl bg-[#091126] border border-purple-500/25 flex flex-col justify-center">
-            <div class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none mb-1">
-              45 Days
-            </div>
-            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">
-              Time to Result
-            </div>
+          <div class="pt-5 border-t border-white/10 mt-4">
+            <a href="{{ url('/case-studies') }}" 
+               class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-purple-500/20 hover:from-cyan-500 hover:via-indigo-600 hover:to-purple-600 border border-cyan-500/40 hover:border-cyan-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all group-hover:shadow-glow-cyan">
+              <span>View Case Study</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors"></i>
+            </a>
           </div>
         </div>
-
-      </div>
-
+      @endforelse
     </div>
 
     <!-- Centered View All Case Studies Button -->
-    <div class="text-center pt-2">
-      <a href="{{ url('/case-studies') }}" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 text-white font-bold text-sm shadow-lg hover:border-cyan-400/50 hover:shadow-glow-cyan hover:scale-[1.02] active:scale-95 transition-all group">
+    <div class="text-center pt-4">
+      <a href="{{ url('/case-studies') }}" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-extrabold text-sm shadow-glow-cyan hover:shadow-cyan-500/50 hover:scale-[1.03] active:scale-95 transition-all group">
         <span>View All Case Studies</span>
-        <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1.5"></i>
+        <i data-lucide="arrow-right" class="w-4 h-4 text-white transition-transform group-hover:translate-x-1.5"></i>
       </a>
     </div>
 

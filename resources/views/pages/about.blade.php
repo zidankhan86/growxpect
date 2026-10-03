@@ -4,54 +4,134 @@
 @section('meta_description', 'Growxpect is a digital growth agency helping businesses generate more leads, convert more customers, and scale with smarter marketing systems.')
 
 @section('content')
-<!-- 1. HERO SECTION -->
-<section class="relative pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- 1. HERO SECTION (REDESIGNED MODERN TWO-COLUMN & STATS DASHBOARD) -->
+<section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
+  <!-- Ambient Glow Backgrounds -->
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-r from-purple-600/15 via-cyan-500/15 to-indigo-600/15 blur-[160px] rounded-full"></div>
+    <div class="absolute top-1/3 right-10 w-96 h-96 bg-cyan-500/10 blur-[130px] rounded-full"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-purple-600/10 blur-[130px] rounded-full"></div>
+    <div class="absolute inset-0 grid-bg opacity-20"></div>
+  </div>
 
-    <div class="text-center max-w-4xl mx-auto space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-widest uppercase backdrop-blur-md">
-        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-        {{ $cms['about_hero_badge_text'] ?? $cms['badge_text'] ?? 'ABOUT GROWXPECT' }}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- 2-Column Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+      <!-- Left Column: Headline, Subtitle, Key Pill List & CTAs -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+
+        <!-- Eyebrow Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-extrabold tracking-widest uppercase backdrop-blur-md shadow-[0_0_20px_rgba(56,197,210,0.15)]">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>{{ $cms['about_hero_badge_text'] ?? $cms['badge_text'] ?? 'ABOUT GROWXPECT' }}</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
+          {{ $cms['about_hero_heading_line1'] ?? 'We Build Growth Systems That' }} <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 text-glow">
+            {{ $cms['about_hero_heading_highlight'] ?? 'Turn Attention Into Revenue.' }}
+          </span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          {{ $cms['about_hero_description'] ?? 'Growxpect is a digital growth agency helping businesses generate more leads, convert more customers, and scale with smarter marketing systems.' }}
+        </p>
+
+        <!-- Feature Highlight Card -->
+        <div class="p-5 rounded-2xl bg-[#081024]/90 border border-white/10 backdrop-blur-xl text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 shadow-2xl relative group hover:border-cyan-500/40 transition-all text-left">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="layers" class="w-4.5 h-4.5"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white uppercase tracking-wider mb-1">CONNECTED SYSTEM ARCHITECTURE</div>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {!! nl2br(e($cms['about_hero_box_text'] ?? 'We combine high-converting funnels, CRM, marketing automation, paid advertising, and AI-powered solutions to create connected growth systems that work together — not isolated marketing services.')) !!}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <button onclick="window.openBookingModal && window.openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:shadow-cyan-500/50 hover:scale-[1.02] active:scale-95 transition-all">
+            <span>Book a Strategy Call</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          
+          <a href="#system" class="w-full sm:w-auto px-7 py-4 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 font-bold text-sm flex items-center justify-center gap-2 backdrop-blur-md transition-all">
+            <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
+            <span>See How We Work</span>
+          </a>
+        </div>
+
       </div>
 
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-        {{ $cms['about_hero_heading_line1'] ?? 'We Build Growth Systems That' }} <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 text-glow">
-          {{ $cms['about_hero_heading_highlight'] ?? 'Turn Attention Into Revenue' }}
-        </span>
-      </h1>
+      <!-- Right Column: Goal Quote Banner & Glass Metrics Showcase -->
+      <div class="lg:col-span-5 relative space-y-6">
 
-      <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-        {{ $cms['about_hero_description'] ?? 'Growxpect is a digital growth agency helping businesses generate more leads, convert more customers, and scale with smarter marketing systems.' }}
-      </p>
+        <!-- Our Goal Banner (Floating Glass Card) -->
+        <div class="relative p-7 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0b1329]/95 via-[#080d1d] to-[#120a24]/95 border border-cyan-500/35 shadow-[0_0_40px_rgba(56,197,210,0.18)] overflow-hidden group hover:border-cyan-400 transition-all">
+          
+          <!-- Background Glow Accents -->
+          <div class="absolute -top-12 -right-12 w-36 h-36 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="absolute -bottom-12 -left-12 w-36 h-36 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none"></div>
 
-      <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md text-sm sm:text-base text-slate-200 leading-relaxed max-w-3xl mx-auto shadow-2xl">
-        {!! nl2br(e($cms['about_hero_box_text'] ?? 'We combine high-converting funnels, CRM, marketing automation, paid advertising, and AI-powered solutions to create connected growth systems that work together — not isolated marketing services.')) !!}
+          <div class="relative z-10 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[10px] font-black uppercase tracking-widest">
+                <i data-lucide="target" class="w-3 h-3 text-cyan-400"></i>
+                {{ $cms['about_hero_goal_badge'] ?? 'OUR GOAL IS SIMPLE' }}
+              </span>
+              <div class="w-8 h-8 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                <i data-lucide="quote" class="w-4 h-4"></i>
+              </div>
+            </div>
+
+            <h2 class="text-lg sm:text-2xl font-black text-white leading-snug tracking-tight">
+              "{{ $cms['about_hero_goal_text'] ?? 'Help businesses grow faster, operate smarter, and turn more opportunities into revenue.' }}"
+            </h2>
+
+            <div class="pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs text-slate-400">
+              <span class="font-semibold text-slate-300">Predictable Revenue Systems</span>
+              <span class="text-cyan-400 font-bold">100% Scalable</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Quick Pillar Cards -->
+        <div class="grid grid-cols-3 gap-3">
+          <div class="p-4 rounded-2xl bg-[#091024]/80 border border-white/10 text-center flex flex-col justify-center">
+            <div class="text-lg sm:text-xl font-black text-cyan-400">$12M+</div>
+            <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Client Revenue</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#091024]/80 border border-white/10 text-center flex flex-col justify-center">
+            <div class="text-lg sm:text-xl font-black text-purple-400">500K+</div>
+            <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Leads Handled</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#091024]/80 border border-white/10 text-center flex flex-col justify-center">
+            <div class="text-lg sm:text-xl font-black text-emerald-400">98%</div>
+            <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Client Retention</div>
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <!-- Goal Banner -->
-    <div class="mt-12 max-w-4xl mx-auto p-8 rounded-3xl bg-gradient-to-r from-cyan-950/60 via-[#0B142B] to-purple-950/60 border border-cyan-500/40 shadow-[0_0_50px_rgba(56,197,210,0.18)] text-center relative overflow-hidden">
-      <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
-
-      <span class="text-xs uppercase font-bold tracking-widest text-cyan-400 block mb-2">
-        {{ $cms['about_hero_goal_badge'] ?? 'OUR GOAL IS SIMPLE' }}
-      </span>
-      <h2 class="text-xl sm:text-3xl font-extrabold text-white leading-snug">
-        "{{ $cms['about_hero_goal_text'] ?? 'Help businesses grow faster, operate smarter, and turn more opportunities into revenue.' }}"
-      </h2>
     </div>
 
   </div>
 </section>
 
 <!-- 2. MORE THAN MARKETING: A COMPLETE GROWTH SYSTEM -->
-<section class="py-20 sm:py-24 relative bg-slate-950/70 border-t border-white/[0.06]">
+<section id="system" class="py-20 sm:py-24 relative bg-slate-950/70 border-t border-white/[0.06]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-      <div class="lg:col-span-6 space-y-5">
+      <div class="lg:col-span-6 space-y-5 text-center lg:text-left">
         <div class="inline-block text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3.5 py-1 rounded-full border border-purple-500/20">
           {{ $cms['about_system_badge_text'] ?? 'MORE THAN MARKETING' }}
         </div>
@@ -144,10 +224,35 @@
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
-      <!-- Left Column: Founder Photo Card & Process Chain -->
-      <div class="lg:col-span-5 space-y-6">
+      <!-- 1. Top Content: Greeting, Role & Description (Right column top on desktop) -->
+      <div class="lg:col-span-7 lg:col-start-6 lg:row-start-1 space-y-5">
+        <div class="flex items-center gap-3">
+          <div class="h-0.5 w-7 bg-purple-500"></div>
+          <span class="text-xs font-extrabold tracking-widest text-purple-400 uppercase">
+            {{ $cms['about_founder_badge_text'] ?? 'MEET THE FOUNDER' }}
+          </span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+          {{ $cms['about_founder_greeting_1'] ?? 'Hi, I\'m' }} 
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-400">{{ $cms['about_founder_name_1'] ?? 'Rezaee' }}</span> 
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">{{ $cms['about_founder_name_2'] ?? 'Rabbi.' }}</span>
+        </h2>
+
+        <h3 class="text-base sm:text-xl font-bold text-slate-200">
+          {{ $cms['about_founder_role_text'] ?? 'Founder & Digital Growth Strategist at' }} 
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-extrabold">{{ $cms['about_founder_role_company'] ?? 'Growxpect' }}</span>
+        </h3>
+
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          {{ $cms['about_founder_description'] ?? 'I help businesses grow through proven digital systems — including sales funnels, GoHighLevel, CRM & marketing automation, lead generation, paid advertising and conversion optimization.' }}
+        </p>
+      </div>
+
+      <!-- 2. Founder Photo Card & Process Chain (Left column on desktop, above Core Expertise on mobile) -->
+      <div class="lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:row-span-2 space-y-6">
         <div class="glass-panel p-3 sm:p-4 rounded-3xl border-white/10 relative shadow-2xl group">
           <div class="relative rounded-2xl overflow-hidden bg-slate-900 border border-white/10 aspect-[4/4.2] sm:aspect-square lg:aspect-[4/4.2]">
             <img src="{{ !empty($cms['about_founder_founder_image']) ? asset($cms['about_founder_founder_image']) : asset('founder.png') }}" alt="Rezaee Rabbi - Founder & Digital Growth Strategist at Growxpect" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" />
@@ -220,33 +325,11 @@
         </div>
       </div>
 
-      <!-- Right Column: Meet the Founder Content -->
-      <div class="lg:col-span-7 space-y-6">
-
-        <div class="flex items-center gap-3">
-          <div class="h-0.5 w-7 bg-purple-500"></div>
-          <span class="text-xs font-extrabold tracking-widest text-purple-400 uppercase">
-            {{ $cms['about_founder_badge_text'] ?? 'MEET THE FOUNDER' }}
-          </span>
-        </div>
-
-        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-          {{ $cms['about_founder_greeting_1'] ?? 'Hi, I\'m' }} 
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-400">{{ $cms['about_founder_name_1'] ?? 'Rezaee' }}</span> 
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">{{ $cms['about_founder_name_2'] ?? 'Rabbi.' }}</span>
-        </h2>
-
-        <h3 class="text-base sm:text-xl font-bold text-slate-200">
-          {{ $cms['about_founder_role_text'] ?? 'Founder & Digital Growth Strategist at' }} 
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-extrabold">{{ $cms['about_founder_role_company'] ?? 'Growxpect' }}</span>
-        </h3>
-
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-          {{ $cms['about_founder_description'] ?? 'I help businesses grow through proven digital systems — including sales funnels, GoHighLevel, CRM & marketing automation, lead generation, paid advertising and conversion optimization.' }}
-        </p>
+      <!-- 3. Bottom Content: Core Expertise & Quote (Right column bottom on desktop) -->
+      <div class="lg:col-span-7 lg:col-start-6 lg:row-start-2 space-y-6">
 
         <!-- Core Expertise -->
-        <div class="pt-3">
+        <div>
           <div class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3.5">
             MY CORE EXPERTISE
           </div>
@@ -356,14 +439,6 @@
               {{ $cms['about_founder_quote_text'] ?? '“Don\'t just generate more leads. Build a system that knows what to do with them.”' }}
             </p>
           </div>
-        </div>
-
-        <!-- Founder Signature & Tag -->
-        <div class="pt-2 flex flex-col items-start">
-          <img src="{{ !empty($cms['about_founder_signature_image']) ? asset($cms['about_founder_signature_image']) : asset('signature-transparent.png') }}" alt="Rezaee Rabbi" class="h-9 sm:h-11 w-auto object-contain brightness-125" />
-          <p class="text-xs text-slate-400 font-medium mt-1">
-            {{ $cms['about_founder_founder_title'] ?? 'Founder, Growxpect' }}
-          </p>
         </div>
 
       </div>

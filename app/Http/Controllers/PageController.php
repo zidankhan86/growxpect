@@ -16,7 +16,10 @@ class PageController extends Controller
         $seo = Seo::where('page_slug', 'home')->first();
         $testimonials = Testimonial::where('is_active', true)->orderBy('sort_order')->get();
         $pricingPlans = PricingPlan::where('tier_type', 'home')->orderBy('sort_order')->get();
-        $featuredCaseStudies = CaseStudy::where('is_featured', true)->orderBy('sort_order')->take(2)->get();
+        $featuredCaseStudies = CaseStudy::where('is_featured', true)->orderBy('sort_order')->take(3)->get();
+        if ($featuredCaseStudies->count() < 3) {
+            $featuredCaseStudies = CaseStudy::orderBy('sort_order')->take(3)->get();
+        }
 
         return view('pages.home', compact('seo', 'testimonials', 'pricingPlans', 'featuredCaseStudies'));
     }
