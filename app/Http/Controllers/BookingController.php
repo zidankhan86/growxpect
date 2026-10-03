@@ -57,7 +57,7 @@ class BookingController extends Controller
             'booking_date' => 'required|string|max:100',
             'booking_time' => 'required|string|max:100',
             'timezone' => 'nullable|string|max:50',
-            'message' => 'required|string|max:2000',
+            'message' => 'nullable|string|max:2000',
         ]);
 
         if ($validator->fails()) {

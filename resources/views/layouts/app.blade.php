@@ -478,11 +478,13 @@
         const formData = new FormData(bookingForm);
         const data = Object.fromEntries(formData.entries());
 
+        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '{{ csrf_token() }}';
+
         fetch("{{ route('booking.store') }}", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            'X-CSRF-TOKEN': csrfToken,
             'Accept': 'application/json'
           },
           body: JSON.stringify(data)

@@ -176,8 +176,8 @@
 
         <!-- Customer Notes / Growth Challenges Textarea -->
         <div>
-          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Business Goal & Challenges Notes *</label>
-          <textarea name="message" id="step2-message" required rows="3" placeholder="Describe your main business goal, current challenges, or what you'd like to discuss during our call..." class="w-full px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/10 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"></textarea>
+          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Business Goal & Challenges Notes <span class="text-slate-500 font-normal">(Optional)</span></label>
+          <textarea name="message" id="step2-message" rows="3" placeholder="Describe your main business goal, current challenges, or what you'd like to discuss during our call..." class="w-full px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/10 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"></textarea>
         </div>
 
         <button type="submit" id="modal-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-glow-cyan hover:scale-[1.02] active:scale-95 transition-all mt-2">
