@@ -105,6 +105,7 @@ class BookingController extends Controller
             'booking_date' => $bookingDate,
             'booking_time' => $request->booking_time,
             'timezone' => $request->timezone ?? 'EST',
+            'google_meet_link' => env('GOOGLE_MEET_LINK', 'https://meet.google.com/yfy-izme-fng'),
             'message' => $request->message,
             'status' => 'pending',
             'ip_address' => $request->ip(),
@@ -114,7 +115,7 @@ class BookingController extends Controller
         try {
             // Determine Admin Notification Recipients
             $setting = Setting::first();
-            $adminEmails = collect();
+            $adminEmails = collect(['contact@growxpect.com']);
 
             if (!empty($setting?->email)) {
                 $adminEmails->push(trim($setting->email));

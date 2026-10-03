@@ -56,6 +56,14 @@
                     <div style="font-size: 14px; font-weight: 600; color: #67e8f9; margin-top: 4px;">
                       ⏰ {{ $booking->booking_time ?? '9:00 AM (EST)' }}
                     </div>
+                    @if(!empty($booking->meet_link))
+                    <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); font-size: 13px;">
+                      <span style="color: #94a3b8;">📹 Google Meet Link:</span>
+                      <a href="{{ $booking->meet_link }}" target="_blank" style="color: #38C5D2; font-weight: 700; text-decoration: underline; margin-left: 6px;">
+                        {{ $booking->meet_link }}
+                      </a>
+                    </div>
+                    @endif
                   </td>
                   <td align="right" valign="middle">
                     <span style="display: inline-block; padding: 6px 12px; background-color: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; font-size: 12px; font-weight: 700; color: #34d399;">

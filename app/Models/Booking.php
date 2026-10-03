@@ -20,10 +20,48 @@ class Booking extends Model
         'booking_date',
         'booking_time',
         'timezone',
+        'google_meet_link',
         'message',
         'status',
         'ip_address',
+        'reminded_6h_at',
+        'reminded_1h_at',
+        'reminded_30m_at',
     ];
+
+    protected $casts = [
+        'reminded_6h_at' => 'datetime',
+        'reminded_1h_at' => 'datetime',
+        'reminded_30m_at' => 'datetime',
+    ];
+
+    /**
+     * Get effective Google Meet Link.
+     */
+    public function getMeetLinkAttribute()
+    {
+        return !empty($this->google_meet_link) 
+            ? $this->google_meet_link 
+            : (env('GOOGLE_MEET_LINK') ?: 'https://meet.google.com/yfy-izme-fng');
+    }
+
+    /**
+     * Parse appointment date and time into a Carbon instance in client's timezone or UTC.
+     */
+    public function getAppointmentDateTime()
+    {
+        try {
+            $cleanTime = self::cleanTimeSlot($this->booking_time);
+            if (!$this->booking_date || !$cleanTime) return null;
+
+            $dateTimeString = trim($this->booking_date . ' ' . $cleanTime);
+            $sourceTz = self::getIanaTimezone($this->timezone);
+
+            return \Carbon\Carbon::parse($dateTimeString, $sourceTz);
+        } catch (\Throwable $e) {
+            return null;
+        }
+    }
 
     protected $appends = ['bangladesh_time'];
 

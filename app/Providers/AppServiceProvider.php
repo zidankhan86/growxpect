@@ -46,5 +46,12 @@ class AppServiceProvider extends ServiceProvider
         } catch (\Exception $e) {
             // DB not connected or tables not ready during early boot
         }
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \App\Console\Commands\SendAppointmentReminders::class,
+            ]);
+        }
     }
 }
+
