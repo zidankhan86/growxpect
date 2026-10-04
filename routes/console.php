@@ -90,6 +90,19 @@ Artisan::command('appointment:send-reminders', function () {
     return Artisan::call('send-reminders');
 })->purpose('Alias for send-reminders');
 
+Artisan::command('test:send-mail {email}', function ($email) {
+    $this->info("Sending test email to {$email} using configured SMTP...");
+    try {
+        \Illuminate\Support\Facades\Mail::raw('Test email from GrowXpect SMTP configuration', function ($message) use ($email) {
+            $message->to($email)->subject('SMTP Test Email - GrowXpect');
+        });
+        $this->info("✅ SUCCESS: Test email successfully sent to {$email}!");
+    } catch (\Throwable $e) {
+        $this->error("❌ ERROR: Failed sending email: " . $e->getMessage());
+    }
+})->purpose('Test SMTP mail dispatch');
+
+
 
 
 
